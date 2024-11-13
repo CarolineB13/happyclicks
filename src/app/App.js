@@ -8,6 +8,7 @@ import Footer from '../components/Footer/Footer';
 
 function App() {
   return (
+    <BrowserRouter basename="/happyclicks">
     <Router
       future={{
         v7_startTransition: true,
@@ -25,6 +26,7 @@ function App() {
       </div>
       <Footer />
     </Router>
+    </BrowserRouter>
   );
 }
 
