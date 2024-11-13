@@ -1,0 +1,195 @@
+/* Home.css */
+
+/* Section de Bienvenue */
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-large) var(--spacing-medium);
+    background-color: var(--background-secondary-color);
+  }
+  
+  .welcome-section h1 {
+    font-family: var(--font-primary);
+    font-size: 2.5em;
+    color: var(--accent-color-1);
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .welcome-section p {
+    font-family: var(--font-secondary);
+    font-size: 1.2em;
+    color: var(--text-secondary-color);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .cta-button {
+    padding: var(--spacing-small) var(--spacing-medium);
+    font-size: 1em;
+    font-weight: var(--heading-font-weight);
+    color: #ffffff;
+    background-color: var(--accent-color-1);
+    border: none;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed) var(--transition-ease);
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--highlight-color);
+  }
+  
+  /* Section Présentation */
+  .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-large) var(--spacing-medium);
+    background-color: var(--background-color);
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-large);
+    max-width: 1000px;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text h2 {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    color: var(--accent-color-1);
+  }
+  
+  .about-text p {
+    font-family: var(--font-secondary);
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+  }
+  
+  .about-photo img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Section Services */
+  .services-section {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+    background-color: var(--background-secondary-color);
+  }
+  
+  .services-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    color: var(--accent-color-1);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .custom-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .custom-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .custom-list li::before {
+    content: url('../../assets/arrow-icon.svg'); /* Icône de flèche */
+    display: inline-block;
+    margin-right: var(--spacing-small);
+    width: 16px;
+    height: auto;
+  }
+  
+  .languages-chart {
+    margin-top: var(--spacing-large);
+    max-width: 600px;
+    margin: var(--spacing-large) auto;
+  }
+  
+  /* Section Témoignages */
+  .testimonials-section {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+    background-color: var(--background-color);
+  }
+  
+  .testimonials-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    color: var(--accent-color-1);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .testimonials-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing-medium);
+  }
+  
+  .testimonial {
+    flex: 0 0 300px;
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-secondary-color);
+  }
+  
+  .testimonial p {
+    font-family: var(--font-secondary);
+    color: var(--text-color);
+  }
+  
+  /* Section Portfolio */
+  .portfolio-section {
+    padding: var(--spacing-large) var(--spacing-medium);
+    background-color: var(--background-secondary-color);
+    text-align: center;
+  }
+  
+  .portfolio-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    color: var(--accent-color-1);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .portfolio-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing-medium);
+  }
+  
+  .project-card {
+    flex: 0 0 200px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    background-color: #ffffff;
+    text-align: center;
+    padding: var(--spacing-small);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .project-card p {
+    font-family: var(--font-secondary);
+    color: var(--text-secondary-color);
+    margin-top: var(--spacing-small);
+  }
+  

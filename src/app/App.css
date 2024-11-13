@@ -1,0 +1,65 @@
+/* App.css */
+
+/* Définition de la police et des couleurs de base */
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--base-font-size);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container principal */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Le contenu principal doit se développer pour pousser le footer en bas */
+.main-content {
+  flex: 1;
+}
+
+/* Liens */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+a:hover {
+  color: var(--accent-color-1);
+}
+
+/* Titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+/* Classes Utilitaires */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: var(--spacing-medium);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Global container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-large);
+}

@@ -1,0 +1,34 @@
+/* Services.css */
+
+.services-section {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+    background-color: var(--background-secondary-color);
+  }
+  
+  .services-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    color: var(--accent-color-1);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .custom-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .custom-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .custom-list li::before {
+    content: url('../../assets/arrow-icon.svg'); /* Icône de flèche pour chaque compétence */
+    display: inline-block;
+    margin-right: var(--spacing-small);
+    width: 16px;
+    height: auto;
+  }
+  

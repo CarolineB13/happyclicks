@@ -1,0 +1,36 @@
+/* Palette de Couleurs */
+:root {
+  /* Couleurs Principales */
+  --primary-color: #81d4ca40; /* Bleu Aqua Transparent pour Header et Footer */
+  --accent-color-1: #1a557f; /* Bleu Profond pour Boutons et Liens */
+  --accent-color-2: #f2aab845; /* Rose Transparent pour Sections Secondaires */
+
+  /* Couleurs de Fond */
+  --background-color: #ffffff; /* Blanc pour le Fond Principal */
+  --background-secondary-color: #f7f7f7; /* Gris Clair pour Variantes de Fond */
+
+  /* Couleurs de Texte */
+  --text-color: #000000; /* Noir pour le Texte Principal */
+  --text-secondary-color: #333333; /* Gris Foncé pour Texte Secondaire */
+  --link-color: #1a557f; /* Couleur des Liens en Bleu Profond */
+  --highlight-color: #81d4ca; /* Bleu Aqua pour les surbrillances ou éléments d'accentuation */
+
+  /* Typographie */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+  --base-font-size: 16px;
+  --heading-font-weight: 700;
+  --body-font-weight: 400;
+
+  /* Espacements */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  /* Ombres */
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+  --transition-ease: ease-in-out;
+}

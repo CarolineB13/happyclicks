@@ -1,0 +1,51 @@
+/* SkillBar.css */
+
+.skill-bar {
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .progress-bar {
+    background-color: var(--background-secondary-color);
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  .progress {
+    background-color: var(--accent-color-1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .skill-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .skill-name {
+    font-family: var(--font-secondary);
+    color: #ffffff; /* Couleur de texte pour contraste */
+  }
+  
+  .skill-level {
+    font-family: var(--font-secondary);
+    color: #ffffff;
+    font-weight: bold;
+  }
+  

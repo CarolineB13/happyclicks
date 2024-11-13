@@ -1,0 +1,18 @@
+/* TechnologiesChart.css */
+
+.technologies-chart {
+    max-width: 600px;
+    margin: var(--spacing-large) auto;
+    padding: var(--spacing-medium);
+    background-color: var(--background-secondary-color);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+  }
+  
+  .technologies-chart h2 {
+    font-family: var(--font-primary);
+    color: var(--accent-color-1);
+    margin-bottom: var(--spacing-large);
+  }
+  
