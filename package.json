@@ -2,7 +2,10 @@
   "name": "happyclicks",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://CarolineB13.github.io/happyclicks",
   "dependencies": {
+    "@svgr/hast-util-to-babel-ast": "^8.0.0",
+    "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

@@ -2,7 +2,7 @@
 import React from 'react';
 import './Services.css';
 import TechnologiesChart from '../TechnologiesChart/TechnologiesChart';
-import arrowIcon from '../../assets/arrow-icon.svg';
+import arrowIcon from '../../assets/arrow-icon.png';
 
 function Services() {
   return (
