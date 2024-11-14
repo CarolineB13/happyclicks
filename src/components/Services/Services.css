@@ -24,10 +24,9 @@
     margin-bottom: var(--spacing-small);
   }
   
-  .custom-list li::before {
-    content: url('../../assets/arrow-icon.svg'); /* Icône de flèche pour chaque compétence */
-    display: inline-block;
-    margin-right: var(--spacing-small);
+  .arrow-icon {
+    transform: rotate(90deg); /* Pivote la flèche de 90 degrés */
+    margin-right: var(--spacing-small); /* Espace entre la flèche et le texte */
     width: 16px;
     height: auto;
   }

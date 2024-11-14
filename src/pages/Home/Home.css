@@ -76,7 +76,7 @@
   .about-photo img {
     width: 200px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 50% 50% 3% 3%;
     box-shadow: var(--box-shadow);
   }
   
@@ -92,25 +92,6 @@
     font-size: 2em;
     color: var(--accent-color-1);
     margin-bottom: var(--spacing-medium);
-  }
-  
-  .custom-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .custom-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--spacing-small);
-  }
-  
-  .custom-list li::before {
-    content: url('../../assets/arrow-icon.svg'); /* Icône de flèche */
-    display: inline-block;
-    margin-right: var(--spacing-small);
-    width: 16px;
-    height: auto;
   }
   
   .languages-chart {
