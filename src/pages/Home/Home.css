@@ -2,175 +2,175 @@
 
 /* Section de Bienvenue */
 .welcome-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--spacing-large) var(--spacing-medium);
-    background-color: var(--background-secondary-color);
-  }
-  
-  .welcome-section h1 {
-    font-family: var(--font-primary);
-    font-size: 2.5em;
-    color: var(--accent-color-1);
-    margin-bottom: var(--spacing-small);
-  }
-  
-  .welcome-section p {
-    font-family: var(--font-secondary);
-    font-size: 1.2em;
-    color: var(--text-secondary-color);
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .cta-button {
-    padding: var(--spacing-small) var(--spacing-medium);
-    font-size: 1em;
-    font-weight: var(--heading-font-weight);
-    color: #ffffff;
-    background-color: var(--accent-color-1);
-    border: none;
-    border-radius: 4px;
-    transition: background-color var(--transition-speed) var(--transition-ease);
-    cursor: pointer;
-  }
-  
-  .cta-button:hover {
-    background-color: var(--highlight-color);
-  }
-  
-  /* Section Présentation */
-  .about-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--spacing-large) var(--spacing-medium);
-    background-color: var(--background-color);
-  }
-  
-  .about-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--spacing-large);
-    max-width: 1000px;
-  }
-  
-  .about-text {
-    flex: 1;
-  }
-  
-  .about-text h2 {
-    font-family: var(--font-primary);
-    font-size: 2em;
-    color: var(--accent-color-1);
-  }
-  
-  .about-text p {
-    font-family: var(--font-secondary);
-    color: var(--text-secondary-color);
-    line-height: 1.6;
-  }
-  
-  .about-photo img {
-    width: 200px;
-    height: auto;
-    border-radius: 50% 50% 3% 3%;
-    box-shadow: var(--box-shadow);
-  }
-  
-  /* Section Services */
-  .services-section {
-    padding: var(--spacing-large) var(--spacing-medium);
-    text-align: center;
-    background-color: var(--background-secondary-color);
-  }
-  
-  .services-section h2 {
-    font-family: var(--font-primary);
-    font-size: 2em;
-    color: var(--accent-color-1);
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .languages-chart {
-    margin-top: var(--spacing-large);
-    max-width: 600px;
-    margin: var(--spacing-large) auto;
-  }
-  
-  /* Section Témoignages */
-  .testimonials-section {
-    padding: var(--spacing-large) var(--spacing-medium);
-    text-align: center;
-    background-color: var(--background-color);
-  }
-  
-  .testimonials-section h2 {
-    font-family: var(--font-primary);
-    font-size: 2em;
-    color: var(--accent-color-1);
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .testimonials-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: var(--spacing-medium);
-  }
-  
-  .testimonial {
-    flex: 0 0 300px;
-    padding: var(--spacing-medium);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-    background-color: var(--background-secondary-color);
-  }
-  
-  .testimonial p {
-    font-family: var(--font-secondary);
-    color: var(--text-color);
-  }
-  
-  /* Section Portfolio */
-  .portfolio-section {
-    padding: var(--spacing-large) var(--spacing-medium);
-    background-color: var(--background-secondary-color);
-    text-align: center;
-  }
-  
-  .portfolio-section h2 {
-    font-family: var(--font-primary);
-    font-size: 2em;
-    color: var(--accent-color-1);
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .portfolio-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: var(--spacing-medium);
-  }
-  
-  .project-card {
-    flex: 0 0 200px;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-    background-color: #ffffff;
-    text-align: center;
-    padding: var(--spacing-small);
-  }
-  
-  .project-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .project-card p {
-    font-family: var(--font-secondary);
-    color: var(--text-secondary-color);
-    margin-top: var(--spacing-small);
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-large) var(--spacing-medium);
+  background-color: var(--primary-color); /* Beige clair */
+}
+
+.welcome-section h1 {
+  font-family: var(--font-primary);
+  font-size: 2.5em;
+  color: var(--accent-color-1); /* Bleu profond */
+  margin-bottom: var(--spacing-small);
+}
+
+.welcome-section p {
+  font-family: var(--font-secondary);
+  font-size: 1.2em;
+  color: var(--text-secondary-color);
+  margin-bottom: var(--spacing-medium);
+}
+
+.cta-button {
+  padding: var(--spacing-small) var(--spacing-medium);
+  font-size: 1em;
+  font-weight: var(--heading-font-weight);
+  color: #ffffff;
+  background-color: var(--accent-color-1); /* Bleu profond pour le CTA */
+  border: none;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed) var(--transition-ease);
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: var(--highlight-color); /* Bleu très foncé */
+}
+
+/* Section Présentation */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-large) var(--spacing-medium);
+  background-color: var(--background-color); /* Fond blanc */
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-large);
+  max-width: 1000px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-family: var(--font-primary);
+  font-size: 2em;
+  color: var(--accent-color-1); /* Bleu profond */
+}
+
+.about-text p {
+  font-family: var(--font-secondary);
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+}
+
+.about-photo {
+  width: 220px; /* Largeur ajustée pour inclure l'espace autour de la photo */
+  padding: 10px; /* Espace entre l’image et la bordure */
+  border: solid 5px var(--accent-color-1); /* Bordure bleue */
+  border-radius: 5%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow); /* Ombre appliquée sur le cadre */
+  background-color: var(--primary-color); /* Beige clair */
+}
+.about-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5%; /* Suit la bordure arrondie du cadre */
+}
+
+/* Section Services */
+
+
+.languages-chart {
+  margin-top: var(--spacing-large);
+  max-width: 600px;
+  margin: var(--spacing-large) auto;
+}
+
+/* Section Témoignages */
+.testimonials-section {
+  padding: var(--spacing-large) var(--spacing-medium);
+  text-align: center;
+  background-color: var(--background-color); /* Fond blanc */
+}
+
+.testimonials-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2em;
+  color: var(--accent-color-1); /* Bleu profond */
+  margin-bottom: var(--spacing-medium);
+}
+
+.testimonials-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--spacing-medium);
+}
+
+.testimonial {
+  flex: 0 0 300px;
+  padding: var(--spacing-medium);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-secondary-color); /* Fond clair */
+}
+
+.testimonial p {
+  font-family: var(--font-secondary);
+  color: var(--text-color);
+}
+
+/* Section Portfolio */
+.portfolio-section {
+  padding: var(--spacing-large) var(--spacing-medium);
+  background-color: var(--primary-color); /* Fond clair */
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2em;
+  color: var(--accent-color-1); /* Bleu profond */
+  margin-bottom: var(--spacing-medium);
+}
+
+.portfolio-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--spacing-medium);
+}
+
+.project-card {
+  flex: 0 0 200px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  background-color: #ffffff; /* Fond blanc pour les cartes */
+  text-align: center;
+  padding: var(--spacing-small);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.project-card p {
+  font-family: var(--font-secondary);
+  color: var(--text-secondary-color);
+  margin-top: var(--spacing-small);
+}

@@ -3,7 +3,7 @@
 .services-section {
     padding: var(--spacing-large) var(--spacing-medium);
     text-align: center;
-    background-color: var(--background-secondary-color);
+    background-color: var(--primary-color); /* Fond clair */
   }
   
   .services-section h2 {
@@ -25,7 +25,6 @@
   }
   
   .arrow-icon {
-    transform: rotate(90deg); /* Pivote la flèche de 90 degrés */
     margin-right: var(--spacing-small); /* Espace entre la flèche et le texte */
     width: 16px;
     height: auto;

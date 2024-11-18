@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import maPhoto from '../../assets/Caroline.jpg';
+import maPhoto from '../../assets/Caroline5.jpg';
 import Services from '../../components/Services/Services';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import PortfolioCarousel from '../../components/PortfolioCarousel/PortfolioCarousel';
@@ -10,7 +10,7 @@ function Home() {
     <div className="home">
       {/* Section de Bienvenue */}
       <section className="welcome-section">
-        <h1>Bienvenue chez Happy Clicks</h1>
+        <h1>Bienvenue chez HappyClicks</h1>
         <p>Votre partenaire en solutions digitales</p>
         <button className="cta-button">Voir mes projets</button>
       </section>

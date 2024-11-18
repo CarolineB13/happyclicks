@@ -1,33 +1,31 @@
-/* Header.css */
-
 .header {
-  background-color: var(--primary-color);
-  color: var(--text-color);
+  background-color: var(--background-secondary-color); /* Fond clair pour mettre en valeur le logo */
+  color: var(--text-color); /* Noir pour le texte */
   padding: var(--spacing-medium);
-  box-shadow: var(--box-shadow); 
+  box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
   position: relative;
   z-index: 10;
 }
+
 .header-logo img {
   height: 80px;
   width: auto;
 }
 
 .header-nav {
-  margin-left: auto; 
+  margin-left: auto;
   display: flex;
   gap: var(--spacing-medium);
 }
 
-/* Styles spécifiques aux liens du header */
 .header .nav-link {
-  color: var(--text-secondary-color); 
+  color: var(--accent-color-1); /* Bleu profond pour les liens */
   text-decoration: none;
   transition: color var(--transition-speed) var(--transition-ease);
 }
 
 .header .nav-link:hover {
-  color: var(--accent-color-1); /* Accentuation au survol */
+  color: var(--accent-color-2); /* Bleu très foncé au survol pour contraste */
 }

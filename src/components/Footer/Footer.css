@@ -1,43 +1,38 @@
-/* Footer.css */
-
 .footer {
-    background-color: var(--primary-color); /* Utilisation de la couleur principale (bleu aqua transparent) */
-    color: var(--text-color); /* Couleur de texte principale */
-    padding: var(--spacing-large) var(--spacing-medium);
-    text-align: center;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-medium);
-  }
-  
-  .footer-links,
-  .footer-social {
-    display: flex;
-    gap: var(--spacing-medium);
-  }
-  
-  .footer-link,
-  .footer-social-link {
-    color: var(--text-secondary-color);
-    text-decoration: none;
-    transition: color var(--transition-speed) var(--transition-ease);
-  }
-  
-  .footer-link:hover,
-  .footer-social-link:hover {
-    color: var(--accent-color-1); /* Accentuation au survol en bleu profond */
-  }
-  
-  .footer-legal {
-    font-size: var(--base-font-size);
-    color: var(--text-secondary-color);
-    margin-top: var(--spacing-small);
-  }
-  
+  background-color: var(--background-secondary-color); /* Fond clair */
+  color: var(--text-secondary-color); /* Texte gris foncé */
+  padding: var(--spacing-medium);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+.footer-link,
+.footer-social-link {
+  color: var(--accent-color-1); /* Bleu profond pour les liens */
+  text-decoration: none;
+  transition: color var(--transition-speed) var(--transition-ease);
+}
+
+.footer-link:hover,
+.footer-social-link:hover {
+  color: var(--accent-color-2); /* Surbrillance en bleu très foncé */
+}
+
+.footer-legal {
+  font-size: 0.875rem;
+  color: var(--text-secondary-color); /* Texte secondaire pour la mention légale */
+  margin-top: var(--spacing-small);
+}

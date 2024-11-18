@@ -1,0 +1,17 @@
+/* Portfolio.css */
+
+.portfolio-section {
+    padding: var(--spacing-large) var(--spacing-medium);
+    text-align: center;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium); /* Espacement entre les cartes */
+    justify-items: center;
+    align-items: start;
+    max-width: 1000px; /* Limiter la largeur totale pour ne pas excéder 4 cartes par ligne */
+    margin: 0 auto;
+  }
+  

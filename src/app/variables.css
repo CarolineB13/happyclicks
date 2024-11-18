@@ -1,19 +1,19 @@
 /* Palette de Couleurs */
 :root {
   /* Couleurs Principales */
-  --primary-color: #81d4ca40; /* Bleu Aqua Transparent pour Header et Footer */
-  --accent-color-1: #1a557f; /* Bleu Profond pour Boutons et Liens */
-  --accent-color-2: #f2aab845; /* Rose Transparent pour Sections Secondaires */
+  --primary-color: #dbcfb059; /* Beige clair pour le fond principal, compatible avec les accents bleus */
+  --accent-color-1: #046296; /* Bleu profond pour les liens et boutons */
+  --accent-color-2: #00244D; /* Bleu très foncé pour les surbrillances ou textes en gras */
 
   /* Couleurs de Fond */
-  --background-color: #ffffff; /* Blanc pour le Fond Principal */
-  --background-secondary-color: #f7f7f7; /* Gris Clair pour Variantes de Fond */
+  --background-color: #FFFFFF; /* Blanc pour le fond principal */
+  --background-secondary-color: #04629629; /* bleu clair */
 
   /* Couleurs de Texte */
-  --text-color: #000000; /* Noir pour le Texte Principal */
-  --text-secondary-color: #333333; /* Gris Foncé pour Texte Secondaire */
-  --link-color: #1a557f; /* Couleur des Liens en Bleu Profond */
-  --highlight-color: #81d4ca; /* Bleu Aqua pour les surbrillances ou éléments d'accentuation */
+  --text-color: #000000; /* Noir pour le texte principal, en accord avec le logo */
+  --text-secondary-color: #333333; /* Gris foncé pour le texte secondaire */
+  --link-color: #046296; /* Bleu profond pour les liens */
+  --highlight-color: #00244D; /* Bleu très foncé pour les éléments de surbrillance */
 
   /* Typographie */
   --font-primary: 'Poppins', sans-serif;

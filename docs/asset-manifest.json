@@ -1,9 +1,15 @@
 {
   "files": {
-    "main.css": "/happyclicks/static/css/main.ea7270f5.css",
-    "main.js": "/happyclicks/static/js/main.0eafc715.js",
+    "main.css": "/happyclicks/static/css/main.def15815.css",
+    "main.js": "/happyclicks/static/js/main.412a0895.js",
     "static/js/453.bfcefd98.chunk.js": "/happyclicks/static/js/453.bfcefd98.chunk.js",
-    "static/media/Caroline.jpg": "/happyclicks/static/media/Caroline.688fce1eb15a7dd49180.jpg",
+    "static/media/nina-carducci.png": "/happyclicks/static/media/nina-carducci.cde14cbcd5a0a5a780b1.png",
+    "static/media/printit.png": "/happyclicks/static/media/printit.41013e93bee7637ee3f5.png",
+    "static/media/Caroline5.jpg": "/happyclicks/static/media/Caroline5.aa080544b41990179de8.jpg",
+    "static/media/ohmyfood.png": "/happyclicks/static/media/ohmyfood.75f0054f0047cad0485b.png",
+    "static/media/kasa.png": "/happyclicks/static/media/kasa.2a62e671e15f810245f7.png",
+    "static/media/appart-beaute.png": "/happyclicks/static/media/appart-beaute.77a325dd761b68d13561.png",
+    "static/media/argent-bank.png": "/happyclicks/static/media/argent-bank.9eb101bd0f87c3e4f9d3.png",
     "static/media/Happy Clicks.png": "/happyclicks/static/media/Happy Clicks.48ac2a42df7472bc9eb7.png",
     "static/media/react.svg": "/happyclicks/static/media/react.8e63d418a6421cc2662e234ac8af7313.svg",
     "static/media/node.svg": "/happyclicks/static/media/node.6d0ce605479079334bce77dc7c3be9ab.svg",
@@ -13,12 +19,12 @@
     "static/media/mongodb.svg": "/happyclicks/static/media/mongodb.d930c2c4198d1000c2fb8b7d3177a44c.svg",
     "static/media/css.svg": "/happyclicks/static/media/css.1323e04024709c8a25e60cd9db22db48.svg",
     "static/media/html.svg": "/happyclicks/static/media/html.8e6289ed1eb0b9f348a463db8fa3e38c.svg",
-    "main.ea7270f5.css.map": "/happyclicks/static/css/main.ea7270f5.css.map",
-    "main.0eafc715.js.map": "/happyclicks/static/js/main.0eafc715.js.map",
+    "main.def15815.css.map": "/happyclicks/static/css/main.def15815.css.map",
+    "main.412a0895.js.map": "/happyclicks/static/js/main.412a0895.js.map",
     "453.bfcefd98.chunk.js.map": "/happyclicks/static/js/453.bfcefd98.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea7270f5.css",
-    "static/js/main.0eafc715.js"
+    "static/css/main.def15815.css",
+    "static/js/main.412a0895.js"
   ]
 }

@@ -35,6 +35,8 @@ a {
 
 a:hover {
   color: var(--accent-color-1);
+  text-decoration:underline;
+  font-weight: bold;
 }
 
 /* Titres */
