@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import maPhoto from '../../assets/Caroline5.jpg';
 import Services from '../../components/Services/Services';
 import Testimonials from '../../components/Testimonials/Testimonials';
-import PortfolioCarousel from '../../components/PortfolioCarousel/PortfolioCarousel';
+
 
 function Home() {
   return (
@@ -12,11 +13,13 @@ function Home() {
       <section className="welcome-section">
         <h1>Bienvenue chez HappyClicks</h1>
         <p>Votre partenaire en solutions digitales</p>
-        <button className="cta-button">Voir mes projets</button>
+        <Link to="/portfolio" className="cta-button">
+          Voir mes projets
+        </Link>
       </section>
 
-      {/* Section Présentation */}
-      <section className="about-section">
+{/* Section Présentation */}
+<section className="about-section">
         <div className="about-content">
           <div className="about-text">
             <h2>À propos de moi</h2>
@@ -33,9 +36,6 @@ function Home() {
 
       {/* Section Témoignages */}
       <Testimonials />
-
-      {/* Section Portfolio avec Carrousel */}
-      <PortfolioCarousel />
     </div>
   );
 }

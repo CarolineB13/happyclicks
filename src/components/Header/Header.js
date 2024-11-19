@@ -12,9 +12,9 @@ function Header() {
       </div>
       <nav className="header-nav">
         <Link to="/" className="nav-link">Accueil</Link>
-        <Link to="/about" className="nav-link">À propos</Link>
         <Link to="/portfolio" className="nav-link">Portfolio</Link>
         <Link to="/contact" className="nav-link">Contact</Link>
+        <Link to="/blog" className="nav-link">Blog</Link>
       </nav>
     </header>
   );

@@ -43,6 +43,7 @@
 /* Section Présentation */
 .about-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: var(--spacing-large) var(--spacing-medium);
@@ -91,6 +92,23 @@
   object-fit: cover;
   border-radius: 5%; /* Suit la bordure arrondie du cadre */
 }
+.linkedin-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.linkedin-badge h3 {
+  font-size: 1.2em;
+  color: var(--accent-color-1);
+  margin-bottom: 10px;
+}
+
+.badge-base {
+  display: inline-block;
+}
+
 
 /* Section Services */
 

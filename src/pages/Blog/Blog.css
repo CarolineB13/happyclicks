@@ -1,0 +1,21 @@
+.blog-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .blog-page h1 {
+    font-size: 2.5em;
+    color: var(--accent-color-1);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .intro-text {
+    font-size: 1.2em;
+    color: var(--text-secondary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
