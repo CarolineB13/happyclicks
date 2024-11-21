@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/happyclicks/static/css/main.def15815.css",
-    "main.js": "/happyclicks/static/js/main.412a0895.js",
+    "main.css": "/happyclicks/static/css/main.af5726e2.css",
+    "main.js": "/happyclicks/static/js/main.da19a631.js",
     "static/js/453.bfcefd98.chunk.js": "/happyclicks/static/js/453.bfcefd98.chunk.js",
     "static/media/nina-carducci.png": "/happyclicks/static/media/nina-carducci.cde14cbcd5a0a5a780b1.png",
     "static/media/printit.png": "/happyclicks/static/media/printit.41013e93bee7637ee3f5.png",
@@ -10,7 +10,10 @@
     "static/media/kasa.png": "/happyclicks/static/media/kasa.2a62e671e15f810245f7.png",
     "static/media/appart-beaute.png": "/happyclicks/static/media/appart-beaute.77a325dd761b68d13561.png",
     "static/media/argent-bank.png": "/happyclicks/static/media/argent-bank.9eb101bd0f87c3e4f9d3.png",
+    "static/media/AI.webp": "/happyclicks/static/media/AI.dd53b9d610543f78d276.webp",
     "static/media/Happy Clicks.png": "/happyclicks/static/media/Happy Clicks.48ac2a42df7472bc9eb7.png",
+    "static/media/visibilite.webp": "/happyclicks/static/media/visibilite.4a66c183e7e3404aa867.webp",
+    "static/media/what is SEO.svg": "/happyclicks/static/media/what is SEO.c94c36f70377129fbac8abff96381e18.svg",
     "static/media/react.svg": "/happyclicks/static/media/react.8e63d418a6421cc2662e234ac8af7313.svg",
     "static/media/node.svg": "/happyclicks/static/media/node.6d0ce605479079334bce77dc7c3be9ab.svg",
     "static/media/redux.svg": "/happyclicks/static/media/redux.a80e92c35427b6aed81fcc8f1dc285f7.svg",
@@ -19,12 +22,12 @@
     "static/media/mongodb.svg": "/happyclicks/static/media/mongodb.d930c2c4198d1000c2fb8b7d3177a44c.svg",
     "static/media/css.svg": "/happyclicks/static/media/css.1323e04024709c8a25e60cd9db22db48.svg",
     "static/media/html.svg": "/happyclicks/static/media/html.8e6289ed1eb0b9f348a463db8fa3e38c.svg",
-    "main.def15815.css.map": "/happyclicks/static/css/main.def15815.css.map",
-    "main.412a0895.js.map": "/happyclicks/static/js/main.412a0895.js.map",
+    "main.af5726e2.css.map": "/happyclicks/static/css/main.af5726e2.css.map",
+    "main.da19a631.js.map": "/happyclicks/static/js/main.da19a631.js.map",
     "453.bfcefd98.chunk.js.map": "/happyclicks/static/js/453.bfcefd98.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.def15815.css",
-    "static/js/main.412a0895.js"
+    "static/css/main.af5726e2.css",
+    "static/js/main.da19a631.js"
   ]
 }
