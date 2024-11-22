@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/happyclicks/static/css/main.af5726e2.css",
-    "main.js": "/happyclicks/static/js/main.da19a631.js",
+    "main.css": "/happyclicks/static/css/main.09baa088.css",
+    "main.js": "/happyclicks/static/js/main.9ade845c.js",
     "static/js/453.bfcefd98.chunk.js": "/happyclicks/static/js/453.bfcefd98.chunk.js",
     "static/media/nina-carducci.png": "/happyclicks/static/media/nina-carducci.cde14cbcd5a0a5a780b1.png",
     "static/media/printit.png": "/happyclicks/static/media/printit.41013e93bee7637ee3f5.png",
@@ -22,12 +22,12 @@
     "static/media/mongodb.svg": "/happyclicks/static/media/mongodb.d930c2c4198d1000c2fb8b7d3177a44c.svg",
     "static/media/css.svg": "/happyclicks/static/media/css.1323e04024709c8a25e60cd9db22db48.svg",
     "static/media/html.svg": "/happyclicks/static/media/html.8e6289ed1eb0b9f348a463db8fa3e38c.svg",
-    "main.af5726e2.css.map": "/happyclicks/static/css/main.af5726e2.css.map",
-    "main.da19a631.js.map": "/happyclicks/static/js/main.da19a631.js.map",
+    "main.09baa088.css.map": "/happyclicks/static/css/main.09baa088.css.map",
+    "main.9ade845c.js.map": "/happyclicks/static/js/main.9ade845c.js.map",
     "453.bfcefd98.chunk.js.map": "/happyclicks/static/js/453.bfcefd98.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af5726e2.css",
-    "static/js/main.da19a631.js"
+    "static/css/main.09baa088.css",
+    "static/js/main.9ade845c.js"
   ]
 }
