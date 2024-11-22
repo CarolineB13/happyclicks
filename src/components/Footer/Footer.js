@@ -5,6 +5,8 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
+
+        {/* Liens de navigation */}
         <div className="footer-links-container">
           <div className="footer-links">
             <Link to="/" className="footer-link">Accueil</Link>

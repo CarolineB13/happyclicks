@@ -38,6 +38,8 @@
 
 .cta-button:hover {
   background-color: var(--highlight-color); /* Bleu très foncé */
+  text-decoration: none;
+  color: white;
 }
 
 /* Section Présentation */
@@ -55,29 +57,41 @@
   flex-direction: row;
   align-items: center;
   gap: var(--spacing-large);
-  max-width: 1000px;
+  max-width: 1240px;
 }
 
 .about-text {
   flex: 1;
 }
 
-.about-text h2 {
+.about-section h2 {
   font-family: var(--font-primary);
   font-size: 2em;
   color: var(--accent-color-1); /* Bleu profond */
 }
 
-.about-text p {
-  font-family: var(--font-secondary);
-  color: var(--text-secondary-color);
-  line-height: 1.6;
+.about-text__paragraph {
+  display: flex;
+  gap: var(--spacing-medium);
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
 }
-
+.about-text__paragraph p {
+  text-indent: 20px; /* Ajoute un alinéa de 20px */
+  line-height: 1.6; /* Ajuste l'espacement des lignes pour une meilleure lisibilité */
+  margin-bottom: var(--spacing-small); /* Espace entre les paragraphes */
+}
+.about-text__paragraph p::first-letter {
+  font-size: 1.5em; /* Taille plus grande pour la première lettre */ 
+  color: var(--accent-color-1); 
+  margin-right: 0.5px;
+  line-height: 1; 
+}
 .about-photo {
-  width: 220px; /* Largeur ajustée pour inclure l'espace autour de la photo */
-  padding: 10px; /* Espace entre l’image et la bordure */
-  border: solid 5px var(--accent-color-1); /* Bordure bleue */
+  width: 220px; 
+  padding: 10px; 
+  border: solid 5px var(--accent-color-1);
   border-radius: 5%;
   overflow: hidden;
   display: flex;

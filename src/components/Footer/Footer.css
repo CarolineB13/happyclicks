@@ -13,12 +13,6 @@
   margin: auto;
 }
 
-.footer-social {
-  margin-left: 60px;
-  margin-top: 10px;
-  
-}
-
 .footer-links-container {
   flex: 2;
   display: flex;
