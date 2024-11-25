@@ -45,9 +45,13 @@ function Home() {
             </p>
           </div>
         </div>
+        <div className="linkedin-badge">
         <LinkedInBadge />
         </div>
-        
+        </div>
+        <Link to="/contact" className="cta-button">
+          Contactez-moi
+        </Link>
       </section>
 
       {/* Section Services / Compétences */}
@@ -55,7 +59,7 @@ function Home() {
 
       {/* Section Témoignages */}
       <section className="testimonials-section">
-        <h2>Ce que disent nos clients</h2>
+        <h2>Ce qu'on dit de mon travail</h2>
         
       </section>
     </div>

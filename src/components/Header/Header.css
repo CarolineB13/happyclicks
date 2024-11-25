@@ -29,3 +29,29 @@
 .header .nav-link:hover {
   color: var(--accent-color-2); /* Bleu très foncé au survol pour contraste */
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Change la disposition en colonne */
+    align-items: flex-start; /* Aligne les éléments à gauche */
+    padding: var(--spacing-small); /* Réduit les marges */
+  }
+  .header-logo {
+    display: flex;
+    justify-content: center; /* Centre le logo horizontalement */
+    width: 100%; /* S'assure que le logo occupe une ligne entière */
+  }
+  .header-logo img {
+    height: 60px; 
+  }
+  .header-nav {
+    margin : auto;
+  }
+
+  .header-nav .nav-link {
+    display: block; /* Les liens s'affichent en bloc */
+    text-align: center; /* Centrer les liens */
+    width: 100%; /* S'adapte à la largeur */
+    padding: var(--spacing-small); /* Ajoute du padding pour une meilleure cliquabilité */
+  }
+}

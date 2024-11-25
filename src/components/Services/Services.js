@@ -1,20 +1,42 @@
-// src/components/Services.js
 import React from 'react';
 import './Services.css';
 import TechnologiesChart from '../TechnologiesChart/TechnologiesChart';
-import arrowIcon from '../../assets/arrow-icon.png';
+import { FaLaptopCode, FaMobileAlt, FaPalette } from 'react-icons/fa';
 
 function Services() {
   return (
     <section className="services-section">
       <h2>Mes Compétences</h2>
-      <ul className="custom-list">
-        <li><img src={arrowIcon} alt="Flèche" className="arrow-icon" />Création de sites vitrines</li>
-        <li><img src={arrowIcon}  alt="Flèche" className="arrow-icon" />Responsive Design</li>
-        <li><img src={arrowIcon}  alt="Flèche" className="arrow-icon" />Développement front-end (HTML, CSS, JavaScript, React)</li>
-      </ul>
+      <div className="services-container">
+        {/* Carte 1 */}
+        <div className="service-card">
+          <FaLaptopCode className="service-icon" />
+          <h3>Développement Web</h3>
+          <p>
+            Création de sites vitrines modernes et performants avec une attention particulière à l'expérience utilisateur.
+          </p>
+        </div>
 
-      {/* Section des Compétences Techniques avec Barres de Progression */}
+        {/* Carte 2 */}
+        <div className="service-card">
+          <FaMobileAlt className="service-icon" />
+          <h3>Responsive Design</h3>
+          <p>
+            Optimisation pour tous les écrans, du téléphone portable à l'écran d'ordinateur, avec un design adaptatif.
+          </p>
+        </div>
+
+        {/* Carte 3 */}
+        <div className="service-card">
+          <FaPalette className="service-icon" />
+          <h3>Front-End Design</h3>
+          <p>
+            Expertise en HTML, CSS, JavaScript, et React pour des interfaces intuitives et modernes.
+          </p>
+        </div>
+      </div>
+
+      {/* Section des Compétences Techniques */}
       <TechnologiesChart />
     </section>
   );

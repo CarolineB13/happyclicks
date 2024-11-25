@@ -1,32 +1,83 @@
-/* Services.css */
-
+/* Section principale */
 .services-section {
-    padding: var(--spacing-large) var(--spacing-medium);
-    text-align: center;
-    background-color: var(--primary-color); /* Fond clair */
+  padding: var(--spacing-large) var(--spacing-medium);
+  text-align: center;
+  background-color: var(--primary-color); /* Beige clair */
+  overflow-x: hidden; 
+}
+
+/* Titre */
+.services-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2.5em;
+  color: var(--accent-color-1);
+  margin-bottom: var(--spacing-large);
+}
+
+/* Conteneur de cartes */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-large);
+  justify-content: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Carte de service */
+.service-card {
+  background-color: var(--background-secondary-color);
+  border-radius: 12px;
+  padding: var(--spacing-medium);
+  width: 30%;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Icônes */
+.service-icon {
+  font-size: 3em;
+  color: var(--accent-color-1);
+  margin-bottom: var(--spacing-small);
+}
+
+/* Titres des cartes */
+.service-card h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.5em;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-small);
+}
+
+/* Texte des cartes */
+.service-card p {
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    gap: var(--spacing-medium);
+    padding: 0 var(--spacing-small);
   }
-  
-  .services-section h2 {
-    font-family: var(--font-primary);
-    font-size: 2em;
-    color: var(--accent-color-1);
+
+  .service-card {
+    width: 95%;
+    margin: auto;
     margin-bottom: var(--spacing-medium);
+    padding: var(--spacing-small);
   }
-  
-  .custom-list {
-    list-style: none;
-    padding: 0;
+  .services-section h2 {
+    font-size: 2em;
   }
-  
-  .custom-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--spacing-small);
-  }
-  
-  .arrow-icon {
-    margin-right: var(--spacing-small); /* Espace entre la flèche et le texte */
-    width: 16px;
-    height: auto;
-  }
-  
+}
