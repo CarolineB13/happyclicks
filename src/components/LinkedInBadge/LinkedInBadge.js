@@ -2,7 +2,7 @@ import React from 'react';
 
 const LinkedInBadge = () => {
   return (
-    <div class="badge-base LI-profile-badge" 
+    <div className="badge-base LI-profile-badge" 
     data-locale="fr_FR" 
     data-size="medium" 
     data-theme="light" data-type="VERTICAL" 
