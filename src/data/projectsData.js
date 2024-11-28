@@ -2,7 +2,7 @@ import ohmyfoodImage from '../assets/sites/ohmyfood.png'
 import printitImage from '../assets/sites/printit.png'
 import kasaImage from '../assets/sites/kasa.png'
 import ninaCarducciImage from '../assets/sites/nina-carducci.png'
-import argentBankImage from '../assets/sites/argent-bank.png'
+/*import argentBankImage from '../assets/sites/argent-bank.png'*/
 import appartBeauteImage from '../assets/sites/appart-beaute.png'
 
 const projectsData = [
@@ -30,17 +30,6 @@ const projectsData = [
       },
       {
         id: 3,
-        title: "Portfolio Architecte d’Intérieur",
-        description: "Création d'une page web dynamique avec JavaScript et communication avec une API pour le site d'une architecte d'intérieur. Le projet comprend une page de présentation des travaux, une page de connexion administrateur, et une modale pour l'ajout de médias.",
-        technologies: ["HTML", "CSS", "JavaScript", "API", "Git", "GitHub"],
-        image: "../assets/sites/portfolio-architect.jpg", 
-        link: "https://sophiebluel.happyclicks.fr/", 
-        github: "https://github.com/CarolineB13/Portfolio-architecte-sophie-bluel-master.git", 
-        date: "2024-06-16",
-        category: "Formation"
-      },
-      {
-        id: 4,
         title: "Kasa",
         description: "Développement front-end d'une application web de location immobilière avec React et React Router. Création d'une interface utilisateur réactive et moderne en utilisant des données JSON et en respectant les maquettes fournies. Gestion de la navigation avec React Router pour une expérience fluide.",
         technologies: ["React", "React Router", "JavaScript", "SASS", "CSS", "Node.js"],
@@ -51,7 +40,7 @@ const projectsData = [
         category: "Formation"
       },
       {
-        id: 5,
+        id: 4,
         title: "Nina Carducci - Photographe",
         description: "Optimisation SEO et accessibilité pour le site d'un photographe freelance, incluant des améliorations de performances et de structure du code. Utilisation d'outils comme Lighthouse et Wave pour évaluer et appliquer les modifications nécessaires pour le référencement.",
         technologies: ["HTML", "CSS", "JavaScript", "SEO", "Lighthouse", "Wave"],
@@ -59,6 +48,28 @@ const projectsData = [
         link: "https://ninacarducci.happyclicks.fr/", // Lien vers la version en ligne
         github: "https://github.com/CarolineB13/Photographe_Nina_Carducci.git", // Lien vers le dépôt GitHub
         date: "2024-08-07", // Date d'achèvement
+        category: "Formation"
+      },
+      {
+        id: 5,
+        title: "Appart Beauté Institut",
+        description: "Création d'un site vitrine pour un institut de beauté, avec une interface élégante et moderne, optimisée pour une présentation claire des services de l'institut.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        image: appartBeauteImage, // Chemin vers l'image du projet
+        link: "https://carolineb13.github.io/APPART_BEAUTE_INSTITUT/", // Lien vers la version en ligne
+        github: "https://github.com/CarolineB13/APPART_BEAUTE_INSTITUT", // Lien vers le dépôt GitHub
+        date: "2024-10-31", // Date d'achèvement du projet
+        category: "Projet Réel"
+      }
+      /*      {
+        id: 3,
+        title: "Portfolio Architecte d’Intérieur",
+        description: "Création d'une page web dynamique avec JavaScript et communication avec une API pour le site d'une architecte d'intérieur. Le projet comprend une page de présentation des travaux, une page de connexion administrateur, et une modale pour l'ajout de médias.",
+        technologies: ["HTML", "CSS", "JavaScript", "API", "Git", "GitHub"],
+        image: "../assets/sites/portfolio-architect.jpg", 
+        link: "https://sophiebluel.happyclicks.fr/", 
+        github: "https://github.com/CarolineB13/Portfolio-architecte-sophie-bluel-master.git", 
+        date: "2024-06-16",
         category: "Formation"
       },
       {
@@ -71,18 +82,8 @@ const projectsData = [
         github: "https://github.com/CarolineB13/argentbank-frontend-react.git", // Lien vers le dépôt GitHub
         date: "2024-10-10", // Date d'achèvement
         category: "Formation"
-      },
-      {
-        id: 7,
-        title: "Appart Beauté Institut",
-        description: "Création d'un site vitrine pour un institut de beauté, avec une interface élégante et moderne, optimisée pour une présentation claire des services de l'institut.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        image: appartBeauteImage, // Chemin vers l'image du projet
-        link: "https://carolineb13.github.io/APPART_BEAUTE_INSTITUT/", // Lien vers la version en ligne
-        github: "https://github.com/CarolineB13/APPART_BEAUTE_INSTITUT", // Lien vers le dépôt GitHub
-        date: "2024-10-31", // Date d'achèvement du projet
-        category: "Client"
-      }
+      }, 
+      */
       
   ];
   

@@ -170,47 +170,6 @@
   color: var(--text-color);
 }
 
-/* Section Portfolio */
-.portfolio-section {
-  padding: var(--spacing-large) var(--spacing-medium);
-  background-color: var(--primary-color); /* Fond clair */
-  text-align: center;
-}
-
-.portfolio-section h2 {
-  font-family: var(--font-primary);
-  font-size: 2.5em;
-  color: var(--accent-color-1); /* Bleu profond */
-  margin-bottom: var(--spacing-medium);
-}
-
-.portfolio-carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: var(--spacing-medium);
-}
-
-.project-card {
-  flex: 0 0 200px;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  background-color: #ffffff; /* Fond blanc pour les cartes */
-  text-align: center;
-  padding: var(--spacing-small);
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.project-card p {
-  font-family: var(--font-secondary);
-  color: var(--text-secondary-color);
-  margin-top: var(--spacing-small);
-}
-
 
 @media screen and (max-width: 768px) {
   .welcome-section {
@@ -232,8 +191,7 @@
 }
 @media screen and (max-width: 1024px) {
   .about-content {
-      flex-direction: column; /* Empile les éléments */
-      gap: var(--spacing-medium);
+      flex-direction: column; 
   }
 
   .about-photo {
@@ -244,6 +202,9 @@
   .about-text {
       text-align: center; 
       margin: var(--spacing-medium);
+  }
+  .linkedin-badge {
+      margin: 0;
   }
 }
 

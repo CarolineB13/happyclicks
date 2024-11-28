@@ -1,17 +1,132 @@
-/* Portfolio.css */
-
+/* Section Portfolio */
 .portfolio-section {
-    padding: var(--spacing-large) var(--spacing-medium);
-    text-align: center;
+  padding: var(--spacing-large) var(--spacing-medium);
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-family: var(--font-primary);
+  font-size: 2.5em;
+  color: var(--accent-color-1);
+}
+
+.portfolio-intro {
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: start;
+}
+
+.portfolio-intro p {
+  font-size: 1.2em;
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+  margin: 20px auto;
+}
+.category-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: var(--text-secondary-color);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+/* Grille des Projets */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr)); /* 2 colonnes */
+  gap: var(--spacing-large); /* Espacement entre les cartes */
+  justify-content: center; /* Centre la grille entière */
+  align-items: start;
+  max-width: 1200px;
+  margin: 30px auto;
+  overflow: hidden;
+  justify-items: center; /* Centre chaque carte */
+}
+.portfolio-grid > *:nth-last-child(1):nth-child(odd) {
+  grid-column: span 2; 
+  justify-self: center; 
+}
+
+/* Animation des Cartes */
+.portfolio-grid.animating .project-card {
+  opacity: 0; /* Cachées au départ */
+  animation: slideInFromOutside 0.8s ease-out forwards;
+}
+
+.portfolio-grid.animating .project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.portfolio-grid.animating .project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.portfolio-grid.animating .project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.portfolio-grid.animating .project-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Effet d'entrée des Cartes */
+@keyframes slideInFromOutside {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8); /* Les cartes partent de "loin" */
   }
-  
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Les cartes atteignent leur position normale */
+  }
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-small); /* Espacement entre les boutons */
+  margin-top: var(--spacing-medium); /* Espace entre la pagination et les projets */
+}
+
+.page-button {
+  padding: var(--spacing-small) var(--spacing-medium); /* Ajustez les dimensions des boutons */
+  border: none;
+  background-color: var(--background-secondary-color); /* Couleur de fond */
+  color: var(--text-secondary-color); /* Couleur du texte */
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.page-button:hover {
+  transform: scale(1.1);
+}
+
+.page-button.active {
+  background-color: var(--accent-color-1); /* Couleur pour la page active */
+  color: #fff; /* Texte en blanc pour contraster */
+  font-weight: bold;
+}
+
+/* Vue Mobile */
+@media screen and (max-width: 768px) {
+  .portfolio-intro {
+    margin: 20px auto;
+    padding: 0 10px; /* Ajouter un léger padding pour éviter les débordements */
+  }
+
   .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-medium); /* Espacement entre les cartes */
-    justify-items: center;
-    align-items: start;
-    max-width: 1000px; /* Limiter la largeur totale pour ne pas excéder 4 cartes par ligne */
-    margin: 0 auto;
+    grid-template-columns: repeat(1, minmax(250px, 1fr)); /* Une seule colonne */
+    margin: 20px auto;
+    max-width: 90%;
   }
-  
+
+  .project-card {
+    max-width: 100%; /* Les cartes prennent toute la largeur disponible */
+  }
+}

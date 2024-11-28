@@ -1,15 +1,45 @@
-/* src/components/Select.css */
-.custom-select {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 2px solid var(--accent-color-1);
-    border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .custom-select:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  }
-  
+/* Conteneur Principal */
+.select-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 25px auto;
+}
+
+/* Dropdown Stylisé */
+.select-dropdown {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1em;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  appearance: none; /* Supprime l'apparence native */
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Chrome/Safari */
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Icône Personnalisée (Image Flèche) */
+.select-container::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg); /* Flèche initiale pointant à gauche */
+  width: 16px;
+  height: 16px;
+  background-image: url('../../assets/arrow-icon.png'); /* Votre image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Effet lorsque le Select est Ouvert */
+.select-container.open::after {
+  transform: translateY(-50%) rotate(90deg); /* Flèche pointe vers le bas */
+}

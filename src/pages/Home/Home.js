@@ -4,7 +4,7 @@ import './Home.css';
 import maPhoto from '../../assets/Caroline5.jpg';
 import LinkedInBadge from '../../components/LinkedInBadge/LinkedInBadge';
 import Services from '../../components/Services/Services';
-
+import GoogleReviews from '../../components/GoogleReviews/GoogleReviews'
 
 function Home() {
   return (
@@ -60,7 +60,7 @@ function Home() {
       {/* Section Témoignages */}
       <section className="testimonials-section">
         <h2>Ce qu'on dit de mon travail</h2>
-        
+        <GoogleReviews />
       </section>
     </div>
   );
