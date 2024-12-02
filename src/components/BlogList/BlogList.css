@@ -1,0 +1,86 @@
+/* Conteneur des Cartes */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+  gap: var(--spacing-large);
+  margin: 30px auto;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+/* Carte d'Article */
+.article-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-secondary-color);
+  border: 1px solid var(--text-secondary-color);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  height: 400px; 
+  text-align: center;
+}
+
+/* Conteneur de l'Image */
+.article-image-container {
+  width: 100%;
+  height: 150px; /* Taille fixe pour uniformité */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Image */
+.article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Adapte l'image à l'espace sans la déformer */
+  border-radius: 8px;
+}
+
+/* Titre de l'Article */
+.article-card h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+/* Date de l'Article */
+.article-card span {
+  font-size: 0.9em;
+  color: var(--text-secondary-color);
+  margin-bottom: 10px;
+}
+.article-card p {
+  font-size: 1em;
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+  flex-grow: 1; /* Remplit l'espace disponible */
+  margin-bottom: 10px;
+  overflow: hidden; /* Empêche le dépassement du texte */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limite à 3 lignes */
+  -webkit-box-orient: vertical;
+}
+/* Bouton Lire Plus */
+.read-more {
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--accent-color-2);
+  background-color: var(--background-secondary-color);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 10px;
+}
+
+.read-more:hover {
+  background-color: var(--accent-color-2);
+  color: #fff;
+}

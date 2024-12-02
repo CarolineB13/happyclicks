@@ -7,7 +7,7 @@ import './Contact.css';
 function Contact() {
   return (
     <section className="contact-section">
-      <h2>Contactez-moi</h2>
+      <h1>Contactez-moi</h1>
       <p>
         <FontAwesomeIcon icon={faPhone} /> 06.50.35.45.56
       </p>
