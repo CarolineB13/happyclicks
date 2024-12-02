@@ -7,7 +7,9 @@ function BlogList({ articles, isAnimating }) {
     <div className={`blog-grid ${isAnimating ? 'animating' : ''}`}>
       {articles.map((article) => (
         <div key={article.id} className="article-card">
-          <img src={article.image} alt={article.title} className="article-image" />
+          <div className="article-image-container">
+            <img src={article.image} alt={article.title} className="article-image-card" />
+          </div>
           <h3>{article.title}</h3>
           <p>{article.excerpt}</p>
           <span>{article.date}</span>

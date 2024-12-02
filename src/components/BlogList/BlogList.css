@@ -1,14 +1,46 @@
-/* Conteneur des Cartes */
+/* Grille des Articles */
 .blog-grid {
+  align-items: start;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
   gap: var(--spacing-large);
-  margin: 30px auto;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
   justify-content: center;
+  justify-items: center;
+  margin: 30px auto;
   max-width: 1200px;
+  overflow: hidden;
 }
 
-/* Carte d'Article */
+.blog-grid.animating .article-card {
+  opacity: 0; 
+  animation: slideInFromOutside 0.8s ease-out forwards;
+}
+
+.blog-grid.animating .article-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.blog-grid.animating .article-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.blog-grid.animating .article-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.blog-grid.animating .article-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Effet d'entrée des Cartes */
+@keyframes slideInFromOutside {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8); /* Les cartes partent de "loin" */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Les cartes atteignent leur position normale */
+  }
+}
+
 .article-card {
   display: flex;
   flex-direction: column;
@@ -20,33 +52,28 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 400px;
-  height: 400px; 
+  height: 500px; 
   text-align: center;
+  overflow: hidden;
 }
-
-/* Conteneur de l'Image */
 .article-image-container {
   width: 100%;
-  height: 150px; /* Taille fixe pour uniformité */
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 15px;
 }
 
-/* Image */
-.article-image {
+.article-image-card {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Adapte l'image à l'espace sans la déformer */
+  object-fit: cover; 
   border-radius: 8px;
 }
 
-/* Titre de l'Article */
 .article-card h3 {
   font-size: 1.2em;
   font-weight: bold;
   color: var(--text-color);
-  margin-bottom: 10px;
 }
 
 /* Date de l'Article */
@@ -57,15 +84,8 @@
 }
 .article-card p {
   font-size: 1em;
-  color: var(--text-secondary-color);
-  line-height: 1.6;
-  flex-grow: 1; /* Remplit l'espace disponible */
-  margin-bottom: 10px;
-  overflow: hidden; /* Empêche le dépassement du texte */
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limite à 3 lignes */
-  -webkit-box-orient: vertical;
+    color: var(--text-secondary-color);
+    line-height: 1.6;
 }
 /* Bouton Lire Plus */
 .read-more {
@@ -83,4 +103,18 @@
 .read-more:hover {
   background-color: var(--accent-color-2);
   color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(1, minmax(250px, 1fr)); /* Une seule colonne */
+    margin: 20px auto;
+    max-width: 90%;
+  }
+
+  .article-card {
+    max-width: 100%; 
+    
+  }
+
+  
 }

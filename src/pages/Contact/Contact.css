@@ -19,5 +19,10 @@
 
 .contact-section .fa-computer-mouse {
   margin-left: 5px;
-  color: var(--accent-color-1); /* Couleur assortie à votre design */
+  color: var(--accent-color-1); 
+}
+@media screen and (max-width: 768px) {
+.contact-section p {
+  font-size: 1em;
+}
 }

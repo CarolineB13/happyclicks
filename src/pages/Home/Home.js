@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import maPhoto from '../../assets/Caroline5.jpg';
+import maPhoto from '../../assets/Caroline.webp';
 import LinkedInBadge from '../../components/LinkedInBadge/LinkedInBadge';
 import Services from '../../components/Services/Services';
 import GoogleReviews from '../../components/GoogleReviews/GoogleReviews'
@@ -32,7 +32,7 @@ function Home() {
             Aujourd'hui, je suis développeuse web spécialisée dans le front-end, avec une expertise en création de sites modernes et performants.
             </p>
             <p>
-            Mon parcours m'a permis de maîtriser des technologies comme HTML, CSS, JavaScript, React et Redux, et d'acquérir une solide expérience dans la conception de sites responsives. 
+            Mon parcours chez Openclassrooms m'a permis de maîtriser des technologies comme HTML, CSS, JavaScript, React et Redux, et d'acquérir une solide expérience dans la conception de sites responsives. 
             Je m'attache à rendre chaque projet accessible, adapté à tous les écrans, et optimisé pour offrir une expérience utilisateur fluide et agréable.
             </p>
             <p>
