@@ -70,7 +70,7 @@
   border-radius: 8px;
 }
 
-.article-card h3 {
+.article-card h2 {
   font-size: 1.2em;
   font-weight: bold;
   color: var(--text-color);

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from "../../components/SEO/SEO"
 import { Link } from 'react-router-dom';
 import './Home.css';
 import maPhoto from '../../assets/Caroline.webp';
@@ -9,11 +10,19 @@ import GoogleReviews from '../../components/GoogleReviews/GoogleReviews'
 function Home() {
   return (
     <div className="home">
+      {/* SEO */}
+      <SEO
+        title="HappyClicks - Développeuse Web à Aubagne"
+        description="Bienvenue chez HappyClicks ! Caroline, développeuse web spécialisée en front-end à Aubagne, crée des sites modernes, performants et optimisés SEO."
+        keywords="développeuse web, Aubagne, création site internet, front-end, SEO, sites responsives, freelance, HappyClicks"
+        url="https://happyclicks.fr/"
+        image="https://happyclicks.fr/happyclicks-social.png"
+      />
       {/* Section de Bienvenue */}
       <section className="welcome-section">
         <h1>Bienvenue chez HappyClicks</h1>
         <p>Votre partenaire en solutions digitales modernes et performantes à Aubagne.</p>
-        <Link to="/portfolio" className="cta-button">
+        <Link to="/portfolio" className="cta-button" aria-label="Voir les projets de Caroline">
           Voir mes projets
         </Link>
       </section>
@@ -23,7 +32,7 @@ function Home() {
       <h2>À propos de moi</h2>
         <div className="about-content">
           <div className="about-photo">
-            <img src={maPhoto} alt="Caroline" />
+            <img src={maPhoto} alt="Caroline, développeuse web à Aubagne" loading="lazy" />
           </div>
           <div className="about-text">
             <div className="about-text__paragraph">

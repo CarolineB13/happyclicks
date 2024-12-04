@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../../components/SEO/SEO';
 import Select from '../../components/Select/Select';
 import BlogList from '../../components/BlogList/BlogList';
 import articlesData from '../../data/articlesData';
@@ -46,6 +47,31 @@ function Blog() {
 
   return (
     <div className="blog-page">
+      {/* Composant SEO */}
+      <SEO
+        title="Blog - HappyClicks"
+        description="Découvrez les derniers articles sur le développement web, les tendances numériques et mes conseils pour vos projets."
+        url="https://happyclicks.fr/blog"
+        image="https://happyclicks.fr/blog-social.png"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "HappyClicks Blog",
+          "url": "https://happyclicks.fr/blog",
+          "blogPost": filteredArticles.map((article) => ({
+            "@type": "BlogPosting",
+            "headline": article.title,
+            "author": {
+              "@type": "Person",
+              "name": "Caroline Briois"
+            },
+            "datePublished": article.date,
+            "image": article.image,
+            "url": `https://happyclicks.fr/blog/${article.id}`
+          }))
+        }}
+      />
+
       <h1>Mon Blog</h1>
       <p className="intro-text">
         Bienvenue sur mon blog ! Ici, je partage mes expériences, conseils et réflexions sur le développement web et les tendances du numérique.

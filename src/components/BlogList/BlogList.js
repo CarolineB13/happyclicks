@@ -10,7 +10,7 @@ function BlogList({ articles, isAnimating }) {
           <div className="article-image-container">
             <img src={article.image} alt={article.title} className="article-image-card" />
           </div>
-          <h3>{article.title}</h3>
+          <h2>{article.title}</h2>
           <p>{article.excerpt}</p>
           <span>{article.date}</span>
           <Link to={`/blog/${article.slug}`} className="read-more">Lire plus</Link>

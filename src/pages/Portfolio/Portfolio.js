@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../../components/SEO/SEO';
+import portfolioBanner from '../../assets/portfolio-banner.png'
 import Select from '../../components/Select/Select';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projectsData from '../../data/projectsData';
@@ -44,6 +46,14 @@ function Portfolio() {
 
   return (
     <div className="portfolio-section">
+      {/* SEO */}
+      <SEO
+        title="Portfolio - HappyClicks"
+        description="Découvrez le portfolio de Caroline, développeuse web à Aubagne, présentant une variété de projets modernes et techniques illustrant son expertise."
+        keywords="portfolio, projets web, développement web, Aubagne, freelance, front-end, HappyClicks"
+        url="https://happyclicks.fr/portfolio"
+        image= {portfolioBanner}
+      />
       <h2>Portfolio</h2>
       <div className="portfolio-intro">
         <p>

@@ -13,14 +13,23 @@
 
 .contact-section p {
   font-size: 1.2em;
-  margin-bottom: 15px;
   color: var(--text-secondary-color);
 }
-
+.contact-section .fa-phone {
+  color: var(--accent-color-1); 
+}
 .contact-section .fa-computer-mouse {
   margin-left: 5px;
   color: var(--accent-color-1); 
 }
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-medium);
+}
+
+
 @media screen and (max-width: 768px) {
 .contact-section p {
   font-size: 1em;
