@@ -1,4 +1,3 @@
-/* Conteneur Principal */
 .select-container {
   position: relative;
   width: 100%;
@@ -6,7 +5,6 @@
   margin: 25px auto;
 }
 
-/* Dropdown Stylisé */
 .select-dropdown {
   width: 100%;
   padding: 10px 15px;
@@ -15,31 +13,30 @@
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 6px;
-  appearance: none; /* Supprime l'apparence native */
-  -moz-appearance: none; /* Firefox */
-  -webkit-appearance: none; /* Chrome/Safari */
+  appearance: none; 
+  -moz-appearance: none; 
+  -webkit-appearance: none; 
   outline: none;
   cursor: pointer;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Icône Personnalisée (Image Flèche) */
 .select-container::after {
   content: '';
   position: absolute;
   right: 15px;
   top: 50%;
-  transform: translateY(-50%) rotate(-90deg); /* Flèche initiale pointant à gauche */
+  transform: translateY(-50%) rotate(-90deg); 
   width: 16px;
   height: 16px;
-  background-image: url('../../assets/arrow-icon.png'); /* Votre image */
+  background-image: url('../../assets/arrow-icon.png'); 
   background-size: contain;
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
   pointer-events: none;
 }
 
-/* Effet lorsque le Select est Ouvert */
+
 .select-container.open::after {
-  transform: translateY(-50%) rotate(90deg); /* Flèche pointe vers le bas */
+  transform: translateY(-50%) rotate(90deg); 
 }

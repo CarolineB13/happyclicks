@@ -8,7 +8,7 @@
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Centre les éléments verticalement */
+  align-items: center; 
   max-width: 1000px;
   margin: auto;
 }

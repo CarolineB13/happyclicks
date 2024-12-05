@@ -48,13 +48,19 @@ function Portfolio() {
     <div className="portfolio-section">
       {/* SEO */}
       <SEO
-        title="Portfolio - HappyClicks"
-        description="Découvrez le portfolio de Caroline, développeuse web à Aubagne, présentant une variété de projets modernes et techniques illustrant son expertise."
-        keywords="portfolio, projets web, développement web, Aubagne, freelance, front-end, HappyClicks"
-        url="https://happyclicks.fr/portfolio"
-        image= {portfolioBanner}
-      />
-      <h2>Portfolio</h2>
+  title="Portfolio HappyClicks - Création de Sites Web"
+  description="Découvrez les projets réalisés par Caroline, développeuse web à Aubagne."
+  url="https://happyclicks.fr/portfolio"
+  image={portfolioBanner}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Portfolio HappyClicks",
+    "description": "Projets réalisés par HappyClicks, spécialiste en développement web.",
+    "url": "https://happyclicks.fr/portfolio",
+  }}
+/>
+      <h1>Portfolio</h1>
       <div className="portfolio-intro">
         <p>
           Bienvenue dans mon portfolio ! Vous y découvrirez une variété de

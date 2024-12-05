@@ -1,4 +1,3 @@
-// src/components/TechnologiesChart.js
 import React from 'react';
 import SkillBar from '../SkillBar/SkillBar';
 import './TechnologiesChart.css';

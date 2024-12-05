@@ -5,20 +5,20 @@ function Select({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMouseDown = () => {
-    setIsOpen((prevState) => !prevState); // Alterne entre ouvert et fermé
+    setIsOpen((prevState) => !prevState); 
   };
 
   const handleChange = (event) => {
-    onChange(event); // Met à jour la valeur sélectionnée
-    setIsOpen(false); // Ferme après sélection
+    onChange(event); 
+    setIsOpen(false); 
   };
 
   return (
     <div className={`select-container ${isOpen ? 'open' : ''}`}>
       <select
         value={value}
-        onMouseDown={handleMouseDown} // Gestion explicite du clic
-        onChange={handleChange} // Réagit à la sélection
+        onMouseDown={handleMouseDown} 
+        onChange={handleChange}
         className="select-dropdown"
       >
         {options.map((option, index) => (

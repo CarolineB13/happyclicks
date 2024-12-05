@@ -10,7 +10,7 @@ function PhoneLink({ number, countryCode ='+33'  }) {
   };
 
   
-  const formattedNumberForTel = `${countryCode}${number.replace(/\./g, '')}`;
+  const formattedNumberForTel = `${countryCode}${number.replace(/^0/, '').replace(/[\s.]/g, '')}`;
 
   return (
     <div className="phone-link-container">

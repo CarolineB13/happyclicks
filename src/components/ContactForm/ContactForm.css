@@ -1,13 +1,13 @@
 .contact-form {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes */
+    grid-template-columns: 1fr 1fr; 
     gap: 20px;
     margin-top: 20px;
   }
   
   .contact-form .input-group {
     display: flex;
-    flex-direction: column; /* Aligne verticalement les champs et les labels */
+    flex-direction: column; 
     gap: 5px;
   }
   
@@ -17,26 +17,26 @@
   }
   
   .contact-form .full-width {
-    grid-column: 1 / -1; /* Étend l'élément sur toute la largeur */
+    grid-column: 1 / -1; 
   }
   
   .contact-form input,
   .contact-form textarea {
-    width: 100%; /* S'assurer que les champs utilisent toute la largeur */
+    width: 100%; 
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Assure un dimensionnement uniforme */
+    box-sizing: border-box; 
   }
   
   .contact-form textarea {
     height: 100px;
-    resize: vertical; /* Permet de redimensionner verticalement seulement */
+    resize: vertical; 
   }
   
   .contact-form button {
-    grid-column: 1 / -1; /* Étend le bouton sur toute la largeur */
+    grid-column: 1 / -1; 
     padding: 10px;
     font-size: 1em;
     color: #fff;
@@ -57,7 +57,7 @@
   }
   
   .status-message {
-    grid-column: 1 / -1; /* Étend le message de statut sur toute la largeur */
+    grid-column: 1 / -1; 
     text-align: center;
     margin-top: 10px;
     font-size: 1em;
