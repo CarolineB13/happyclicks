@@ -16,7 +16,24 @@
   margin: 20px auto;
   text-align: start;
 }
-
+.cta-button {
+  padding: var(--spacing-small) var(--spacing-medium);
+  font-size: 1em;
+  font-weight: var(--heading-font-weight);
+  color: #ffffff;
+  background-color: var(--accent-color-1); 
+  border: none;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed) var(--transition-ease);
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+}
+.cta-button:hover {
+  background-color: var(--highlight-color);
+  text-decoration: none;
+  color: white;
+}
 .portfolio-intro p {
   font-size: 1.2em;
   color: var(--text-secondary-color);
