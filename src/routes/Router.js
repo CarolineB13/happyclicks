@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import React, { Suspense } from "react";
 import App from "../app/App"; // App reste non différé
-import Loading from "../components/Loading/Loading"; // Ton composant de chargement (optionnel)
+import Loading from "../components/Loading/Loading"; 
 
 // Chargement différé des pages
 const Home = React.lazy(() => import("../pages/Home/Home"));

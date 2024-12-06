@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from "../../components/SEO/SEO"
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom';
 import './Home.css';
 import maPhoto from '../../assets/Caroline.webp';
@@ -11,13 +11,17 @@ function Home() {
   return (
     <div className="home">
       {/* SEO */}
-      <SEO
-  title="HappyClicks - Développeuse Web à Aubagne"
-  description="Bienvenue chez HappyClicks ! Caroline, développeuse web spécialisée en front-end à Aubagne, crée des sites modernes, performants et optimisés SEO."
-  url="https://happyclicks.fr/"
-  image="https://happyclicks.fr/happyclicks-social.png"
-  structuredData={[
-    {
+      <Helmet>
+  <title>HappyClicks - Développeuse Web à Aubagne</title>
+  <meta name="description" content="Bienvenue chez HappyClicks ! Caroline, développeuse web spécialisée en front-end à Aubagne, crée des sites modernes, performants et optimisés SEO." />
+  <meta name="keywords" content="développeuse web, Aubagne, création site internet, front-end, SEO, sites responsives, freelance, HappyClicks" />
+  <link rel="canonical" href="https://happyclicks.fr/" />
+  <meta property="og:title" content="HappyClicks - Développeuse Web à Aubagne" />
+  <meta property="og:description" content="Bienvenue chez HappyClicks ! Caroline, développeuse web spécialisée en front-end à Aubagne, crée des sites modernes, performants et optimisés SEO." />
+  <meta property="og:url" content="https://happyclicks.fr/" />
+  <meta property="og:image" content="https://happyclicks.fr/happyclicks-social.png" />
+  <script type="application/ld+json">
+    {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "HappyClicks",
@@ -29,18 +33,18 @@ function Home() {
         "addressLocality": "Aubagne",
         "addressRegion": "Provence-Alpes-Côte d'Azur",
         "postalCode": "13400",
-        "addressCountry": "FR",
+        "addressCountry": "FR"
       },
-      "openingHours": "Mo-Fr 08:30-17:30",
+      "openingHours": ["Mo-Fr 08:30-17:30"],
       "description": "Développeuse web spécialisée dans la création de sites modernes et optimisés SEO.",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+33650354556",
-        "contactType": "customer service",
-      },
-    },
-  ]}
-/>
+        "contactType": "customer service"
+      }
+    })}
+  </script>
+</Helmet>
       {/* Section de Bienvenue */}
       <section className="welcome-section">
         <h1>Bienvenue chez HappyClicks</h1>

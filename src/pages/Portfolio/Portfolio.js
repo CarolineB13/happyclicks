@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import SEO from '../../components/SEO/SEO';
-import portfolioBanner from '../../assets/portfolio-banner.png'
+import { Helmet } from 'react-helmet-async';
 import Select from '../../components/Select/Select';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import projectsData from '../../data/projectsData';
-import arrowIcon from '../../assets/arrow-icon.png'; // Import de l'icône de flèche
+import arrowIcon from '../../assets/arrow-icon.png'; 
 import './Portfolio.css';
 
 const ITEMS_PER_PAGE = 4;
@@ -47,19 +46,16 @@ function Portfolio() {
   return (
     <div className="portfolio-section">
       {/* SEO */}
-      <SEO
-  title="Portfolio HappyClicks - Création de Sites Web"
-  description="Découvrez les projets réalisés par Caroline, développeuse web à Aubagne."
-  url="https://happyclicks.fr/portfolio"
-  image={portfolioBanner}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Portfolio HappyClicks",
-    "description": "Projets réalisés par HappyClicks, spécialiste en développement web.",
-    "url": "https://happyclicks.fr/portfolio",
-  }}
-/>
+      <Helmet>
+  <title>Portfolio HappyClicks - Création de Sites Web</title>
+  <meta name="description" content="Découvrez les projets réalisés par Caroline, développeuse web à Aubagne." />
+  <meta name="keywords" content="portfolio, HappyClicks, projets web, développeuse web, Aubagne, SEO, freelance" />
+  <link rel="canonical" href="https://happyclicks.fr/portfolio" />
+  <meta property="og:title" content="Portfolio HappyClicks - Création de Sites Web" />
+  <meta property="og:description" content="Découvrez les projets réalisés par Caroline, développeuse web à Aubagne." />
+  <meta property="og:url" content="https://happyclicks.fr/portfolio" />
+  <meta property="og:image" content="https://happyclicks.fr/portfolio-banner.png" />
+</Helmet>
       <h1>Portfolio</h1>
       <div className="portfolio-intro">
         <p>

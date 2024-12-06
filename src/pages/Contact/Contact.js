@@ -1,6 +1,5 @@
 import React from 'react';
-import SEO from '../../components/SEO/SEO';
-import contactBanner from '../../assets/contact-banner.png'
+import { Helmet } from 'react-helmet-async';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faComputerMouse } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from '../../components/ContactForm/ContactForm';
@@ -11,13 +10,17 @@ function Contact() {
   return (
     <section className="contact-section">
       {/* SEO */}
-      <SEO
-  title="Contactez HappyClicks - Développeuse Web à Aubagne"
-  description="Contactez Caroline, développeuse web spécialisée en front-end à Aubagne, pour discuter de vos projets web et obtenir un site performant et optimisé."
-  url="https://happyclicks.fr/contact"
-  image={contactBanner}
-  structuredData={[
-    {
+      <Helmet>
+  <title>Contactez HappyClicks - Développeuse Web à Aubagne</title>
+  <meta name="description" content="Contactez Caroline, développeuse web spécialisée en front-end à Aubagne, pour discuter de vos projets web et obtenir un site performant et optimisé." />
+  <meta name="keywords" content="contact, développeuse web, Aubagne, HappyClicks, création site internet, SEO, freelance" />
+  <link rel="canonical" href="https://happyclicks.fr/contact" />
+  <meta property="og:title" content="Contactez HappyClicks - Développeuse Web à Aubagne" />
+  <meta property="og:description" content="Contactez Caroline, développeuse web spécialisée en front-end à Aubagne, pour discuter de vos projets web et obtenir un site performant et optimisé." />
+  <meta property="og:url" content="https://happyclicks.fr/contact" />
+  <meta property="og:image" content="https://happyclicks.fr/contact-banner.png" />
+  <script type="application/ld+json">
+    {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "HappyClicks",
@@ -29,18 +32,18 @@ function Contact() {
         "addressLocality": "Aubagne",
         "addressRegion": "Provence-Alpes-Côte d'Azur",
         "postalCode": "13400",
-        "addressCountry": "FR",
+        "addressCountry": "FR"
       },
-      "openingHours": "Mo-Fr 08:30-17:30",
+      "openingHours": ["Mo-Fr 08:30-17:30"],
       "description": "Développeuse web spécialisée dans la création de sites modernes et optimisés SEO.",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+33650354556",
-        "contactType": "customer service",
-      },
-    },
-  ]}
-/>
+        "contactType": "customer service"
+      }
+    })}
+  </script>
+</Helmet>
 
       <h1>Contactez-moi</h1>
       <div className="contact">

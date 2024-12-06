@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SEO from '../../components/SEO/SEO';
-import blogBannerImage from '../../assets/blog-banner.png';
+import { Helmet } from 'react-helmet-async';
 import Select from '../../components/Select/Select';
 import BlogList from '../../components/BlogList/BlogList';
 import articlesData from '../../data/articlesData';
@@ -54,51 +53,36 @@ function Blog() {
   return (
     <div className="blog-page">
       {/* SEO */}
-      <SEO
-  title="Blog - HappyClicks"
-  description={
-    selectedCategory === 'Tous'
+      <Helmet>
+  <title>Blog - HappyClicks</title>
+  <meta
+    name="description"
+    content={selectedCategory === 'Tous'
       ? "Découvrez les derniers articles sur le développement web, les tendances numériques et mes conseils pour vos projets."
-      : `Explorez les articles de la catégorie "${selectedCategory}", où je partage mes idées et expériences en développement web.`
-  }
-  url={
-    currentPage > 1
+      : `Explorez les articles de la catégorie "${selectedCategory}", où je partage mes idées et expériences en développement web.`}
+  />
+  <meta name="keywords" content="blog, développement web, tendances numériques, conseils, HappyClicks, Aubagne" />
+  <link
+    rel="canonical"
+    href={currentPage > 1
       ? `https://happyclicks.fr/blog?page=${currentPage}`
-      : 'https://happyclicks.fr/blog'
-  }
-  image={blogBannerImage}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "HappyClicks Blog",
-    "url": "https://happyclicks.fr/blog",
-    "blogPost": filteredArticles.map((article) => ({
-      "@type": "BlogPosting",
-      "headline": article.title,
-      "author": {
-        "@type": "Person",
-        "name": "Caroline Briois",
-      },
-      "datePublished": article.date,
-      "image": article.image,
-      "url": `https://happyclicks.fr/blog/${article.id}`,
-    })),
-  }}
->
-  {/* Balises rel="prev" et rel="next" */}
-  {currentPage > 1 && (
-    <link
-      rel="prev"
-      href={`https://happyclicks.fr/blog?page=${currentPage - 1}`}
-    />
-  )}
-  {currentPage < totalPages && (
-    <link
-      rel="next"
-      href={`https://happyclicks.fr/blog?page=${currentPage + 1}`}
-    />
-  )}
-</SEO>
+      : 'https://happyclicks.fr/blog'}
+  />
+  <meta property="og:title" content="Blog - HappyClicks" />
+  <meta
+    property="og:description"
+    content={selectedCategory === 'Tous'
+      ? "Découvrez les derniers articles sur le développement web, les tendances numériques et mes conseils pour vos projets."
+      : `Explorez les articles de la catégorie "${selectedCategory}", où je partage mes idées et expériences en développement web.`}
+  />
+  <meta
+    property="og:url"
+    content={currentPage > 1
+      ? `https://happyclicks.fr/blog?page=${currentPage}`
+      : 'https://happyclicks.fr/blog'}
+  />
+  <meta property="og:image" content="https://happyclicks.fr/blog-banner.png" />
+</Helmet>
 
       <h1>Mon Blog</h1>
       <p className="intro-text">
