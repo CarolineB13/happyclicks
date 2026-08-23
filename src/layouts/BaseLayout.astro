@@ -5,6 +5,8 @@ import "../styles/global.css";
 import "../styles/animations.css";
 
 import Header from "../components/navigation/Header.astro";
+import PageTabs from "../components/navigation/PageTabs.astro";
+import MobileMenu from "../components/navigation/MobileMenu.astro";
 
 interface Props {
   title?: string;
@@ -38,6 +40,9 @@ const {
 
   <body>
     <Header />
+    <PageTabs />
+    <MobileMenu />
+
     <slot />
   </body>
 </html>
