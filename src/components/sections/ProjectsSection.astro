@@ -30,18 +30,20 @@
         class="project__visual project__visual--polymaintenance"
         aria-label="Découvrir le projet Polymaintenance"
       >
-        <picture class="project__picture">
-          <source
-            srcset="/images/projects/polymaintenance-mobile.webp"
-            media="(max-width: 767px)"
-          />
+        <div class="project__device">
+          <picture class="project__picture">
+            <source
+              srcset="/images/projects/polymaintenance-mobile.webp"
+              media="(max-width: 767px)"
+            />
 
-          <img
-            class="project__image"
-            src="/images/projects/polymaintenance-desktop.webp"
-            alt="Aperçu du site Polymaintenance"
-          />
-        </picture>
+            <img
+              class="project__image"
+              src="/images/projects/polymaintenance-desktop.webp"
+              alt="Aperçu du site Polymaintenance"
+            />
+          </picture>
+        </div>
 
         <span class="project__number" aria-hidden="true"> 01 </span>
       </a>
@@ -249,8 +251,77 @@
      POLYMAINTENANCE
      ======================================== */
 
+  /* ========================================
+   POLYMAINTENANCE — ÉCRAN
+   ======================================== */
+
+  .project__visual--polymaintenance {
+    overflow: visible;
+  }
+
+  /* ========================================
+   ÉCRAN DESKTOP — FENÊTRE NAVIGATEUR
+   ======================================== */
+
+  .project__device {
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 34px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(11, 37, 48, 0.12);
+
+    border-radius: 18px 18px 50px 18px;
+
+    box-shadow: 0 20px 50px rgba(11, 37, 48, 0.09);
+  }
+
+  /* Barre supérieure du navigateur */
+  .project__device::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 34px;
+
+    background: var(--color-ivory);
+
+    border-bottom: 1px solid rgba(11, 37, 48, 0.08);
+  }
+
+  /* Trois petits points très discrets */
+  .project__device::after {
+    content: "";
+
+    position: absolute;
+
+    top: 14px;
+    left: 16px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--color-coral);
+
+    box-shadow:
+      12px 0 0 rgba(15, 159, 143, 0.45),
+      24px 0 0 rgba(11, 37, 48, 0.18);
+  }
+
   .project__picture {
     display: block;
+
     width: 100%;
   }
 
@@ -258,9 +329,18 @@
     display: block;
 
     width: 100%;
-    height: 100%;
+
+    aspect-ratio: 16 / 9;
 
     object-fit: cover;
+    object-position: top;
+
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project__visual--polymaintenance:hover .project__image,
+  .project__visual--polymaintenance:focus-visible .project__image {
+    transform: scale(1.012);
   }
 
   .project__visual--polymaintenance {
@@ -328,8 +408,8 @@
   .project__number {
     position: absolute;
 
-    top: 1rem;
-    left: 1rem;
+    top: -1.15rem;
+    left: -1.15rem;
 
     z-index: 3;
 
@@ -594,34 +674,63 @@
       top: -1rem;
       left: -0.6rem;
     }
-    /*
-     * Sur mobile on montre une vraie capture
-     * verticale du site plutôt qu'un recadrage
-     * du desktop.
-     */
+
     .project__visual--polymaintenance {
       overflow: visible;
 
-      border-radius: 0;
+      padding-top: 1rem;
+    }
+
+    .project__visual--polymaintenance .project__device {
+      width: min(72%, 280px);
+
+      margin-inline: auto;
+
+      padding: 18px 7px 7px;
+
+      overflow: hidden;
+
+      background: var(--color-ink);
+
+      border: 0;
+
+      border-radius: 32px;
+
+      box-shadow: 0 20px 42px rgba(11, 37, 48, 0.14);
+    }
+
+    /* On supprime la barre navigateur desktop */
+    .project__visual--polymaintenance .project__device::before {
+      top: 7px;
+      left: 50%;
+      right: auto;
+
+      width: 42px;
+      height: 4px;
+
+      background: rgba(250, 247, 240, 0.5);
+
+      border: 0;
+
+      border-radius: 999px;
+
+      transform: translateX(-50%);
+    }
+
+    /* On supprime les trois points */
+    .project__visual--polymaintenance .project__device::after {
+      display: none;
     }
 
     .project__visual--polymaintenance .project__picture {
       display: block;
 
-      width: min(72%, 280px);
-
-      margin-inline: auto;
-
       overflow: hidden;
 
       border-radius: 24px;
-
-      box-shadow: 0 18px 40px rgba(11, 37, 48, 0.09);
     }
 
     .project__visual--polymaintenance .project__image {
-      display: block;
-
       width: 100%;
 
       aspect-ratio: 9 / 16;
@@ -632,10 +741,11 @@
       border-radius: 24px;
     }
 
+    /* Numéro Happyclicks */
     .project__visual--polymaintenance .project__number {
-      left: calc(14% - 0.6rem);
+      top: 0;
+      left: calc(14% - 0.7rem);
     }
-
     .projects-section__secondary {
       gap: 5.5rem;
     }

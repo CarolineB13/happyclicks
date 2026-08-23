@@ -1,0 +1,367 @@
+<section class="values-section">
+  <div class="values-section__inner">
+    <!-- =====================================
+         INTRODUCTION
+         ===================================== -->
+
+    <header class="values-section__header">
+      <p class="values-section__eyebrow">L’esprit Happyclicks</p>
+
+      <h2 class="values-section__title">
+        Des sites pensés<br />
+
+        <span>
+          autrement<span class="values-section__dot">.</span>
+        </span>
+      </h2>
+
+      <p class="values-section__intro">
+        Derrière chaque choix, il y a la même intention : créer un site juste,
+        sensible et réellement utile à votre projet.
+      </p>
+    </header>
+
+    <!-- =====================================
+         VALEURS
+         ===================================== -->
+
+    <div class="values-section__grid">
+      <!-- HUMAIN -->
+
+      <article class="value">
+        <h3 class="value__title">
+          Humain<span class="value__dot">.</span>
+        </h3>
+
+        <p class="value__text">
+          Une approche basée sur l’écoute, l’échange et la compréhension réelle
+          de votre projet.
+        </p>
+      </article>
+
+      <!-- CRÉATIF -->
+
+      <article class="value">
+        <h3 class="value__title">
+          Créatif<span class="value__dot">.</span>
+        </h3>
+
+        <p class="value__text">
+          Des univers singuliers, conçus sur mesure, sans reproduire les mêmes
+          recettes d’un projet à l’autre.
+        </p>
+      </article>
+
+      <!-- AUTHENTIQUE -->
+
+      <article class="value">
+        <h3 class="value__title">
+          Authentique<span class="value__dot">.</span>
+        </h3>
+
+        <p class="value__text">
+          Pas de façade ni de discours générique : votre site doit raconter ce
+          qui vous rend vraiment différent.
+        </p>
+      </article>
+
+      <!-- DURABLE -->
+
+      <article class="value">
+        <h3 class="value__title">
+          Durable<span class="value__dot">.</span>
+        </h3>
+
+        <p class="value__text">
+          Des sites légers, soignés et pensés pour évoluer avec votre activité
+          plutôt que devenir vite obsolètes.
+        </p>
+      </article>
+    </div>
+
+    <!-- =====================================
+         FIL DE FIN
+         ===================================== -->
+
+    <div class="values-section__thread" aria-hidden="true">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+        <path
+          d="
+            M -40 52
+            C 110 18, 205 78, 355 50
+            C 470 29, 540 27, 620 51
+            C 663 64, 690 77, 715 55
+            C 739 33, 706 21, 688 40
+            C 666 63, 706 77, 759 55
+            C 910 4, 1030 83, 1240 43
+          "
+        ></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ========================================
+     SECTION
+     ======================================== */
+
+  .values-section {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--color-ivory);
+  }
+
+  .values-section__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+
+    margin-inline: auto;
+
+    padding-block: clamp(5rem, 10vw, 9rem);
+  }
+
+  /* ========================================
+     INTRODUCTION
+     ======================================== */
+
+  .values-section__header {
+    max-width: 800px;
+
+    margin-bottom: clamp(4.5rem, 9vw, 8rem);
+  }
+
+  .values-section__eyebrow {
+    margin-bottom: 1rem;
+
+    color: var(--color-teal);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+  }
+
+  .values-section__title {
+    font-size: clamp(2.7rem, 5vw, 5rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.03em;
+  }
+
+  .values-section__title > span {
+    color: var(--color-teal);
+  }
+
+  .values-section__dot {
+    color: var(--color-coral);
+  }
+
+  .values-section__intro {
+    max-width: 550px;
+
+    margin-top: 2rem;
+
+    font-size: 1.02rem;
+
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     GRILLE
+     ======================================== */
+
+  .values-section__grid {
+    display: grid;
+
+    gap: clamp(4rem, 8vw, 7rem);
+  }
+
+  /* ========================================
+     UNE VALEUR
+     ======================================== */
+
+  .value {
+    position: relative;
+
+    max-width: 500px;
+
+    min-width: 0;
+  }
+
+  .value__title {
+    font-size: clamp(2.5rem, 4vw, 4.4rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.025em;
+  }
+
+  .value__dot {
+    color: var(--color-coral);
+  }
+
+  /* ========================================
+     TEXTE
+     ======================================== */
+
+  .value__text {
+    max-width: 390px;
+
+    margin-top: 1rem;
+
+    font-size: clamp(1rem, 1.25vw, 1.08rem);
+
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     FIL DÉCORATIF
+     ======================================== */
+
+  .values-section__thread {
+    width: 100vw;
+
+    margin-top: clamp(5rem, 10vw, 8rem);
+
+    margin-left: calc((100vw - 100%) / -2);
+  }
+
+  .values-section__thread svg {
+    display: block;
+
+    width: 100%;
+    height: 80px;
+
+    overflow: visible;
+  }
+
+  .values-section__thread path {
+    fill: none;
+
+    stroke: var(--color-teal);
+
+    stroke-width: 1.15;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* ========================================
+     TABLETTE / DESKTOP
+     ======================================== */
+
+  @media (min-width: 768px) {
+    .values-section__inner {
+      width: min(calc(100% - 4rem), var(--content-max));
+    }
+
+    .values-section__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      column-gap: clamp(5rem, 12vw, 12rem);
+
+      row-gap: clamp(4.5rem, 7vw, 7rem);
+    }
+
+    /*
+     * On décale légèrement la colonne droite
+     * pour casser l'effet grille.
+     */
+
+    .value:nth-child(2) {
+      margin-top: 4rem;
+    }
+
+    .value:nth-child(4) {
+      margin-top: 3rem;
+    }
+
+    /*
+     * Les valeurs de gauche sont
+     * légèrement décalées vers l'intérieur.
+     */
+
+    .value:nth-child(1),
+    .value:nth-child(3) {
+      padding-left: 2rem;
+    }
+  }
+
+  /* ========================================
+     GRAND ÉCRAN
+     ======================================== */
+
+  @media (min-width: 1200px) {
+    .values-section__grid {
+      padding-inline: clamp(1rem, 4vw, 4rem);
+    }
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 767px) {
+    .values-section__inner {
+      padding-block: 5rem;
+    }
+
+    .values-section__header {
+      margin-bottom: 4.5rem;
+    }
+
+    .values-section__title {
+      font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .values-section__grid {
+      gap: 3rem;
+    }
+
+    .value {
+      max-width: 100%;
+    }
+
+    /*
+     * Aucun décalage asymétrique desktop
+     * sur téléphone.
+     */
+
+    .value:nth-child(1),
+    .value:nth-child(2),
+    .value:nth-child(3),
+    .value:nth-child(4) {
+      margin-top: 0;
+      padding-left: 0;
+    }
+
+    .value__title {
+      font-size: clamp(2.5rem, 12vw, 3.4rem);
+    }
+
+    .value__text {
+      max-width: 100%;
+
+      margin-top: 0.8rem;
+
+      font-size: 0.98rem;
+
+      line-height: 1.65;
+    }
+
+    .values-section__thread {
+      margin-top: 4.5rem;
+    }
+
+    .values-section__thread svg {
+      height: 65px;
+    }
+  }
+</style>
