@@ -1,0 +1,86 @@
+/* ========================================
+   HAPPYCLICKS — STYLES GLOBAUX
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ========================================
+   STRUCTURE GÉNÉRALE
+   ======================================== */
+
+.container {
+  width: min(
+    calc(100% - 2rem),
+    var(--content-max)
+  );
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--space-4xl);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: min(
+      calc(100% - 4rem),
+      var(--content-max)
+    );
+  }
+
+  .section {
+    padding-block: var(--space-5xl);
+  }
+}

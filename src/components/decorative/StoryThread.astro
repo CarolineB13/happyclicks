@@ -1,0 +1,101 @@
+<div class="story-thread" aria-hidden="true">
+  <!-- Desktop -->
+  <svg
+    class="story-thread__desktop"
+    viewBox="0 0 1200 180"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="
+        M -30 55
+        C 90 38, 120 120, 285 112
+        C 430 105, 515 89, 650 108
+        C 735 120, 795 128, 845 99
+        C 888 74, 891 38, 864 29
+        C 833 18, 805 45, 819 72
+        C 838 109, 893 114, 947 87
+        C 1010 56, 1085 39, 1230 18
+      "
+    ></path>
+  </svg>
+
+  <!-- Mobile -->
+  <svg
+    class="story-thread__mobile"
+    viewBox="0 0 360 110"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="
+        M -15 28
+        C 55 22, 67 74, 145 72
+        C 194 71, 214 60, 247 68
+        C 275 75, 291 77, 304 59
+        C 314 44, 312 29, 302 25
+        C 289 20, 281 31, 286 43
+        C 293 59, 314 63, 375 35
+      "
+    ></path>
+  </svg>
+</div>
+
+<style>
+  .story-thread {
+    pointer-events: none;
+    color: var(--color-teal);
+  }
+
+  .story-thread svg {
+    width: 100%;
+    overflow: visible;
+
+    clip-path: inset(0 100% 0 0);
+    animation: reveal-thread 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+  }
+
+  .story-thread path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .story-thread__desktop {
+    display: none;
+  }
+
+  .story-thread__mobile {
+    display: block;
+    height: 90px;
+  }
+
+  @keyframes reveal-thread {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .story-thread__desktop {
+      display: block;
+      height: 150px;
+    }
+
+    .story-thread__mobile {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .story-thread svg {
+      animation: none;
+      clip-path: none;
+    }
+  }
+</style>

@@ -1,0 +1,178 @@
+---
+import StoryThread from "../decorative/StoryThread.astro";
+---
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Création de sites web sur mesure</p>
+
+      <h1 class="hero__title">
+        Chaque projet<br />
+        mérite son<br />
+        <span>histoire<span class="hero__dot">.</span></span>
+      </h1>
+
+      <div class="hero__thread">
+        <StoryThread />
+      </div>
+
+      <p class="hero__description">
+        Je crée des sites élégants, clairs et vivants qui racontent votre
+        histoire et touchent les bonnes personnes.
+      </p>
+
+      <div class="hero__actions">
+        <a class="hero__primary" href="/votre-projet">
+          <span>Racontez-moi votre projet</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a class="hero__secondary" href="/realisations">
+          <span>Découvrir les projets</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: calc(100svh - 110px);
+    overflow: hidden;
+  }
+
+  .hero__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+    margin-inline: auto;
+    padding-block: clamp(2rem, 5vh, 5rem);
+  }
+
+  .hero__content {
+    width: min(100%, 820px);
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero__title {
+    font-size: clamp(3.4rem, 6vw, 6.2rem);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+  }
+
+  .hero__title > span {
+    color: var(--color-teal);
+  }
+
+  .hero__dot {
+    color: var(--color-coral);
+  }
+
+  .hero__description {
+    margin-top: 2.5rem;
+    max-width: 590px;
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+    line-height: 1.65;
+  }
+
+  .hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .hero__primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 52px;
+    padding: 0.8rem 1.5rem;
+    border: 1.5px solid var(--color-teal);
+    border-radius: 999px;
+    transition:
+      transform var(--transition-base),
+      background-color var(--transition-base);
+  }
+
+  .hero__primary:hover {
+    background-color: var(--color-mist);
+    transform: translateY(-2px);
+  }
+
+  .hero__secondary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 0.5rem;
+  }
+
+  .hero__secondary::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--color-teal);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+  }
+
+  .hero__secondary:hover::after {
+    transform: scaleX(1.08);
+  }
+  .hero__thread {
+    width: 100vw;
+    margin-top: -2.75rem;
+    margin-left: calc((100vw - 100%) / -2);
+    margin-bottom: -1rem;
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      min-height: auto;
+    }
+
+    .hero__inner {
+      padding-top: 4rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero__eyebrow {
+      font-size: 0.7rem;
+    }
+
+    .hero__title {
+      font-size: clamp(3rem, 15vw, 4.3rem);
+      line-height: 0.94;
+    }
+
+    .hero__description {
+      margin-top: 2rem;
+      font-size: 0.98rem;
+    }
+
+    .hero__actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .hero__thread {
+      width: calc(100% + 2rem);
+      margin-top: 0.25rem;
+      margin-left: -1rem;
+      margin-bottom: -1rem;
+    }
+  }
+</style>

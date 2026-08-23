@@ -1,0 +1,43 @@
+---
+import "../styles/variables.css";
+import "../styles/typography.css";
+import "../styles/global.css";
+import "../styles/animations.css";
+
+import Header from "../components/navigation/Header.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Happyclicks — Création de sites web sur mesure",
+  description = "Happyclicks imagine des sites web singuliers, élégants et sur mesure. Chaque projet mérite son histoire.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>
