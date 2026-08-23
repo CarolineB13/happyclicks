@@ -1,0 +1,665 @@
+<section class="projects-section" id="realisations">
+  <div class="projects-section__inner">
+    <!-- =====================================
+         INTRODUCTION
+         ===================================== -->
+
+    <header class="projects-section__header">
+      <p class="projects-section__eyebrow">Quelques histoires</p>
+
+      <h2 class="projects-section__title">
+        Des projets différents.<br />
+        <span>
+          Une attention unique<span class="projects-section__dot">.</span>
+        </span>
+      </h2>
+
+      <p class="projects-section__intro">
+        Chaque projet commence par une histoire, un besoin, une personnalité.
+        Mon rôle est de trouver la forme juste pour la raconter.
+      </p>
+    </header>
+
+    <!-- =====================================
+         01 — POLYMAINTENANCE
+         ===================================== -->
+
+    <article class="project project--featured">
+      <a
+        href="/realisations/polymaintenance"
+        class="project__visual project__visual--polymaintenance"
+        aria-label="Découvrir le projet Polymaintenance"
+      >
+        <picture class="project__picture">
+          <source
+            srcset="/images/projects/polymaintenance-mobile.webp"
+            media="(max-width: 767px)"
+          />
+
+          <img
+            class="project__image"
+            src="/images/projects/polymaintenance-desktop.webp"
+            alt="Aperçu du site Polymaintenance"
+          />
+        </picture>
+
+        <span class="project__number" aria-hidden="true"> 01 </span>
+      </a>
+
+      <div class="project__content">
+        <p class="project__type">Industrie · Site vitrine & négoce</p>
+
+        <h3 class="project__title">Polymaintenance</h3>
+
+        <p class="project__description">
+          Repenser un site industriel pour rendre l'offre plus claire, renforcer
+          la place du négoce et donner à l'entreprise une présence en ligne plus
+          actuelle, tout en restant fidèle à son identité.
+        </p>
+
+        <a href="/realisations/polymaintenance" class="project__link">
+          <span>Découvrir son histoire</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- =====================================
+         PROJETS SECONDAIRES
+         ===================================== -->
+
+    <div class="projects-section__secondary">
+      <!-- ===================================
+           02 — APPART BEAUTÉ
+           =================================== -->
+
+      <article class="project project--secondary">
+        <div class="project__visual project__visual--beauty">
+          <div class="project__placeholder">
+            <span>Refonte à venir</span>
+          </div>
+
+          <span class="project__number" aria-hidden="true"> 02 </span>
+        </div>
+
+        <div class="project__content">
+          <p class="project__type">Beauté · Bien-être</p>
+
+          <h3 class="project__title">Appart Beauté</h3>
+
+          <p class="project__description">
+            Un univers à repenser autour de la douceur, de la confiance et de la
+            personnalité de l'institut, pour créer une expérience plus élégante
+            et plus cohérente.
+          </p>
+
+          <span class="project__status"> Refonte à venir </span>
+        </div>
+      </article>
+
+      <!-- ===================================
+           03 — MARIAGE
+           =================================== -->
+
+      <article class="project project--secondary project--offset">
+        <a
+          href="/realisations/mariage"
+          class="project__visual project__visual--wedding"
+          aria-label="Découvrir le projet de site de mariage"
+        >
+          <div class="project__placeholder">
+            <span>Visuel à venir</span>
+          </div>
+
+          <span class="project__number" aria-hidden="true"> 03 </span>
+        </a>
+
+        <div class="project__content">
+          <p class="project__type">Mariage · Site événementiel</p>
+
+          <h3 class="project__title">Une histoire à célébrer</h3>
+
+          <p class="project__description">
+            Un site imaginé comme une invitation numérique : raconter l'histoire
+            du couple, réunir les informations essentielles et accompagner les
+            invités jusqu'au jour J.
+          </p>
+
+          <a href="/realisations/mariage" class="project__link">
+            <span>Découvrir le projet</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- =====================================
+         LIEN GÉNÉRAL
+         ===================================== -->
+
+    <div class="projects-section__footer">
+      <a href="/realisations" class="projects-section__all">
+        <span>Voir toutes les histoires</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ========================================
+     SECTION
+     ======================================== */
+
+  .projects-section {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-ivory);
+  }
+
+  .projects-section__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+
+    margin-inline: auto;
+
+    padding-block: clamp(5rem, 10vw, 9rem);
+  }
+
+  /* ========================================
+     INTRODUCTION
+     ======================================== */
+
+  .projects-section__header {
+    max-width: 820px;
+
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  .projects-section__eyebrow {
+    margin-bottom: 1rem;
+
+    color: var(--color-teal);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .projects-section__title {
+    font-size: clamp(2.7rem, 5vw, 5rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.03em;
+  }
+
+  .projects-section__title > span {
+    color: var(--color-teal);
+  }
+
+  .projects-section__dot {
+    color: var(--color-coral);
+  }
+
+  .projects-section__intro {
+    max-width: 550px;
+
+    margin-top: 2rem;
+
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     PROJETS
+     ======================================== */
+
+  .project {
+    min-width: 0;
+  }
+
+  .project--featured {
+    display: grid;
+
+    gap: 2.5rem;
+
+    margin-bottom: clamp(6rem, 12vw, 10rem);
+  }
+
+  /* ========================================
+     VISUELS
+     ======================================== */
+
+  .project__visual {
+    position: relative;
+
+    display: block;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: inherit;
+  }
+
+  /* ========================================
+     POLYMAINTENANCE
+     ======================================== */
+
+  .project__picture {
+    display: block;
+    width: 100%;
+  }
+
+  .project__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  .project__visual--polymaintenance {
+    border-radius: 24px 24px 70px 24px;
+  }
+
+  .project__visual--polymaintenance .project__image {
+    aspect-ratio: 16 / 9;
+
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project__visual--polymaintenance:hover .project__image,
+  .project__visual--polymaintenance:focus-visible .project__image {
+    transform: scale(1.015);
+  }
+
+  /* ========================================
+     PLACEHOLDERS
+     ======================================== */
+
+  .project__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .project__placeholder span {
+    padding: 0.5rem 0.75rem;
+
+    color: rgba(11, 37, 48, 0.42);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Appart Beauté */
+  .project__visual--beauty .project__placeholder {
+    aspect-ratio: 4 / 5;
+
+    background: linear-gradient(145deg, #f0dfda, #f6ece7);
+
+    border-radius: 20px 55px 20px 20px;
+  }
+
+  /* Mariage */
+  .project__visual--wedding .project__placeholder {
+    aspect-ratio: 4 / 5;
+
+    background: linear-gradient(145deg, #e8dfd1, #f5efe7);
+
+    border-radius: 55px 20px 20px 20px;
+  }
+
+  /* ========================================
+     NUMÉROS
+     ======================================== */
+
+  .project__number {
+    position: absolute;
+
+    top: 1rem;
+    left: 1rem;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: var(--color-ivory);
+
+    border-radius: 50%;
+
+    color: var(--color-teal);
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    letter-spacing: 0.05em;
+
+    box-shadow: 0 6px 18px rgba(11, 37, 48, 0.08);
+  }
+
+  /* ========================================
+     TEXTES PROJETS
+     ======================================== */
+
+  .project__content {
+    align-self: center;
+  }
+
+  .project__type {
+    margin-bottom: 0.7rem;
+
+    color: var(--color-teal);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project__title {
+    font-size: clamp(2rem, 3vw, 3.4rem);
+
+    line-height: 1;
+  }
+
+  .project__description {
+    max-width: 480px;
+
+    margin-top: 1.3rem;
+
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     STATUT
+     ======================================== */
+
+  .project__status {
+    display: inline-block;
+
+    margin-top: 1.5rem;
+    padding: 0.45rem 0.75rem;
+
+    background: var(--color-mist);
+
+    border-radius: 999px;
+
+    color: var(--color-teal);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ========================================
+     LIENS
+     ======================================== */
+
+  .project__link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    margin-top: 1.7rem;
+    padding-bottom: 0.35rem;
+
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  .project__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 75%;
+    height: 1px;
+
+    background: var(--color-teal);
+
+    transition: width var(--transition-base);
+  }
+
+  .project__link:hover::after,
+  .project__link:focus-visible::after {
+    width: 100%;
+  }
+
+  .project__link span:last-child {
+    color: var(--color-teal);
+
+    transition: transform var(--transition-base);
+  }
+
+  .project__link:hover span:last-child,
+  .project__link:focus-visible span:last-child {
+    transform: translateX(5px);
+  }
+
+  /* ========================================
+     PROJETS SECONDAIRES
+     ======================================== */
+
+  .projects-section__secondary {
+    display: grid;
+
+    gap: 5rem;
+  }
+
+  .project--secondary .project__content {
+    padding-top: 1.5rem;
+  }
+
+  /* ========================================
+     BAS DE SECTION
+     ======================================== */
+
+  .projects-section__footer {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: clamp(5rem, 9vw, 8rem);
+  }
+
+  .projects-section__all {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding-bottom: 0.5rem;
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+
+    font-style: italic;
+  }
+
+  .projects-section__all::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 75%;
+    height: 1px;
+
+    background: var(--color-teal);
+
+    transition: width var(--transition-base);
+  }
+
+  .projects-section__all:hover::after,
+  .projects-section__all:focus-visible::after {
+    width: 100%;
+  }
+
+  .projects-section__all span:last-child {
+    color: var(--color-teal);
+
+    transition: transform var(--transition-base);
+  }
+
+  .projects-section__all:hover span:last-child,
+  .projects-section__all:focus-visible span:last-child {
+    transform: translateX(6px);
+  }
+
+  /* ========================================
+     TABLETTE / DESKTOP
+     ======================================== */
+
+  @media (min-width: 768px) {
+    .projects-section__inner {
+      width: min(calc(100% - 4rem), var(--content-max));
+    }
+
+    .project--featured {
+      grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(280px, 0.55fr);
+
+      align-items: center;
+
+      gap: clamp(3rem, 6vw, 6rem);
+    }
+
+    .projects-section__secondary {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      align-items: start;
+
+      gap: clamp(3rem, 8vw, 7rem);
+    }
+
+    .project--offset {
+      margin-top: 6rem;
+    }
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
+
+  @media (max-width: 767px) {
+    .projects-section__inner {
+      padding-block: 5rem;
+    }
+
+    .projects-section__title {
+      font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .project--featured {
+      gap: 2.5rem;
+
+      margin-bottom: 6rem;
+    }
+    .project__visual {
+      overflow: visible;
+    }
+
+    .project__number {
+      top: -1rem;
+      left: -0.6rem;
+    }
+    /*
+     * Sur mobile on montre une vraie capture
+     * verticale du site plutôt qu'un recadrage
+     * du desktop.
+     */
+    .project__visual--polymaintenance {
+      overflow: visible;
+
+      border-radius: 0;
+    }
+
+    .project__visual--polymaintenance .project__picture {
+      display: block;
+
+      width: min(72%, 280px);
+
+      margin-inline: auto;
+
+      overflow: hidden;
+
+      border-radius: 24px;
+
+      box-shadow: 0 18px 40px rgba(11, 37, 48, 0.09);
+    }
+
+    .project__visual--polymaintenance .project__image {
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 9 / 16;
+
+      object-fit: cover;
+      object-position: top;
+
+      border-radius: 24px;
+    }
+
+    .project__visual--polymaintenance .project__number {
+      left: calc(14% - 0.6rem);
+    }
+
+    .projects-section__secondary {
+      gap: 5.5rem;
+    }
+
+    .project--offset {
+      margin-top: 0;
+    }
+
+    .projects-section__footer {
+      justify-content: flex-start;
+
+      margin-top: 5rem;
+    }
+  }
+
+  /* ========================================
+     ACCESSIBILITÉ
+     ======================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    .project__image,
+    .project__link span:last-child,
+    .projects-section__all span:last-child {
+      transition: none;
+    }
+  }
+</style>

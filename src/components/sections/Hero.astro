@@ -10,7 +10,10 @@ import StoryThread from "../decorative/StoryThread.astro";
       <h1 class="hero__title">
         Chaque projet<br />
         mérite son<br />
-        <span>histoire<span class="hero__dot">.</span></span>
+
+        <span>
+          histoire<span class="hero__dot">.</span>
+        </span>
       </h1>
 
       <div class="hero__thread">
@@ -40,13 +43,17 @@ import StoryThread from "../decorative/StoryThread.astro";
 <style>
   .hero {
     position: relative;
+
     min-height: calc(100svh - 110px);
+
     overflow: hidden;
   }
 
   .hero__inner {
     width: min(calc(100% - 2rem), var(--content-max));
+
     margin-inline: auto;
+
     padding-block: clamp(2rem, 5vh, 5rem);
   }
 
@@ -54,18 +61,32 @@ import StoryThread from "../decorative/StoryThread.astro";
     width: min(100%, 820px);
   }
 
+  /* ========================================
+     PETITE ACCROCHE
+     ======================================== */
+
   .hero__eyebrow {
     margin-bottom: 1rem;
+
     color: var(--color-teal);
+
     font-size: 0.78rem;
     font-weight: 600;
+
     letter-spacing: 0.08em;
+
     text-transform: uppercase;
   }
 
+  /* ========================================
+     TITRE
+     ======================================== */
+
   .hero__title {
     font-size: clamp(3.4rem, 6vw, 6.2rem);
+
     line-height: 0.94;
+
     letter-spacing: -0.035em;
   }
 
@@ -77,67 +98,117 @@ import StoryThread from "../decorative/StoryThread.astro";
     color: var(--color-coral);
   }
 
+  /* ========================================
+     FIL
+     ======================================== */
+
+  .hero__thread {
+    width: 100vw;
+
+    margin-top: -2.75rem;
+    margin-left: calc((100vw - 100%) / -2);
+
+    margin-bottom: -1rem;
+  }
+
+  /* ========================================
+     TEXTE
+     ======================================== */
+
   .hero__description {
-    margin-top: 2.5rem;
     max-width: 590px;
+
+    margin-top: 2.5rem;
+
     font-size: clamp(1rem, 1.25vw, 1.15rem);
+
     line-height: 1.65;
   }
+
+  /* ========================================
+     ACTIONS
+     ======================================== */
 
   .hero__actions {
     display: flex;
     align-items: center;
+
     gap: 3rem;
+
     margin-top: 2rem;
   }
+
+  /* ========================================
+     BOUTON PRINCIPAL
+     ======================================== */
 
   .hero__primary {
     display: inline-flex;
     align-items: center;
+
     gap: 1rem;
+
     min-height: 52px;
+
     padding: 0.8rem 1.5rem;
+
     border: 1.5px solid var(--color-teal);
+
     border-radius: 999px;
+
     transition:
       transform var(--transition-base),
       background-color var(--transition-base);
   }
 
-  .hero__primary:hover {
+  .hero__primary:hover,
+  .hero__primary:focus-visible {
     background-color: var(--color-mist);
+
     transform: translateY(-2px);
   }
 
+  /* ========================================
+     LIEN SECONDAIRE
+     ======================================== */
+
   .hero__secondary {
     position: relative;
+
     display: inline-flex;
     align-items: center;
+
     gap: 1rem;
+
     padding-block: 0.5rem;
   }
 
   .hero__secondary::after {
     content: "";
+
     position: absolute;
+
     right: 0;
     bottom: 0;
     left: 0;
+
     height: 1px;
+
     background: var(--color-teal);
+
     transform-origin: left;
+
     transition: transform var(--transition-base);
   }
 
-  .hero__secondary:hover::after {
+  .hero__secondary:hover::after,
+  .hero__secondary:focus-visible::after {
     transform: scaleX(1.08);
   }
-  .hero__thread {
-    width: 100vw;
-    margin-top: -2.75rem;
-    margin-left: calc((100vw - 100%) / -2);
-    margin-bottom: -1rem;
-  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
 
   @media (max-width: 767px) {
     .hero {
@@ -145,7 +216,7 @@ import StoryThread from "../decorative/StoryThread.astro";
     }
 
     .hero__inner {
-      padding-top: 4rem;
+      padding-top: 0.5rem;
       padding-bottom: 5rem;
     }
 
@@ -155,24 +226,29 @@ import StoryThread from "../decorative/StoryThread.astro";
 
     .hero__title {
       font-size: clamp(3rem, 15vw, 4.3rem);
+
       line-height: 0.94;
+    }
+
+    .hero__thread {
+      width: calc(100% + 2rem);
+
+      margin-top: 0.25rem;
+      margin-left: -1rem;
+      margin-bottom: -1rem;
     }
 
     .hero__description {
       margin-top: 2rem;
+
       font-size: 0.98rem;
     }
 
     .hero__actions {
       flex-direction: column;
       align-items: flex-start;
+
       gap: 1.25rem;
-    }
-    .hero__thread {
-      width: calc(100% + 2rem);
-      margin-top: 0.25rem;
-      margin-left: -1rem;
-      margin-bottom: -1rem;
     }
   }
 </style>

@@ -1,18 +1,7 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a href="/" class="site-header__logo" aria-label="Happyclicks — Accueil">
-      <img
-        class="site-header__logo-full"
-        src="/images/brand/happyclicks-logo-color.svg"
-        alt="Happyclicks"
-      />
-
-      <img
-        class="site-header__logo-symbol"
-        src="/images/brand/happyclicks-h.svg"
-        alt=""
-        aria-hidden="true"
-      />
+      <img src="/images/brand/happyclicks-logo-color.svg" alt="Happyclicks" />
     </a>
   </div>
 </header>
@@ -21,49 +10,42 @@
   .site-header {
     position: relative;
     z-index: var(--z-navigation);
+
     width: 100%;
   }
 
   .site-header__inner {
     width: min(calc(100% - 2rem), var(--content-max));
+
     margin-inline: auto;
-    padding-block: 1.5rem;
-  }
 
-  .site-header__logo img {
-    height: auto;
-  }
-  .site-header__logo-full {
-    display: none;
-    width: 100%;
-    height: auto;
-  }
-
-  .site-header__logo-symbol {
-    display: block;
-    width: 46px;
-    height: auto;
+    padding-top: 1.25rem;
+    padding-bottom: 0.5rem;
   }
 
   .site-header__logo {
     display: inline-flex;
     align-items: center;
-    width: auto;
+
+    width: 140px;
+  }
+
+  .site-header__logo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
   }
 
   @media (min-width: 768px) {
-    .site-header__logo-full {
-      display: block;
-      width: 260px;
-    }
-
-    .site-header__logo-symbol {
-      display: none;
-    }
-
     .site-header__inner {
       width: min(calc(100% - 4rem), var(--content-max));
+
       padding-block: 2rem;
+    }
+
+    .site-header__logo {
+      width: 260px;
     }
   }
 </style>
