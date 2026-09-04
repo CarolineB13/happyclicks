@@ -1,10 +1,10 @@
 ---
 const items = [
-  { number: "01", label: "Réalisations", href: "/realisations" },
-  { number: "02", label: "Votre projet", href: "/votre-projet" },
-  { number: "03", label: "À propos", href: "/a-propos" },
-  { number: "04", label: "Journal", href: "/journal" },
-  { number: "05", label: "Contact", href: "/contact" },
+  { label: "Réalisations", href: "/#realisations" },
+  { label: "Services", href: "/#services" },
+  { label: "Tarifs", href: "/#tarifs" },
+  { label: "À propos", href: "/#a-propos" },
+  { label: "Contact", href: "/contact" },
 ];
 ---
 
@@ -21,12 +21,11 @@ const items = [
     aria-controls="mobile-navigation"
     data-menu-trigger
   >
-    <img
-      src="/images/ui/page-corner.webp"
-      alt=""
-      aria-hidden="true"
-      class="mobile-menu__trigger-image"
-    />
+    <span class="mobile-menu__trigger-icon" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
   </button>
 
   <!-- ======================================
@@ -89,8 +88,6 @@ const items = [
         {
           items.map((item) => (
             <a class="mobile-menu__item" href={item.href}>
-              <span class="mobile-menu__number">{item.number}</span>
-
               <span class="mobile-menu__label">{item.label}</span>
             </a>
           ))
@@ -156,63 +153,53 @@ const items = [
   }
 
   /* ========================================
-     COIN DE PAGE — MENU FERMÉ
+     BOUTON MENU MOBILE — CLAIR ET VISIBLE
      ======================================== */
 
   .mobile-menu__trigger {
     position: fixed;
-
-    top: 0;
-    right: 0;
-
+    top: 0.9rem;
+    right: 0.9rem;
     z-index: calc(var(--z-navigation) + 20);
-
-    width: 105px;
-    height: 105px;
-
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
     padding: 0;
-
-    background: transparent;
-
-    overflow: visible;
-
+    background: rgba(250, 247, 240, 0.96);
+    border: 1px solid rgba(11, 37, 48, 0.12);
+    border-radius: 999px;
+    color: var(--color-ink);
+    box-shadow: 0 8px 22px rgba(11, 37, 48, 0.12);
+    backdrop-filter: blur(8px);
     transition:
-      transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 350ms ease;
+      transform var(--transition-base),
+      box-shadow var(--transition-base),
+      background-color var(--transition-base);
   }
 
-  .mobile-menu__trigger-image {
-    position: absolute;
+  .mobile-menu__trigger:hover,
+  .mobile-menu__trigger:focus-visible {
+    transform: translateY(-1px);
+    background: var(--color-ivory);
+    box-shadow: 0 10px 26px rgba(11, 37, 48, 0.16);
+  }
 
-    top: 0;
-    right: 0;
 
+  .mobile-menu__trigger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 18px;
+  }
+
+  .mobile-menu__trigger-icon span {
     display: block;
-
-    width: 105px;
-    height: 105px;
-
-    object-fit: contain;
-    object-position: top right;
-
-    pointer-events: none;
-
-    transform-origin: top right;
-
-    transition:
-      transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 400ms ease;
-  }
-
-  .mobile-menu__trigger:hover .mobile-menu__trigger-image,
-  .mobile-menu__trigger:focus-visible .mobile-menu__trigger-image {
-    transform: scale(1.055) rotate(-1deg);
-
-    filter: drop-shadow(-3px 5px 5px rgba(11, 37, 48, 0.08));
-  }
-
-  .mobile-menu__trigger:active .mobile-menu__trigger-image {
-    transform: scale(1.02) rotate(0deg);
+    width: 18px;
+    height: 1.5px;
+    background: var(--color-teal);
+    border-radius: 999px;
   }
 
   /* ========================================
@@ -389,12 +376,8 @@ const items = [
   }
 
   .mobile-menu__item {
-    display: grid;
-
-    grid-template-columns:
-      2.2rem
-      1fr;
-
+    position: relative;
+    display: flex;
     align-items: center;
 
     min-height: 66px;
@@ -413,13 +396,6 @@ const items = [
   .mobile-menu__item:hover,
   .mobile-menu__item:focus-visible {
     transform: translateX(6px);
-  }
-
-  .mobile-menu__number {
-    font-size: 0.68rem;
-    font-weight: 500;
-
-    opacity: 0.72;
   }
 
   .mobile-menu__label {
@@ -527,7 +503,6 @@ const items = [
     .mobile-menu__panel,
     .mobile-menu__item,
     .mobile-menu__trigger,
-    .mobile-menu__trigger-image,
     .mobile-menu__close {
       transition: none;
     }

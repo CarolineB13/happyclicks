@@ -1,0 +1,353 @@
+---
+const offers = [
+  {
+    title: "Site essentiel",
+    subtitle: "1 page",
+    price: "à partir de 890 €",
+    delay: "1 semaine",
+    text: "Pour présenter votre activité de façon claire et professionnelle sur une seule page : présentation, services, appels à l’action, formulaire de contact, responsive et bases SEO.",
+  },
+  {
+    title: "Site vitrine",
+    subtitle: "3 à 5 pages",
+    price: "à partir de 1 390 €",
+    delay: "4 à 6 semaines",
+    text: "Pour structurer une offre plus complète, travailler davantage le référencement et proposer un parcours plus détaillé à vos visiteurs.",
+  },
+  {
+    title: "Site sur mesure",
+    subtitle: "Fonctionnalités spécifiques",
+    price: "à partir de 1 800 €",
+    delay: "Selon le projet",
+    text: "Pour un catalogue, des annonces, des formulaires spécifiques, des fonctionnalités particulières ou une architecture plus importante.",
+  },
+];
+
+const technicalItems = [
+  {
+    title: "Mise en place",
+    text: "Je vous accompagne dans le choix et la réservation du nom de domaine, puis je configure l’hébergement, les DNS, le certificat SSL et la mise en ligne.",
+  },
+  {
+    title: "Toujours à votre nom",
+    text: "Le domaine et l’hébergement sont souscrits à votre nom. Vous restez propriétaire de vos accès et libre de changer de prestataire à tout moment.",
+  },
+  {
+    title: "Gestion possible",
+    text: "Si vous préférez ne pas vous en occuper, je peux assurer le suivi technique et vous accompagner pour les renouvellements et les petites interventions courantes.",
+  },
+];
+---
+
+<section class="pricing-section" id="tarifs">
+  <div class="pricing-section__inner">
+    <header class="pricing-section__header">
+      <p class="pricing-section__eyebrow">Tarifs & délais</p>
+
+      <h2 class="pricing-section__title">
+        Savoir où l’on va,<br />
+        <span>avant de commencer<span class="pricing-section__dot">.</span></span>
+      </h2>
+
+      <p class="pricing-section__intro">
+        Chaque projet reste sur mesure, mais quelques repères permettent de
+        savoir rapidement si nous sommes sur la même longueur d’onde.
+      </p>
+    </header>
+
+    <div class="pricing-section__grid">
+      {offers.map((offer) => (
+        <article class="pricing-card">
+          <div>
+            <h3 class="pricing-card__title">{offer.title}</h3>
+            <p class="pricing-card__subtitle">{offer.subtitle}</p>
+          </div>
+
+          <p class="pricing-card__price">{offer.price}</p>
+          <p class="pricing-card__text">{offer.text}</p>
+
+          <div class="pricing-card__delay">
+            <span>Délai indicatif</span>
+            <strong>{offer.delay}</strong>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="pricing-section__extra">
+      Besoin également d’une identité visuelle ou d’un logo ?
+      <strong>À partir de 350 €</strong>, selon le besoin.
+    </p>
+
+    <div class="technical-block" aria-label="Nom de domaine et hébergement">
+      <header class="technical-block__header">
+        <p class="technical-block__eyebrow">Nom de domaine & hébergement</p>
+
+        <h3 class="technical-block__title">
+          Je peux aussi gérer toute la partie technique.
+        </h3>
+
+        <p class="technical-block__intro">
+          Pas besoin de savoir quoi acheter ni comment le configurer : je peux
+          vous accompagner de la réservation du domaine jusqu’à la mise en ligne
+          du site.
+        </p>
+      </header>
+
+      <div class="technical-block__grid">
+        {technicalItems.map((item) => (
+          <article class="technical-card">
+            <h4 class="technical-card__title">{item.title}</h4>
+            <p class="technical-card__text">{item.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <p class="technical-block__note">
+        Les frais de domaine et d’hébergement sont réglés séparément auprès du
+        prestataire choisi. Une gestion technique dans le temps peut être ajoutée
+        au devis si vous souhaitez que je m’en occupe pour vous.
+      </p>
+    </div>
+
+    <p class="pricing-section__note">
+      Les montants indiqués sont des prix de départ. Un devis précis est établi
+      après un premier échange sur votre projet, vos contenus et les
+      fonctionnalités souhaitées.
+    </p>
+  </div>
+</section>
+
+<style>
+  .pricing-section {
+    position: relative;
+    background: var(--color-mist);
+  }
+
+  .pricing-section__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+    margin-inline: auto;
+    padding: clamp(3.5rem, 5vw, 5rem) 0 clamp(1.75rem, 2.5vw, 2.5rem);
+  }
+
+  .pricing-section__header {
+    max-width: 820px;
+    margin-bottom: clamp(2.75rem, 4vw, 4rem);
+  }
+
+  .pricing-section__eyebrow,
+  .technical-block__eyebrow {
+    margin: 0 0 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .pricing-section__title {
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+
+  .pricing-section__title > span {
+    color: var(--color-teal);
+  }
+
+  .pricing-section__dot {
+    color: var(--color-coral);
+  }
+
+  .pricing-section__intro {
+    max-width: 590px;
+    margin-top: 1.7rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .pricing-section__grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: clamp(1.8rem, 3vw, 2.6rem);
+    background: var(--color-ivory);
+    border: 1px solid rgba(11, 37, 48, 0.06);
+    border-radius: 20px 50px 20px 20px;
+    box-shadow: 0 16px 40px rgba(11, 37, 48, 0.04);
+  }
+
+  .pricing-card__title {
+    font-size: clamp(1.8rem, 2.3vw, 2.5rem);
+    line-height: 1;
+  }
+
+  .pricing-card__subtitle {
+    margin-top: 0.35rem;
+    color: rgba(11, 37, 48, 0.65);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .pricing-card__price {
+    margin-top: 1.4rem;
+    color: var(--color-teal);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .pricing-card__text {
+    margin-top: 1.2rem;
+    line-height: 1.65;
+  }
+
+  .pricing-card__delay {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(11, 37, 48, 0.08);
+  }
+
+  .pricing-card__delay span {
+    color: rgba(11, 37, 48, 0.58);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .pricing-card__delay strong {
+    color: var(--color-teal);
+    font-size: 0.9rem;
+  }
+
+  .pricing-section__extra {
+    margin-top: 1.4rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .pricing-section__extra strong {
+    color: var(--color-teal);
+  }
+
+  /* ========================================
+     DOMAINE & HÉBERGEMENT
+     ======================================== */
+
+  .technical-block {
+    margin-top: clamp(2.5rem, 4vw, 3.5rem);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    overflow: hidden;
+    background: var(--color-ink);
+    color: var(--color-ivory);
+    border-radius: 24px 70px 24px 24px;
+    box-shadow: 0 20px 50px rgba(11, 37, 48, 0.08);
+  }
+
+  .technical-block__header {
+    max-width: 760px;
+  }
+
+  .technical-block__eyebrow {
+    color: var(--color-teal);
+  }
+
+  .technical-block__title {
+    margin: 0;
+    max-width: 720px;
+    color: var(--color-ivory);
+    font-family: var(--font-heading);
+    font-size: clamp(2.1rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  .technical-block__intro {
+    max-width: 650px;
+    margin-top: 1.25rem;
+    color: rgba(250, 247, 240, 0.76);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .technical-block__grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .technical-card {
+    min-width: 0;
+    padding: 1.5rem;
+    background: rgba(250, 247, 240, 0.055);
+    border: 1px solid rgba(250, 247, 240, 0.12);
+    border-radius: 18px;
+  }
+
+  .technical-card__title {
+    margin: 0;
+    color: var(--color-ivory);
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .technical-card__text {
+    margin-top: 0.75rem;
+    color: rgba(250, 247, 240, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .technical-block__note {
+    max-width: 850px;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(250, 247, 240, 0.12);
+    color: rgba(250, 247, 240, 0.55);
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  .pricing-section__note {
+    margin-top: 1.25rem;
+    color: rgba(11, 37, 48, 0.58);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-section__inner {
+      width: min(calc(100% - 4rem), var(--content-max));
+    }
+
+    .pricing-section__grid,
+    .technical-block__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .pricing-section__inner {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .pricing-section__title {
+      font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .technical-block {
+      border-radius: 20px 48px 20px 20px;
+    }
+
+  }
+</style>

@@ -8,6 +8,8 @@ import Header from "../components/navigation/Header.astro";
 import PageTabs from "../components/navigation/PageTabs.astro";
 import MobileMenu from "../components/navigation/MobileMenu.astro";
 import Footer from "../components/navigation/Footer.astro";
+import WhatsAppButton from "../components/ui/WhatsAppButton.astro";
+
 interface Props {
   title?: string;
   description?: string;
@@ -15,7 +17,7 @@ interface Props {
 
 const {
   title = "Happyclicks — Création de sites web sur mesure",
-  description = "Happyclicks imagine des sites web singuliers, élégants et sur mesure. Chaque projet mérite son histoire.",
+  description = "Happyclicks crée des sites web sur mesure, élégants et pensés pour être réellement utiles à votre activité : visibilité, confiance et prise de contact.",
 } = Astro.props;
 ---
 
@@ -24,12 +26,10 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-
     <meta name="description" content={description} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"
       rel="stylesheet"
@@ -44,6 +44,8 @@ const {
     <MobileMenu />
 
     <slot />
+
     <Footer />
+    <WhatsAppButton />
   </body>
 </html>

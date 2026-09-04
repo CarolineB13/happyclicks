@@ -1,0 +1,150 @@
+<section class="about-section" id="a-propos">
+  <div class="about-section__inner">
+    <div class="about-section__visual">
+      <img
+        src="/images/home/caroline-happyclicks.webp"
+        alt="Caroline, créatrice de Happyclicks"
+        class="about-section__image"
+      />
+      <span class="about-section__accent" aria-hidden="true"></span>
+    </div>
+
+    <div class="about-section__content">
+      <p class="about-section__eyebrow">Derrière Happyclicks</p>
+
+      <h2 class="about-section__title">
+        Bonjour,<br />
+        <span>moi c’est Caroline<span>.</span></span>
+      </h2>
+
+      <p>
+        J’ai créé Happyclicks avec une conviction simple : un site internet ne
+        doit pas seulement être beau. Il doit être clair, cohérent et répondre
+        à un objectif concret.
+      </p>
+
+      <p>
+        Avant de penser design, je prends le temps de comprendre votre métier,
+        vos clients et vos objectifs. J’aime associer créativité, logique et
+        sens du détail pour concevoir des sites sur mesure, sans modèle tout
+        fait et sans fonctionnalités inutiles.
+      </p>
+
+      <p>
+        Vous échangez directement avec moi tout au long du projet, de la
+        première idée jusqu’à la mise en ligne.
+      </p>
+
+      <p class="about-section__signature">
+        Vous savez toujours avec qui vous échangez, et pourquoi chaque choix est fait.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-ivory);
+  }
+
+  .about-section__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+    margin-inline: auto;
+    padding-block: clamp(3rem, 4vw, 4rem);
+    display: grid;
+    gap: 3rem;
+  }
+
+  .about-section__visual {
+    position: relative;
+    min-width: 0;
+  }
+
+  .about-section__image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 22px 70px 22px 22px;
+    box-shadow: 0 22px 55px rgba(11, 37, 48, 0.08);
+  }
+
+  .about-section__accent {
+    position: absolute;
+    right: -2rem;
+    bottom: -2rem;
+    z-index: 1;
+    width: 55%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-mist);
+  }
+
+  .about-section__content {
+    align-self: center;
+  }
+
+  .about-section__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .about-section__title {
+    font-size: clamp(2.7rem, 5vw, 4.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+
+  .about-section__title > span {
+    color: var(--color-teal);
+  }
+
+  .about-section__title > span span {
+    color: var(--color-coral);
+  }
+
+  .about-section__content > p:not(.about-section__eyebrow):not(.about-section__signature) {
+    max-width: 560px;
+    margin-top: 1.4rem;
+    line-height: 1.75;
+  }
+
+  .about-section__signature {
+    max-width: 520px;
+    margin-top: 2rem;
+    color: var(--color-teal);
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  @media (min-width: 768px) {
+    .about-section__inner {
+      width: min(calc(100% - 4rem), var(--content-max));
+      grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+      align-items: center;
+      gap: clamp(4rem, 9vw, 9rem);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-section__title {
+      font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .about-section__visual {
+      width: min(88%, 420px);
+      margin-inline: auto;
+    }
+  }
+</style>

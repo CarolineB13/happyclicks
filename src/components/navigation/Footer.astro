@@ -5,17 +5,9 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__top">
-      <!-- MARQUE -->
       <div class="site-footer__brand">
-        <a
-          href="/"
-          class="site-footer__logo"
-          aria-label="Happyclicks — Accueil"
-        >
-          <img
-            src="/images/brand/happyclicks-logo-white.svg"
-            alt="Happyclicks"
-          />
+        <a href="/" class="site-footer__logo" aria-label="Happyclicks — Accueil">
+          <img src="/images/brand/happyclicks-logo-white.svg" alt="Happyclicks" />
         </a>
 
         <p class="site-footer__signature">
@@ -23,52 +15,24 @@ const year = new Date().getFullYear();
         </p>
       </div>
 
-      <!-- NAVIGATION -->
       <nav class="site-footer__nav" aria-label="Navigation de pied de page">
-        <a href="/realisations">
-          Réalisations
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <a href="/votre-projet">
-          Votre projet
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <a href="/a-propos">
-          À propos
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <a href="/journal">
-          Journal
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <a href="/contact">
-          Contact
-          <span aria-hidden="true">→</span>
-        </a>
+        <a href="/#realisations">Réalisations <span aria-hidden="true">→</span></a>
+        <a href="/#services">Services <span aria-hidden="true">→</span></a>
+        <a href="/#tarifs">Tarifs & délais <span aria-hidden="true">→</span></a>
+        <a href="/#a-propos">À propos <span aria-hidden="true">→</span></a>
+        <a href="/contact">Contact <span aria-hidden="true">→</span></a>
       </nav>
     </div>
 
-    <!-- BAS DU FOOTER -->
     <div class="site-footer__bottom">
-      <p>
-        © {year} Happyclicks
-      </p>
+      <p>© {year} Happyclicks</p>
 
       <div class="site-footer__legal">
-        <a href="/mentions-legales"> Mentions légales </a>
-
-        <a href="/politique-de-confidentialite"> Confidentialité </a>
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/politique-de-confidentialite">Confidentialité</a>
       </div>
 
-      <a
-        href="#top"
-        class="site-footer__back-top"
-        aria-label="Retour en haut de la page"
-      >
+      <a href="#top" class="site-footer__back-top" aria-label="Retour en haut de la page">
         <span>Retour en haut</span>
         <span aria-hidden="true">↑</span>
       </a>
@@ -77,43 +41,25 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
-  /* ========================================
-     FOOTER
-     ======================================== */
-
   .site-footer {
     position: relative;
-
     background: var(--color-ink);
     color: var(--color-ivory);
-
     border-top: 1px solid rgba(250, 247, 240, 0.1);
   }
 
   .site-footer__inner {
     width: min(calc(100% - 2rem), var(--content-max));
-
     margin-inline: auto;
-
     padding-top: clamp(3rem, 5vw, 4.5rem);
     padding-bottom: 2rem;
   }
 
-  /* ========================================
-     PARTIE HAUTE
-     ======================================== */
-
   .site-footer__top {
     display: grid;
-
     gap: 4rem;
-
     padding-bottom: clamp(4rem, 8vw, 7rem);
   }
-
-  /* ========================================
-     MARQUE
-     ======================================== */
 
   .site-footer__brand {
     max-width: 430px;
@@ -121,26 +67,20 @@ const year = new Date().getFullYear();
 
   .site-footer__logo {
     display: inline-block;
-
     width: 190px;
   }
 
   .site-footer__logo img {
     display: block;
-
     width: 100%;
     height: auto;
   }
 
   .site-footer__signature {
     margin-top: 2rem;
-
     font-family: var(--font-heading);
-
     font-size: clamp(2rem, 3vw, 3.3rem);
-
     line-height: 1;
-
     color: var(--color-ivory);
   }
 
@@ -148,15 +88,9 @@ const year = new Date().getFullYear();
     color: var(--color-coral);
   }
 
-  /* ========================================
-     NAVIGATION
-     ======================================== */
-
   .site-footer__nav {
     display: grid;
-
     align-content: start;
-
     gap: 0;
   }
 
@@ -164,15 +98,10 @@ const year = new Date().getFullYear();
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 2rem;
-
     padding-block: 1rem;
-
     border-bottom: 1px solid rgba(250, 247, 240, 0.14);
-
     font-size: 0.95rem;
-
     transition:
       color var(--transition-base),
       padding-left var(--transition-base);
@@ -184,14 +113,12 @@ const year = new Date().getFullYear();
 
   .site-footer__nav a span {
     color: var(--color-teal);
-
     transition: transform var(--transition-base);
   }
 
   .site-footer__nav a:hover,
   .site-footer__nav a:focus-visible {
     color: var(--color-teal);
-
     padding-left: 0.4rem;
   }
 
@@ -200,29 +127,19 @@ const year = new Date().getFullYear();
     transform: translateX(5px);
   }
 
-  /* ========================================
-     BAS DU FOOTER
-     ======================================== */
-
   .site-footer__bottom {
     display: flex;
     flex-direction: column;
-
     gap: 1.25rem;
-
     padding-top: 1.5rem;
-
     border-top: 1px solid rgba(250, 247, 240, 0.1);
-
     color: rgba(250, 247, 240, 0.58);
-
     font-size: 0.74rem;
   }
 
   .site-footer__legal {
     display: flex;
     flex-wrap: wrap;
-
     gap: 0.75rem 1.5rem;
   }
 
@@ -241,9 +158,7 @@ const year = new Date().getFullYear();
   .site-footer__back-top {
     display: inline-flex;
     align-items: center;
-
     gap: 0.6rem;
-
     width: fit-content;
   }
 
@@ -251,20 +166,13 @@ const year = new Date().getFullYear();
     color: var(--color-teal);
   }
 
-  /* ========================================
-     DESKTOP
-     ======================================== */
-
   @media (min-width: 768px) {
     .site-footer__inner {
       width: min(calc(100% - 4rem), var(--content-max));
     }
 
     .site-footer__top {
-      grid-template-columns:
-        minmax(0, 1.2fr)
-        minmax(300px, 0.8fr);
-
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
       gap: clamp(5rem, 12vw, 12rem);
     }
 
@@ -275,7 +183,6 @@ const year = new Date().getFullYear();
     .site-footer__bottom {
       flex-direction: row;
       align-items: center;
-
       gap: 2rem;
     }
 
@@ -288,10 +195,6 @@ const year = new Date().getFullYear();
     }
   }
 
-  /* ========================================
-     MOBILE
-     ======================================== */
-
   @media (max-width: 767px) {
     .site-footer__inner {
       padding-top: 3.5rem;
@@ -299,7 +202,6 @@ const year = new Date().getFullYear();
 
     .site-footer__top {
       gap: 3.5rem;
-
       padding-bottom: 4rem;
     }
 
@@ -309,9 +211,7 @@ const year = new Date().getFullYear();
 
     .site-footer__signature {
       max-width: 290px;
-
       margin-top: 1.5rem;
-
       font-size: 2.2rem;
     }
 
@@ -323,10 +223,6 @@ const year = new Date().getFullYear();
       padding-bottom: 0.5rem;
     }
   }
-
-  /* ========================================
-     ACCESSIBILITÉ
-     ======================================== */
 
   @media (prefers-reduced-motion: reduce) {
     .site-footer__nav a,
