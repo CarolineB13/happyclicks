@@ -1,0 +1,476 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Réalisations — Happyclicks"
+  description="Découvrez les réalisations Happyclicks : des sites web sur mesure pensés pour clarifier une offre, renforcer une présence en ligne et faciliter le parcours des clients."
+>
+  <main class="work-page">
+    <section class="work-hero">
+      <div class="work-hero__inner">
+        <p class="work-hero__eyebrow">Réalisations</p>
+
+        <h1 class="work-hero__title">
+          Des sites pensés pour<br />
+          <span>répondre à un vrai besoin<span class="work-hero__dot">.</span></span>
+        </h1>
+
+        <p class="work-hero__intro">
+          Chaque projet part d’un contexte différent. L’objectif n’est pas de
+          reproduire une recette, mais de construire un site cohérent avec
+          l’activité, les clients et ce qu’il faut réellement faciliter.
+        </p>
+      </div>
+    </section>
+
+    <section class="work-list" aria-label="Projets réalisés">
+      <div class="work-list__inner">
+        <article class="work-card work-card--poly">
+          <a
+            href="/realisations/polymaintenance"
+            class="work-card__visual"
+            aria-label="Découvrir le projet Polymaintenance"
+          >
+            <div class="browser-frame">
+              <picture>
+                <source
+                  srcset="/images/projects/polymaintenance-mobile.webp"
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="/images/projects/polymaintenance-desktop.webp"
+                  alt="Aperçu du site Polymaintenance"
+                />
+              </picture>
+            </div>
+          </a>
+
+          <div class="work-card__content">
+            <p class="work-card__meta">Industrie · Site vitrine & négoce</p>
+            <h2 class="work-card__title">Polymaintenance</h2>
+            <p class="work-card__text">
+              Une refonte complète pour clarifier les activités de l’entreprise,
+              donner davantage de place au négoce et proposer une expérience
+              plus actuelle sur ordinateur comme sur mobile.
+            </p>
+
+            <div class="work-card__tags" aria-label="Fonctionnalités principales">
+              <span>Catalogue matériel</span>
+              <span>Formation</span>
+              <span>Contact</span>
+              <span>SEO local</span>
+            </div>
+
+            <a href="/realisations/polymaintenance" class="work-card__link">
+              <span>Voir l’étude de cas</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="work-card work-card--beauty">
+          <a
+            href="https://www.appartbeauteinstitut.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-card__visual"
+            aria-label="Voir le site actuel Appart Beauté"
+          >
+            <div class="browser-frame">
+              <picture>
+                <source
+                  srcset="/images/projects/appart-beaute-current-mobile.webp"
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="/images/projects/appart-beaute-current-desktop.webp"
+                  alt="Aperçu du site actuel Appart Beauté"
+                />
+              </picture>
+            </div>
+          </a>
+
+          <div class="work-card__content">
+            <p class="work-card__meta">Beauté · Bien-être</p>
+            <h2 class="work-card__title">Appart Beauté</h2>
+            <p class="work-card__text">
+              Une première présence en ligne pour présenter l’institut, ses
+              prestations et faciliter la prise de rendez-vous. Le site fera
+              prochainement l’objet d’une refonte complète.
+            </p>
+
+            <div class="work-card__actions">
+              <a
+                href="https://www.appartbeauteinstitut.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="work-card__link"
+              >
+                <span>Voir le site actuel</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <span class="work-card__status">Refonte à venir</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-cta">
+      <div class="work-cta__inner">
+        <p class="work-cta__eyebrow">Votre projet</p>
+        <h2>
+          Vous avez besoin d’un site<br />
+          <span>pensé pour votre activité<span class="work-hero__dot">.</span></span>
+        </h2>
+        <p>
+          Parlez-moi de votre métier, de ce qui existe aujourd’hui et de ce que
+          vous aimeriez améliorer. Nous verrons ensemble la solution la plus
+          adaptée.
+        </p>
+        <a href="/contact" class="work-cta__button">
+          <span>Présenter mon projet</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .work-page {
+    overflow: hidden;
+  }
+
+  .work-hero {
+    background: var(--color-ivory);
+  }
+
+  .work-hero__inner,
+  .work-list__inner,
+  .work-cta__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+    margin-inline: auto;
+  }
+
+  .work-hero__inner {
+    padding-block: clamp(3.5rem, 7vw, 7rem) clamp(3rem, 5vw, 5rem);
+  }
+
+  .work-hero__eyebrow,
+  .work-cta__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .work-hero__title {
+    max-width: 980px;
+    font-size: clamp(3rem, 6vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .work-hero__title span,
+  .work-cta h2 span {
+    color: var(--color-teal);
+  }
+
+  .work-hero__dot {
+    color: var(--color-coral) !important;
+  }
+
+  .work-hero__intro {
+    max-width: 650px;
+    margin-top: 2rem;
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+    line-height: 1.75;
+  }
+
+  .work-list {
+    background: linear-gradient(
+      180deg,
+      rgba(229, 243, 241, 0.42),
+      rgba(250, 247, 240, 0.45)
+    );
+  }
+
+  .work-list__inner {
+    padding-block: clamp(3.5rem, 7vw, 7rem);
+  }
+
+  .work-card {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .work-card + .work-card {
+    margin-top: clamp(5rem, 10vw, 9rem);
+  }
+
+  .work-card__visual {
+    display: block;
+    min-width: 0;
+    color: inherit;
+  }
+
+  .browser-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 34px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(11, 37, 48, 0.12);
+    border-radius: 18px 18px 50px 18px;
+    box-shadow: 0 20px 50px rgba(11, 37, 48, 0.09);
+  }
+
+  .browser-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 34px;
+    background: var(--color-ivory);
+    border-bottom: 1px solid rgba(11, 37, 48, 0.08);
+  }
+
+  .browser-frame::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-coral);
+    box-shadow:
+      12px 0 0 rgba(15, 159, 143, 0.45),
+      24px 0 0 rgba(11, 37, 48, 0.18);
+  }
+
+  .browser-frame picture,
+  .browser-frame img {
+    display: block;
+    width: 100%;
+  }
+
+  .browser-frame img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+    transition: transform var(--transition-slow);
+  }
+
+  .work-card__visual:hover .browser-frame img,
+  .work-card__visual:focus-visible .browser-frame img {
+    transform: scale(1.012);
+  }
+
+  .work-card__meta {
+    margin-bottom: 0.75rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .work-card__title {
+    font-size: clamp(2.4rem, 4vw, 4.4rem);
+    line-height: 0.98;
+  }
+
+  .work-card__text {
+    max-width: 520px;
+    margin-top: 1.4rem;
+    line-height: 1.75;
+  }
+
+  .work-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.6rem;
+  }
+
+  .work-card__tags span,
+  .work-card__status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding-inline: 0.85rem;
+    background: rgba(15, 159, 143, 0.09);
+    border-radius: 999px;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .work-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.4rem;
+    margin-top: 1.8rem;
+  }
+
+  .work-card__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+    padding-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .work-card__actions .work-card__link {
+    margin-top: 0;
+  }
+
+  .work-card__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 72%;
+    height: 1px;
+    background: var(--color-teal);
+    transition: width var(--transition-base);
+  }
+
+  .work-card__link:hover::after,
+  .work-card__link:focus-visible::after {
+    width: 100%;
+  }
+
+  .work-card__link span:last-child {
+    color: var(--color-teal);
+  }
+
+  .work-cta {
+    background: var(--color-ink);
+    color: var(--color-ivory);
+  }
+
+  .work-cta__inner {
+    padding-block: clamp(5rem, 9vw, 8rem);
+  }
+
+  .work-cta h2 {
+    max-width: 900px;
+    font-size: clamp(2.8rem, 5vw, 5.4rem);
+    line-height: 0.97;
+    letter-spacing: -0.03em;
+  }
+
+  .work-cta__inner > p:not(.work-cta__eyebrow) {
+    max-width: 590px;
+    margin-top: 2rem;
+    color: rgba(250, 247, 240, 0.8);
+    line-height: 1.75;
+  }
+
+  .work-cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.25rem;
+    min-height: 54px;
+    padding: 0.9rem 1.55rem;
+    background: var(--color-coral);
+    border-radius: 999px 999px 999px 26px;
+    color: var(--color-ivory);
+    transition: transform var(--transition-base);
+  }
+
+  .work-cta__button:hover,
+  .work-cta__button:focus-visible {
+    transform: translateY(-3px);
+  }
+
+  @media (min-width: 768px) {
+    .work-hero__inner,
+    .work-list__inner,
+    .work-cta__inner {
+      width: min(calc(100% - 4rem), var(--content-max));
+    }
+
+    .work-card {
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      gap: clamp(3rem, 7vw, 6.5rem);
+    }
+
+    .work-card--beauty .work-card__visual {
+      order: 2;
+    }
+
+    .work-card--beauty .work-card__content {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .work-hero__inner {
+      padding-top: 2.75rem;
+    }
+
+    .work-hero__title {
+      font-size: clamp(2.9rem, 14vw, 4rem);
+    }
+
+    .browser-frame {
+      width: min(72%, 280px);
+      margin-inline: auto;
+      padding: 18px 7px 7px;
+      background: var(--color-ink);
+      border: 0;
+      border-radius: 32px;
+      box-shadow: 0 20px 42px rgba(11, 37, 48, 0.14);
+    }
+
+    .browser-frame::before {
+      top: 7px;
+      left: 50%;
+      right: auto;
+      width: 42px;
+      height: 4px;
+      background: rgba(250, 247, 240, 0.5);
+      border: 0;
+      border-radius: 999px;
+      transform: translateX(-50%);
+    }
+
+    .browser-frame::after {
+      display: none;
+    }
+
+    .browser-frame picture {
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .browser-frame img {
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 24px;
+    }
+
+    .work-card__actions {
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .browser-frame img,
+    .work-cta__button {
+      transition: none;
+    }
+  }
+</style>
