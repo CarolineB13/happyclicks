@@ -29,7 +29,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <p>201 rue Paul Vaufrey<br />83170 Brignoles — France</p>
           <p>
             Téléphone : <a href="tel:+33650354556">06 50 35 45 56</a><br />
-            E-mail :
+            E-mail :{" "}
             <a href="mailto:caroline.briois@happyclicks.fr">
               caroline.briois@happyclicks.fr
             </a>
@@ -61,7 +61,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             États-Unis
           </p>
           <p>
-            Contact :
+            Contact :{" "}
             <a href="mailto:support@netlify.com">support@netlify.com</a>
           </p>
         </article>
@@ -85,7 +85,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <h2>Données personnelles</h2>
           <p>
             Les informations relatives à la collecte et au traitement des
-            données personnelles sont détaillées dans la
+            données personnelles sont détaillées dans la{" "}
             <a href="/politique-de-confidentialite">politique de confidentialité</a>.
           </p>
         </article>
@@ -159,6 +159,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
   .legal-card p + p { margin-top: 1rem; }
   .legal-card a {
+    overflow-wrap: anywhere;
     color: var(--color-teal);
     text-decoration: underline;
     text-underline-offset: 0.18em;

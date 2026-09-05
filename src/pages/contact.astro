@@ -3,8 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Contact & devis site internet | Happyclicks"
-  description="Parlez-moi de votre projet de site internet : création, refonte, identité visuelle ou besoin sur mesure. Happyclicks travaille partout en France, depuis Brignoles et régulièrement en Ardèche."
+  title="Contact — Happyclicks"
+  description="Parlez-moi de votre projet web. Création de site, refonte, identité visuelle ou besoin sur mesure : Happyclicks vous accompagne de l’idée à la mise en ligne."
+  ogImage="/images/og/happyclicks-og.png"
+  ogImageAlt="Happyclicks — Création de sites web sur mesure"
 >
   <main class="contact-page">
     <section class="contact-hero">
@@ -14,10 +16,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="contact-hero__eyebrow">Votre projet</p>
         <h1 class="contact-hero__title">
           Parlez-moi de ce que<br />
-          <span
-            >vous voulez construire<span class="contact-hero__dot">.</span
-            ></span
-          >
+          <span>vous voulez construire<span class="contact-hero__dot">.</span></span>
         </h1>
         <p class="contact-hero__intro">
           Pas besoin d’avoir déjà un cahier des charges. Dites-moi où vous en
@@ -30,8 +29,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="contact-content">
       <div class="contact-content__inner">
         <div class="contact-form-wrap">
-          <p class="contact-content__eyebrow">Votre demande</p>
-          <h2>Quelques informations pour commencer.</h2>
+          <div class="contact-direct">
+            <p class="contact-content__eyebrow">Contact direct</p>
+            <h2>Vous préférez me contacter directement ?</h2>
+
+            <p class="contact-direct__identity">
+              <strong>Caroline Briois</strong><br />
+              Créatrice de Happyclicks
+            </p>
+
+            <div class="contact-direct__links">
+              <a href="tel:+33650354556" class="contact-direct__link">
+                <span>Téléphone</span>
+                <strong>06 50 35 45 56</strong>
+              </a>
+
+              <a
+                href="mailto:caroline.briois@happyclicks.fr"
+                class="contact-direct__link"
+              >
+                <span>E-mail</span>
+                <strong>caroline.briois@happyclicks.fr</strong>
+              </a>
+
+              <a
+                href="https://wa.me/33650354556"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-direct__link"
+              >
+                <span>WhatsApp</span>
+                <strong>Écrire un message</strong>
+              </a>
+            </div>
+
+            <p class="contact-direct__transition">
+              Ou, si vous préférez, utilisez le formulaire ci-dessous pour me
+              présenter votre projet en quelques lignes.
+            </p>
+          </div>
+
+          <div class="contact-form-intro">
+            <p class="contact-content__eyebrow">Votre demande</p>
+            <h2>Quelques informations pour commencer.</h2>
+          </div>
 
           <form
             class="contact-form"
@@ -131,7 +172,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p class="contact-form__privacy">
               Les informations envoyées sont utilisées uniquement pour répondre
               à votre demande et, le cas échéant, préparer une proposition ou un
-              devis. Les demandes sans suite sont conservées au maximum 12 mois.
+              devis. Les demandes sans suite sont conservées au maximum 12 mois.{" "}
               <a href="/politique-de-confidentialite">
                 En savoir plus sur la gestion de vos données.
               </a>
@@ -172,65 +213,69 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
   </main>
+</BaseLayout>
 
-  <script>
-    const contactForm =
-      document.querySelector<HTMLFormElement>(".contact-form");
+<script>
+  const contactForm = document.querySelector<HTMLFormElement>(".contact-form");
 
-    contactForm?.addEventListener("submit", async (event) => {
-      event.preventDefault();
+  contactForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-      if (!contactForm.reportValidity()) return;
+    if (!contactForm.reportValidity()) return;
 
-      const submitButton = contactForm.querySelector<HTMLButtonElement>(
-        ".contact-form__submit",
+    const submitButton =
+      contactForm.querySelector<HTMLButtonElement>(".contact-form__submit");
+    const originalContent = submitButton?.innerHTML;
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = "<span>Envoi en cours…</span>";
+    }
+
+    if (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1"
+    ) {
+      window.location.assign("/merci");
+      return;
+    }
+
+    try {
+      const formData = new FormData(contactForm);
+      const body = new URLSearchParams();
+
+      for (const [key, value] of formData.entries()) {
+        if (typeof value === "string") {
+          body.append(key, value);
+        }
+      }
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: body.toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erreur lors de l’envoi du formulaire.");
+      }
+
+      window.location.assign("/merci");
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Votre message n’a pas pu être envoyé. Merci de réessayer dans quelques instants."
       );
 
-      const originalContent = submitButton?.innerHTML;
-
       if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.innerHTML = "<span>Envoi en cours…</span>";
+        submitButton.disabled = false;
+        if (originalContent) submitButton.innerHTML = originalContent;
       }
-
-      try {
-        const formData = new FormData(contactForm);
-        const body = new URLSearchParams();
-
-        for (const [key, value] of formData.entries()) {
-          if (typeof value === "string") {
-            body.append(key, value);
-          }
-        }
-
-        const response = await fetch("/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: body.toString(),
-        });
-
-        if (!response.ok) {
-          throw new Error("Erreur lors de l’envoi du formulaire.");
-        }
-
-        window.location.href = "/merci";
-      } catch (error) {
-        console.error(error);
-
-        alert(
-          "Votre message n’a pas pu être envoyé. Merci de réessayer dans quelques instants.",
-        );
-
-        if (submitButton) {
-          submitButton.disabled = false;
-          if (originalContent) submitButton.innerHTML = originalContent;
-        }
-      }
-    });
-  </script>
-</BaseLayout>
+    }
+  });
+</script>
 
 <style>
   .contact-page {
@@ -298,9 +343,73 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .contact-form-wrap > h2,
+  .contact-form-intro h2,
+  .contact-direct h2,
   .contact-aside h2 {
     font-size: clamp(2.2rem, 3.6vw, 3.7rem);
     line-height: 1;
+  }
+
+  .contact-direct {
+    padding: clamp(1.6rem, 3vw, 2.5rem);
+    background: var(--color-ivory);
+    border: 1px solid rgba(11, 37, 48, 0.08);
+    border-radius: 22px 52px 22px 22px;
+    box-shadow: 0 16px 36px rgba(11, 37, 48, 0.05);
+  }
+
+  .contact-direct__identity {
+    margin-top: 1.4rem;
+    line-height: 1.65;
+  }
+
+  .contact-direct__links {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-direct__link {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.9rem 1rem;
+    background: var(--color-mist);
+    border-radius: 14px;
+    transition:
+      transform var(--transition-base),
+      background-color var(--transition-base);
+  }
+
+  .contact-direct__link span {
+    color: rgba(11, 37, 48, 0.65);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .contact-direct__link strong {
+    color: #087a71;
+    font-size: 0.95rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-direct__link:hover,
+  .contact-direct__link:focus-visible {
+    background: rgba(15, 159, 143, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .contact-direct__transition {
+    margin-top: 1.5rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid rgba(11, 37, 48, 0.09);
+    line-height: 1.7;
+  }
+
+  .contact-form-intro {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
   }
 
   .contact-form {
@@ -376,7 +485,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .contact-form__privacy a {
-    color: var(--color-teal);
+    color: #087a71;
     text-decoration: underline;
     text-underline-offset: 0.18em;
   }
@@ -391,7 +500,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     padding: 0.9rem 1.7rem;
     background: var(--color-coral);
     border-radius: 999px 999px 999px 28px;
-    color: var(--color-ivory);
+    color: var(--color-ink);
     transition:
       transform var(--transition-base),
       box-shadow var(--transition-base);
@@ -401,6 +510,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .contact-form__submit:focus-visible {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba(231, 100, 79, 0.2);
+  }
+
+  .contact-form__submit:disabled {
+    cursor: wait;
+    opacity: 0.72;
   }
 
   .contact-aside {
@@ -435,6 +549,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .contact-hero__inner,
     .contact-content__inner {
       width: min(calc(100% - 4rem), var(--content-max));
+    }
+
+    .contact-direct__links {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-direct__link:last-child {
+      grid-column: 1 / -1;
     }
 
     .contact-form__grid {

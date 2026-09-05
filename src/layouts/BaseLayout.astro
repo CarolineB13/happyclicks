@@ -1,13 +1,13 @@
 ---
-import "../styles/variables.css";
-import "../styles/typography.css";
-import "../styles/global.css";
-import "../styles/animations.css";
-
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/500.css";
 import "@fontsource/dm-sans/600.css";
 import "@fontsource/dm-serif-display/400.css";
+
+import "../styles/variables.css";
+import "../styles/typography.css";
+import "../styles/global.css";
+import "../styles/animations.css";
 
 import Header from "../components/navigation/Header.astro";
 import PageTabs from "../components/navigation/PageTabs.astro";
@@ -20,6 +20,8 @@ interface Props {
   description?: string;
   noindex?: boolean;
   ogType?: "website" | "article";
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
 const {
@@ -27,10 +29,13 @@ const {
   description = "Happyclicks crée des sites internet sur mesure pour TPE, artisans et indépendants : création, refonte, identité visuelle et accompagnement technique, partout en France.",
   noindex = false,
   ogType = "website",
+  ogImage = "/images/og/happyclicks-og.png",
+  ogImageAlt = "Happyclicks — Création de sites web sur mesure",
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL("https://happyclicks.fr");
 const canonicalUrl = new URL(Astro.url.pathname, siteOrigin);
+const ogImageUrl = new URL(ogImage, siteOrigin);
 const robotsContent = noindex ? "noindex, follow" : "index, follow";
 const isHomePage = Astro.url.pathname === "/";
 
@@ -88,6 +93,7 @@ const websiteSchema = {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="robots" content={robotsContent} />
+    <meta name="theme-color" content="#faf7f0" />
 
     <link rel="canonical" href={canonicalUrl} />
 
@@ -97,17 +103,23 @@ const websiteSchema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#faf7f0" />
 
     <title>{title}</title>
 
