@@ -46,7 +46,9 @@ const technicalItems = [
 
       <h2 class="pricing-section__title">
         Savoir où l’on va,<br />
-        <span>avant de commencer<span class="pricing-section__dot">.</span></span>
+        <span
+          >avant de commencer<span class="pricing-section__dot">.</span></span
+        >
       </h2>
 
       <p class="pricing-section__intro">
@@ -56,27 +58,29 @@ const technicalItems = [
     </header>
 
     <div class="pricing-section__grid">
-      {offers.map((offer) => (
-        <article class="pricing-card">
-          <div>
-            <h3 class="pricing-card__title">{offer.title}</h3>
-            <p class="pricing-card__subtitle">{offer.subtitle}</p>
-          </div>
+      {
+        offers.map((offer) => (
+          <article class="pricing-card">
+            <div>
+              <h3 class="pricing-card__title">{offer.title}</h3>
+              <p class="pricing-card__subtitle">{offer.subtitle}</p>
+            </div>
 
-          <p class="pricing-card__price">{offer.price}</p>
-          <p class="pricing-card__text">{offer.text}</p>
+            <p class="pricing-card__price">{offer.price}</p>
+            <p class="pricing-card__text">{offer.text}</p>
 
-          <div class="pricing-card__delay">
-            <span>Délai indicatif</span>
-            <strong>{offer.delay}</strong>
-          </div>
-        </article>
-      ))}
+            <div class="pricing-card__delay">
+              <span>Délai indicatif</span>
+              <strong>{offer.delay}</strong>
+            </div>
+          </article>
+        ))
+      }
     </div>
 
     <p class="pricing-section__extra">
       Besoin également d’une identité visuelle ou d’un logo ?
-      <strong>À partir de 350 €</strong>, selon le besoin.
+      <strong> À partir de 350 €</strong>, selon le besoin.
     </p>
 
     <div class="technical-block" aria-label="Nom de domaine et hébergement">
@@ -95,18 +99,20 @@ const technicalItems = [
       </header>
 
       <div class="technical-block__grid">
-        {technicalItems.map((item) => (
-          <article class="technical-card">
-            <h4 class="technical-card__title">{item.title}</h4>
-            <p class="technical-card__text">{item.text}</p>
-          </article>
-        ))}
+        {
+          technicalItems.map((item) => (
+            <article class="technical-card">
+              <h4 class="technical-card__title">{item.title}</h4>
+              <p class="technical-card__text">{item.text}</p>
+            </article>
+          ))
+        }
       </div>
 
       <p class="technical-block__note">
         Les frais de domaine et d’hébergement sont réglés séparément auprès du
-        prestataire choisi. Une gestion technique dans le temps peut être ajoutée
-        au devis si vous souhaitez que je m’en occupe pour vous.
+        prestataire choisi. Une gestion technique dans le temps peut être
+        ajoutée au devis si vous souhaitez que je m’en occupe pour vous.
       </p>
     </div>
 
@@ -138,7 +144,7 @@ const technicalItems = [
   .pricing-section__eyebrow,
   .technical-block__eyebrow {
     margin: 0 0 1rem;
-    color: var(--color-teal);
+    color: #087a71;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.09em;
@@ -152,11 +158,11 @@ const technicalItems = [
   }
 
   .pricing-section__title > span {
-    color: var(--color-teal);
+    color: #087a71;
   }
 
   .pricing-section__dot {
-    color: var(--color-coral);
+    color: #df604f;
   }
 
   .pricing-section__intro {
@@ -196,7 +202,7 @@ const technicalItems = [
 
   .pricing-card__price {
     margin-top: 1.4rem;
-    color: var(--color-teal);
+    color: #087a71;
     font-size: 1.05rem;
     font-weight: 600;
   }
@@ -217,14 +223,14 @@ const technicalItems = [
   }
 
   .pricing-card__delay span {
-    color: rgba(11, 37, 48, 0.58);
+    color: rgba(11, 37, 48, 0.68);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
 
   .pricing-card__delay strong {
-    color: var(--color-teal);
+    color: #087a71;
     font-size: 0.9rem;
   }
 
@@ -235,7 +241,7 @@ const technicalItems = [
   }
 
   .pricing-section__extra strong {
-    color: var(--color-teal);
+    color: #087a71;
   }
 
   /* ========================================
@@ -320,7 +326,7 @@ const technicalItems = [
 
   .pricing-section__note {
     margin-top: 1.25rem;
-    color: rgba(11, 37, 48, 0.58);
+    color: rgba(11, 37, 48, 0.68);
     font-size: 0.8rem;
     line-height: 1.6;
   }
@@ -348,6 +354,5 @@ const technicalItems = [
     .technical-block {
       border-radius: 20px 48px 20px 20px;
     }
-
   }
 </style>

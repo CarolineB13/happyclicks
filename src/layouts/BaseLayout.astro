@@ -4,6 +4,11 @@ import "../styles/typography.css";
 import "../styles/global.css";
 import "../styles/animations.css";
 
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
+import "@fontsource/dm-sans/600.css";
+import "@fontsource/dm-serif-display/400.css";
+
 import Header from "../components/navigation/Header.astro";
 import PageTabs from "../components/navigation/PageTabs.astro";
 import MobileMenu from "../components/navigation/MobileMenu.astro";
@@ -103,13 +108,6 @@ const websiteSchema = {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#faf7f0" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"
-      rel="stylesheet"
-    />
 
     <title>{title}</title>
 
