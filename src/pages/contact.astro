@@ -172,6 +172,64 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
   </main>
+
+  <script>
+    const contactForm =
+      document.querySelector<HTMLFormElement>(".contact-form");
+
+    contactForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) return;
+
+      const submitButton = contactForm.querySelector<HTMLButtonElement>(
+        ".contact-form__submit",
+      );
+
+      const originalContent = submitButton?.innerHTML;
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = "<span>Envoi en cours…</span>";
+      }
+
+      try {
+        const formData = new FormData(contactForm);
+        const body = new URLSearchParams();
+
+        for (const [key, value] of formData.entries()) {
+          if (typeof value === "string") {
+            body.append(key, value);
+          }
+        }
+
+        const response = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: body.toString(),
+        });
+
+        if (!response.ok) {
+          throw new Error("Erreur lors de l’envoi du formulaire.");
+        }
+
+        window.location.href = "/merci";
+      } catch (error) {
+        console.error(error);
+
+        alert(
+          "Votre message n’a pas pu être envoyé. Merci de réessayer dans quelques instants.",
+        );
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          if (originalContent) submitButton.innerHTML = originalContent;
+        }
+      }
+    });
+  </script>
 </BaseLayout>
 
 <style>
