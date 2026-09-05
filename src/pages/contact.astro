@@ -1,0 +1,424 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact & devis site internet | Happyclicks"
+  description="Parlez-moi de votre projet de site internet : création, refonte, identité visuelle ou besoin sur mesure. Happyclicks travaille partout en France, depuis Brignoles et régulièrement en Ardèche."
+>
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="contact-hero__inner">
+        <a class="contact-hero__back" href="/">← Retour à l’accueil</a>
+
+        <p class="contact-hero__eyebrow">Votre projet</p>
+        <h1 class="contact-hero__title">
+          Parlez-moi de ce que<br />
+          <span
+            >vous voulez construire<span class="contact-hero__dot">.</span
+            ></span
+          >
+        </h1>
+        <p class="contact-hero__intro">
+          Pas besoin d’avoir déjà un cahier des charges. Dites-moi où vous en
+          êtes, ce que vous aimeriez améliorer et ce que votre futur site doit
+          réellement vous permettre de faire.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="contact-content__inner">
+        <div class="contact-form-wrap">
+          <p class="contact-content__eyebrow">Votre demande</p>
+          <h2>Quelques informations pour commencer.</h2>
+
+          <form
+            class="contact-form"
+            name="contact"
+            method="POST"
+            action="/merci"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <p class="contact-form__honeypot" aria-hidden="true">
+              <label>
+                Ne pas remplir ce champ :
+                <input name="bot-field" tabindex="-1" autocomplete="off" />
+              </label>
+            </p>
+
+            <div class="contact-form__grid">
+              <label class="field">
+                <span>Nom *</span>
+                <input type="text" name="nom" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span>E-mail *</span>
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span>Téléphone</span>
+                <input type="tel" name="telephone" autocomplete="tel" />
+              </label>
+
+              <label class="field">
+                <span>Site actuel</span>
+                <input
+                  type="text"
+                  name="site-actuel"
+                  placeholder="exemple : happyclicks.fr"
+                  inputmode="url"
+                  autocomplete="url"
+                />
+              </label>
+
+              <label class="field field--wide">
+                <span>Votre besoin *</span>
+                <select name="besoin" required>
+                  <option value="">Choisir</option>
+                  <option>Site essentiel — 1 page</option>
+                  <option>Site vitrine — 3 à 5 pages</option>
+                  <option>Site sur mesure</option>
+                  <option>Refonte d’un site existant</option>
+                  <option>Identité visuelle / logo</option>
+                  <option>Je ne sais pas encore</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Budget envisagé</span>
+                <select name="budget">
+                  <option value="">À définir</option>
+                  <option>Moins de 1 000 €</option>
+                  <option>1 000 à 1 500 €</option>
+                  <option>1 500 à 2 500 €</option>
+                  <option>2 500 € et plus</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Quand aimeriez-vous démarrer ?</span>
+                <select name="delai">
+                  <option value="">Pas encore défini</option>
+                  <option>Dès que possible</option>
+                  <option>Dans le mois</option>
+                  <option>Dans 1 à 3 mois</option>
+                  <option>Plus tard</option>
+                </select>
+              </label>
+
+              <label class="field field--wide">
+                <span>Parlez-moi de votre projet *</span>
+                <textarea
+                  name="message"
+                  rows="7"
+                  required
+                  placeholder="Votre activité, ce qui existe déjà, ce que vous aimeriez changer, les fonctionnalités importantes…"
+                ></textarea>
+              </label>
+            </div>
+
+            <p class="contact-form__privacy">
+              Les informations envoyées sont utilisées uniquement pour répondre
+              à votre demande et, le cas échéant, préparer une proposition ou un
+              devis. Les demandes sans suite sont conservées au maximum 12 mois.
+              <a href="/politique-de-confidentialite">
+                En savoir plus sur la gestion de vos données.
+              </a>
+            </p>
+
+            <button class="contact-form__submit" type="submit">
+              <span>Envoyer ma demande</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+
+        <aside class="contact-aside">
+          <div class="contact-aside__card">
+            <p class="contact-aside__eyebrow">Pas besoin de tout savoir</p>
+            <h2>On peut partir d’une simple idée.</h2>
+            <p>
+              Si vous hésitez entre plusieurs formats ou si vous ne savez pas
+              encore combien de pages prévoir, expliquez-moi simplement votre
+              activité et votre objectif. Je vous aiderai à cadrer le besoin.
+            </p>
+          </div>
+
+          <div class="contact-aside__card contact-aside__card--location">
+            <p class="contact-aside__eyebrow">Où je travaille</p>
+            <h2>Brignoles, Ardèche… et partout en France.</h2>
+            <p>
+              Happyclicks est domicilié à Brignoles, dans le Var. Je travaille
+              principalement à distance avec des clients partout en France et je
+              suis régulièrement présente en Ardèche.
+            </p>
+            <p>
+              Les échanges peuvent se faire par e-mail, téléphone ou visio,
+              selon ce qui est le plus simple pour votre projet.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .contact-page {
+    background: var(--color-ivory);
+  }
+
+  .contact-hero__inner,
+  .contact-content__inner {
+    width: min(calc(100% - 2rem), var(--content-max));
+    margin-inline: auto;
+  }
+
+  .contact-hero__inner {
+    padding: clamp(2rem, 4vw, 4rem) 0 clamp(3rem, 6vw, 5rem);
+  }
+
+  .contact-hero__back {
+    display: inline-flex;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+    color: rgba(11, 37, 48, 0.65);
+    font-size: 0.9rem;
+  }
+
+  .contact-hero__eyebrow,
+  .contact-content__eyebrow,
+  .contact-aside__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .contact-hero__title {
+    max-width: 980px;
+    font-size: clamp(3.2rem, 6.2vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .contact-hero__title > span {
+    color: var(--color-teal);
+  }
+
+  .contact-hero__dot {
+    color: var(--color-coral);
+  }
+
+  .contact-hero__intro {
+    max-width: 690px;
+    margin-top: 2rem;
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+    line-height: 1.75;
+  }
+
+  .contact-content {
+    background: var(--color-mist);
+  }
+
+  .contact-content__inner {
+    display: grid;
+    gap: clamp(3rem, 7vw, 7rem);
+    padding: clamp(3.5rem, 7vw, 6rem) 0;
+  }
+
+  .contact-form-wrap > h2,
+  .contact-aside h2 {
+    font-size: clamp(2.2rem, 3.6vw, 3.7rem);
+    line-height: 1;
+  }
+
+  .contact-form {
+    margin-top: 2.5rem;
+  }
+
+  .contact-form__honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .contact-form__grid {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .field {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .field > span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    border: 1px solid rgba(11, 37, 48, 0.14);
+    border-radius: 14px;
+    background: rgba(250, 247, 240, 0.92);
+    color: var(--color-ink);
+    outline: none;
+    transition:
+      border-color var(--transition-base),
+      box-shadow var(--transition-base),
+      background-color var(--transition-base);
+  }
+
+  .field input,
+  .field select {
+    min-height: 54px;
+    padding: 0 1rem;
+  }
+
+  .field textarea {
+    min-height: 180px;
+    padding: 1rem;
+    resize: vertical;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: var(--color-teal);
+    background: var(--color-ivory);
+    box-shadow: 0 0 0 4px rgba(15, 159, 143, 0.1);
+  }
+
+  .contact-form__privacy {
+    max-width: 700px;
+    margin-top: 1.5rem;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(11, 37, 48, 0.68);
+  }
+
+  .contact-form__privacy a {
+    color: var(--color-teal);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .contact-form__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 58px;
+    margin-top: 2rem;
+    padding: 0.9rem 1.7rem;
+    background: var(--color-coral);
+    border-radius: 999px 999px 999px 28px;
+    color: var(--color-ivory);
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+
+  .contact-form__submit:hover,
+  .contact-form__submit:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(231, 100, 79, 0.2);
+  }
+
+  .contact-aside {
+    display: grid;
+    align-content: start;
+    gap: 1.5rem;
+  }
+
+  .contact-aside__card {
+    padding: clamp(1.6rem, 3vw, 2.5rem);
+    background: var(--color-ivory);
+    border: 1px solid rgba(11, 37, 48, 0.08);
+    border-radius: 22px 52px 22px 22px;
+    box-shadow: 0 16px 36px rgba(11, 37, 48, 0.05);
+  }
+
+  .contact-aside__card--location {
+    background: var(--color-ink);
+    color: var(--color-ivory);
+  }
+
+  .contact-aside__card p:not(.contact-aside__eyebrow) {
+    margin-top: 1.3rem;
+    line-height: 1.75;
+  }
+
+  .contact-aside__card--location p:not(.contact-aside__eyebrow) {
+    color: rgba(250, 247, 240, 0.78);
+  }
+
+  @media (min-width: 768px) {
+    .contact-hero__inner,
+    .contact-content__inner {
+      width: min(calc(100% - 4rem), var(--content-max));
+    }
+
+    .contact-form__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field--wide {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .contact-hero__inner,
+    .contact-content__inner {
+      padding-right: 74px;
+    }
+
+    .contact-content__inner {
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .contact-hero__inner {
+      padding-top: 1rem;
+      padding-bottom: 3.25rem;
+    }
+
+    .contact-hero__back {
+      margin-bottom: 3rem;
+    }
+
+    .contact-hero__title {
+      font-size: clamp(2.85rem, 13vw, 4rem);
+    }
+
+    .contact-content__inner {
+      padding: 3.5rem 0;
+    }
+
+    .contact-form__submit {
+      width: 100%;
+    }
+  }
+</style>

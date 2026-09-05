@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Merci — Happyclicks"
+  description="Votre demande a bien été envoyée à Happyclicks."
+  noindex={true}
+>
+  <main class="thanks-page">
+    <div class="thanks-page__inner">
+      <p class="thanks-page__eyebrow">Message envoyé</p>
+      <h1>
+        Merci pour votre<br />
+        <span>message<span>.</span></span>
+      </h1>
+      <p>
+        Votre demande a bien été transmise. Je prendrai le temps de la lire et
+        de revenir vers vous personnellement.
+      </p>
+      <a href="/">
+        <span>Retour à l’accueil</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .thanks-page {
+    display: grid;
+    min-height: 70vh;
+    place-items: center;
+    background: var(--color-mist);
+  }
+
+  .thanks-page__inner {
+    width: min(calc(100% - 2rem), 900px);
+    padding: clamp(4rem, 9vw, 8rem) 0;
+  }
+
+  .thanks-page__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .thanks-page h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+  }
+
+  .thanks-page h1 > span {
+    color: var(--color-teal);
+  }
+
+  .thanks-page h1 > span > span {
+    color: var(--color-coral);
+  }
+
+  .thanks-page p:not(.thanks-page__eyebrow) {
+    max-width: 580px;
+    margin-top: 2rem;
+    line-height: 1.75;
+  }
+
+  .thanks-page a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .thanks-page a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 75%;
+    height: 1px;
+    background: var(--color-teal);
+  }
+</style>

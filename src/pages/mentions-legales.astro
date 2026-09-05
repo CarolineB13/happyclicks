@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Mentions légales — Happyclicks"
+  description="Mentions légales du site Happyclicks."
+  noindex={true}
+>
+  <main class="legal-page">
+    <section class="legal-hero">
+      <div class="legal-shell">
+        <a class="legal-back" href="/">← Retour à l’accueil</a>
+        <p class="legal-eyebrow">Informations légales</p>
+        <h1>Mentions légales<span>.</span></h1>
+        <p class="legal-intro">
+          Informations relatives à l’éditeur, à la publication et à
+          l’hébergement du site Happyclicks.
+        </p>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="legal-shell legal-grid">
+        <article class="legal-card">
+          <h2>Éditeur du site</h2>
+          <p><strong>Happyclicks</strong> — nom commercial</p>
+          <p>Caroline Briois — Entrepreneur individuel (EI)</p>
+          <p>201 rue Paul Vaufrey<br />83170 Brignoles — France</p>
+          <p>
+            Téléphone : <a href="tel:+33650354556">06 50 35 45 56</a><br />
+            E-mail :
+            <a href="mailto:caroline.briois@happyclicks.fr">
+              caroline.briois@happyclicks.fr
+            </a>
+          </p>
+          <p>
+            SIREN : 935 378 562<br />
+            SIRET : 935 378 562 00026<br />
+            RCS : Draguignan<br />
+            Code APE : 6201Z — Programmation informatique<br />
+            TVA intracommunautaire : FR00 935378562
+          </p>
+        </article>
+
+        <article class="legal-card">
+          <h2>Direction de la publication</h2>
+          <p>
+            La directrice de la publication est <strong>Caroline Briois</strong>,
+            en qualité d’entrepreneure individuelle exploitant Happyclicks.
+          </p>
+        </article>
+
+        <article class="legal-card">
+          <h2>Hébergement</h2>
+          <p>
+            Le site est hébergé par :<br />
+            <strong>Netlify, Inc.</strong><br />
+            101 2nd Street<br />
+            San Francisco, CA 94105<br />
+            États-Unis
+          </p>
+          <p>
+            Contact :
+            <a href="mailto:support@netlify.com">support@netlify.com</a>
+          </p>
+        </article>
+
+        <article class="legal-card">
+          <h2>Propriété intellectuelle</h2>
+          <p>
+            Sauf mention contraire, les textes, éléments graphiques, logos,
+            mises en page, créations et contenus présents sur ce site sont la
+            propriété de Happyclicks ou sont utilisés avec l’autorisation de
+            leurs titulaires.
+          </p>
+          <p>
+            Toute reproduction, représentation, adaptation ou exploitation,
+            totale ou partielle, sans autorisation préalable écrite est
+            interdite, sous réserve des exceptions prévues par la loi.
+          </p>
+        </article>
+
+        <article class="legal-card">
+          <h2>Données personnelles</h2>
+          <p>
+            Les informations relatives à la collecte et au traitement des
+            données personnelles sont détaillées dans la
+            <a href="/politique-de-confidentialite">politique de confidentialité</a>.
+          </p>
+        </article>
+
+        <article class="legal-card">
+          <h2>Liens externes</h2>
+          <p>
+            Le site peut contenir des liens vers des sites tiers. Happyclicks
+            n’exerce aucun contrôle sur leur contenu ou leurs pratiques et ne
+            peut être tenu responsable de leur disponibilité ou de leur
+            fonctionnement.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .legal-page { background: var(--color-ivory); }
+  .legal-shell {
+    width: min(calc(100% - 2rem), 1000px);
+    margin-inline: auto;
+  }
+  .legal-hero { padding: clamp(2rem, 5vw, 5rem) 0 clamp(3rem, 6vw, 5rem); }
+  .legal-back {
+    display: inline-flex;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    color: rgba(11, 37, 48, 0.62);
+    font-size: 0.9rem;
+  }
+  .legal-eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.96;
+  }
+  h1 span { color: var(--color-coral); }
+  .legal-intro {
+    max-width: 650px;
+    margin-top: 1.75rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .legal-content {
+    padding: clamp(3rem, 6vw, 6rem) 0;
+    background: var(--color-mist);
+  }
+  .legal-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .legal-card {
+    padding: clamp(1.5rem, 3vw, 2.4rem);
+    background: var(--color-ivory);
+    border: 1px solid rgba(11, 37, 48, 0.08);
+    border-radius: 20px 48px 20px 20px;
+  }
+  .legal-card h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 1.2rem;
+  }
+  .legal-card p {
+    line-height: 1.75;
+  }
+  .legal-card p + p { margin-top: 1rem; }
+  .legal-card a {
+    color: var(--color-teal);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+  @media (min-width: 768px) {
+    .legal-shell { width: min(calc(100% - 4rem), 1000px); }
+    .legal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1024px) {
+    .legal-shell { padding-right: 72px; }
+  }
+</style>

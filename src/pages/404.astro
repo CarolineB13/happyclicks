@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page introuvable | Happyclicks"
+  description="Cette page n’existe pas ou a été déplacée. Retrouvez les pages principales de Happyclicks."
+  noindex={true}
+>
+  <main class="not-found">
+    <div class="not-found__inner">
+      <p class="not-found__eyebrow">Erreur 404</p>
+      <h1 class="not-found__title">
+        Cette page a pris<br />
+        <span>un autre chemin<span class="not-found__dot">.</span></span>
+      </h1>
+      <p class="not-found__text">
+        L’adresse saisie n’existe pas, ou la page a été déplacée. Vous pouvez
+        revenir à l’accueil ou découvrir une sélection de réalisations.
+      </p>
+      <div class="not-found__actions">
+        <a class="not-found__primary" href="/">
+          <span>Retour à l’accueil</span><span aria-hidden="true">→</span>
+        </a>
+        <a class="not-found__secondary" href="/realisations">
+          <span>Voir les réalisations</span><span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: grid;
+    min-height: 68vh;
+    place-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(15, 159, 143, 0.09), transparent 34%),
+      var(--color-ivory);
+  }
+  .not-found__inner {
+    width: min(calc(100% - 2rem), 960px);
+    margin-inline: auto;
+    padding-block: clamp(4rem, 9vw, 8rem);
+  }
+  .not-found__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--color-teal);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+  .not-found__title {
+    max-width: 900px;
+    font-size: clamp(3rem, 7vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .not-found__title > span { color: var(--color-teal); }
+  .not-found__dot { color: var(--color-coral); }
+  .not-found__text {
+    max-width: 620px;
+    margin-top: 2rem;
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+    line-height: 1.7;
+  }
+  .not-found__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 2rem;
+    margin-top: 2rem;
+  }
+  .not-found__primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 54px;
+    padding: 0.85rem 1.55rem;
+    background: var(--color-coral);
+    border-radius: 999px 999px 999px 26px;
+    color: var(--color-ivory);
+    transition: transform var(--transition-base);
+  }
+  .not-found__secondary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding-bottom: 0.35rem;
+  }
+  .not-found__secondary::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--color-teal);
+  }
+  .not-found__primary:hover,
+  .not-found__primary:focus-visible { transform: translateY(-3px); }
+  @media (max-width: 767px) {
+    .not-found { min-height: 72vh; }
+    .not-found__inner { padding-block: 4rem; }
+    .not-found__title { font-size: clamp(2.8rem, 13vw, 4rem); }
+    .not-found__actions { align-items: stretch; flex-direction: column; }
+    .not-found__primary { justify-content: space-between; width: 100%; }
+    .not-found__secondary { width: fit-content; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .not-found__primary { transition: none; }
+  }
+</style>

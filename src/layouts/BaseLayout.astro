@@ -13,12 +13,67 @@ import WhatsAppButton from "../components/ui/WhatsAppButton.astro";
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
+  ogType?: "website" | "article";
 }
 
 const {
-  title = "Happyclicks — Création de sites web sur mesure",
-  description = "Happyclicks crée des sites web sur mesure, élégants et pensés pour être réellement utiles à votre activité : visibilité, confiance et prise de contact.",
+  title = "Création de site internet sur mesure | Happyclicks",
+  description = "Happyclicks crée des sites internet sur mesure pour TPE, artisans et indépendants : création, refonte, identité visuelle et accompagnement technique, partout en France.",
+  noindex = false,
+  ogType = "website",
 } = Astro.props;
+
+const siteOrigin = Astro.site ?? new URL("https://happyclicks.fr");
+const canonicalUrl = new URL(Astro.url.pathname, siteOrigin);
+const robotsContent = noindex ? "noindex, follow" : "index, follow";
+const isHomePage = Astro.url.pathname === "/";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Happyclicks",
+  legalName: "Caroline Briois — Entrepreneur individuel",
+  url: "https://happyclicks.fr/",
+  logo: "https://happyclicks.fr/images/brand/happyclicks-logo-color.svg",
+  email: "mailto:caroline.briois@happyclicks.fr",
+  telephone: "+33650354556",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "201 rue Paul Vaufrey",
+    postalCode: "83170",
+    addressLocality: "Brignoles",
+    addressCountry: "FR",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "France",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Caroline Briois",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+33650354556",
+    email: "caroline.briois@happyclicks.fr",
+    contactType: "customer service",
+    availableLanguage: "fr",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Happyclicks",
+  url: "https://happyclicks.fr/",
+  inLanguage: "fr-FR",
+  publisher: {
+    "@type": "Organization",
+    name: "Happyclicks",
+    url: "https://happyclicks.fr/",
+  },
+};
 ---
 
 <!doctype html>
@@ -27,6 +82,21 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="robots" content={robotsContent} />
+    <meta name="theme-color" content="#0b2530" />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Happyclicks" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +106,15 @@ const {
     />
 
     <title>{title}</title>
+
+    {
+      isHomePage && (
+        <>
+          <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+          <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+        </>
+      )
+    }
   </head>
 
   <body id="top">
