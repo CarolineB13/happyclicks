@@ -2,19 +2,19 @@
 const currentPath = Astro.url.pathname;
 
 const items = [
-  { label: "Réalisations", href: "/realisations", icon: "projects" },
+  { label: "Réalisations", href: "/realisations/", icon: "projects" },
   { label: "Services", href: "/#services", icon: "services" },
   { label: "Tarifs", href: "/#tarifs", icon: "pricing" },
   { label: "À propos", href: "/#a-propos", icon: "about" },
-  { label: "Contact", href: "/contact", icon: "contact" },
+  { label: "Contact", href: "/contact/", icon: "contact" },
 ];
 ---
 
 <nav class="page-tabs" aria-label="Navigation principale">
   {items.map((item) => {
     const isActive =
-      (item.href === "/contact" && currentPath === "/contact") ||
-      (item.href === "/realisations" && currentPath.startsWith("/realisations"));
+      (item.href === "/contact/" && currentPath === "/contact/") ||
+      (item.href === "/realisations/" && currentPath.startsWith("/realisations"));
 
     return (
       <a

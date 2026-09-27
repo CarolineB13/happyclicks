@@ -1,20 +1,21 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectPreview from "../../components/ui/ProjectPreview.astro";
 ---
 
 <BaseLayout
   title="Refonte de site industriel : Polymaintenance | Happyclicks"
-  description="Découvrez la refonte du site internet de Polymaintenance : architecture clarifiée, négoce mieux mis en avant, catalogue matériel, responsive et SEO local."
+  description="Découvrez la refonte du site Polymaintenance : architecture clarifiée, négoce, SEO local et espace d’administration privé pour gérer les annonces de matériel sur ordinateur ou téléphone."
 >
   <main class="case-page">
     <section class="case-hero">
       <div class="case-hero__inner">
-        <a href="/realisations" class="case-back">
+        <a href="/realisations/" class="case-back">
           <span aria-hidden="true">←</span>
           <span>Toutes les réalisations</span>
         </a>
 
-        <p class="case-hero__eyebrow">Étude de cas · Industrie</p>
+        <p class="case-hero__eyebrow">Projet client · Industrie</p>
 
         <h1 class="case-hero__title">
           Polymaintenance<span class="case-dot">.</span>
@@ -30,27 +31,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <span>Site vitrine</span>
           <span>Négoce</span>
           <span>Catalogue matériel</span>
+          <span>Admin annonces mobile</span>
           <span>Responsive</span>
           <span>SEO local</span>
         </div>
+
+        <a class="case-live-link" href="https://polymaintenance.fr/" target="_blank" rel="noopener noreferrer">
+          <span>Voir le site en ligne</span>
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
     <section class="case-showcase" aria-label="Aperçus du site Polymaintenance">
       <div class="case-showcase__inner">
-        <div class="desktop-frame">
-          <img
-            src="/images/projects/polymaintenance-desktop.webp"
-            alt="Version ordinateur du site Polymaintenance"
-          />
-        </div>
-
-        <div class="phone-frame">
-          <img
-            src="/images/projects/polymaintenance-mobile.webp"
-            alt="Version mobile du site Polymaintenance"
-          />
-        </div>
+        <ProjectPreview
+              desktopImages={[
+                "/images/projects/carousel/polymaintenance/desktop-1.webp",
+                "/images/projects/carousel/polymaintenance/desktop-2.webp",
+                "/images/projects/carousel/polymaintenance/desktop-3.webp",
+              ]}
+              mobileImages={[
+                "/images/projects/carousel/polymaintenance/mobile-1.webp",
+                "/images/projects/carousel/polymaintenance/mobile-2.webp",
+                "/images/projects/carousel/polymaintenance/mobile-3.webp",
+              ]}
+              label="Aperçus du site Polymaintenance sur ordinateur et téléphone"
+              eager={true}
+            />
       </div>
     </section>
 
@@ -125,10 +133,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </article>
 
           <article>
-            <h3>Contact</h3>
+            <h3>Administration des annonces</h3>
             <p>
-              Des appels à l’action plus visibles et des parcours conçus pour
-              faciliter la prise de contact et les demandes d’information.
+              Un espace privé et sécurisé permet d’ajouter, modifier, passer en
+              vendu ou supprimer une annonce, avec photo, description, prix et
+              catégorie. L’interface est pensée pour être utilisée aussi depuis
+              un téléphone, directement sur le terrain.
             </p>
           </article>
 
@@ -161,9 +171,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             l’intéressent.
           </p>
           <p>
-            Le projet a aussi été conçu pour pouvoir évoluer : nouvelles
-            annonces, nouvelles prestations ou nouveaux contenus peuvent être
-            intégrés sans remettre en cause toute la structure.
+            Le projet a aussi été conçu pour rendre l’entreprise autonome : les
+            annonces de matériel peuvent être créées et mises à jour depuis
+            l’espace d’administration, sans avoir à modifier le code du site.
           </p>
         </div>
       </div>
@@ -180,7 +190,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           Refonte, nouvelle activité, offre devenue difficile à présenter :
           parlons de ce que votre site doit réellement permettre aujourd’hui.
         </p>
-        <a href="/contact" class="case-next__button">
+        <a href="/contact/" class="case-next__button">
           <span>Parler de mon projet</span>
           <span aria-hidden="true">→</span>
         </a>
@@ -275,6 +285,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     color: var(--color-teal);
     font-size: 0.72rem;
     font-weight: 600;
+  }
+
+  .case-live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 1.35rem;
+    color: var(--color-teal);
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-style: italic;
   }
 
   /* SHOWCASE */

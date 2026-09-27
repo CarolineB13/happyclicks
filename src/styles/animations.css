@@ -1,0 +1,95 @@
+/* ========================================
+   MOTION SYSTEM — Happyclicks
+   Animations sobres, progressives et accessibles.
+   ======================================== */
+
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 420ms;
+  --motion-base: 720ms;
+  --motion-slow: 900ms;
+}
+
+/* Les éléments restent parfaitement visibles sans JavaScript. */
+.reveal-target {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity var(--motion-base) var(--motion-ease),
+    transform var(--motion-base) var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-target.reveal-from-left {
+  transform: translate3d(-26px, 0, 0);
+}
+
+.reveal-target.reveal-from-right {
+  transform: translate3d(26px, 0, 0);
+}
+
+.reveal-target.reveal-scale {
+  transform: translate3d(0, 18px, 0) scale(0.975);
+}
+
+.reveal-target.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
+}
+
+/* Entrée douce de la page, sans masquer le contenu. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.motion-ready main {
+  animation: page-enter 560ms var(--motion-ease) both;
+}
+
+/* Micro-interactions globales. */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:not(.project__visual):not(.site-header__logo),
+  button {
+    transition:
+      transform var(--motion-fast) var(--motion-ease),
+      opacity var(--motion-fast) var(--motion-ease),
+      box-shadow var(--motion-fast) var(--motion-ease),
+      background-color var(--motion-fast) var(--motion-ease),
+      color var(--motion-fast) var(--motion-ease);
+  }
+}
+
+/* Le mouvement est désactivé pour les visiteurs qui le demandent. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .reveal-target,
+  .reveal-target.reveal-from-left,
+  .reveal-target.reveal-from-right,
+  .reveal-target.reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

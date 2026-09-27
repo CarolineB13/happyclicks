@@ -1,108 +1,172 @@
+---
+import ProjectPreview from "../ui/ProjectPreview.astro";
+---
+
 <section class="projects-section" id="realisations">
   <div class="projects-section__inner">
     <header class="projects-section__header">
-      <p class="projects-section__eyebrow">Une sélection de réalisations</p>
+      <p class="projects-section__eyebrow">Des projets réellement sur mesure</p>
 
       <h2 class="projects-section__title">
-        Des besoins différents.<br />
+        Chaque site part<br />
         <span>
-          Des solutions sur mesure<span class="projects-section__dot">.</span>
+          d’une page blanche<span class="projects-section__dot">.</span>
         </span>
       </h2>
 
       <p class="projects-section__intro">
-        Quelques projets choisis pour montrer des besoins et des approches
-        différents. Chaque site est pensé selon l’activité, le public et
-        l’objectif à atteindre.
+        Je conçois la structure, l’univers graphique et le développement pour
+        chaque projet. Les aperçus ci-dessous permettent de parcourir plusieurs vues de
+        chaque projet, sur ordinateur comme sur mobile.
       </p>
     </header>
 
     <article class="project project--featured">
       <a
-        href="/realisations/polymaintenance"
-        class="project__visual project__visual--polymaintenance"
+        href="/realisations/polymaintenance/"
+        class="project__visual"
         aria-label="Découvrir le projet Polymaintenance"
       >
-        <div class="project__device">
-          <picture class="project__picture">
-            <source
-              srcset="/images/projects/polymaintenance-mobile.webp"
-              media="(max-width: 767px)"
+        <ProjectPreview
+              desktopImages={[
+                "/images/projects/carousel/polymaintenance/desktop-1.webp",
+                "/images/projects/carousel/polymaintenance/desktop-2.webp",
+                "/images/projects/carousel/polymaintenance/desktop-3.webp",
+              ]}
+              mobileImages={[
+                "/images/projects/carousel/polymaintenance/mobile-1.webp",
+                "/images/projects/carousel/polymaintenance/mobile-2.webp",
+                "/images/projects/carousel/polymaintenance/mobile-3.webp",
+              ]}
+              label="Aperçus du site Polymaintenance sur ordinateur et téléphone"
+              eager={true}
             />
-            <img
-              class="project__image"
-              src="/images/projects/polymaintenance-desktop.webp"
-              alt="Aperçu du site Polymaintenance"
-            />
-          </picture>
-        </div>
       </a>
 
       <div class="project__content">
         <p class="project__type">Industrie · Site vitrine & négoce</p>
         <h3 class="project__title">Polymaintenance</h3>
         <p class="project__description">
-          Repenser un site industriel pour rendre l’offre plus claire, renforcer
-          la place du négoce et donner à l’entreprise une présence en ligne plus
-          actuelle, tout en restant fidèle à son identité.
+          Refonte complète d’un site industriel : nouvelle architecture,
+          identité modernisée, référencement local et espace d’administration
+          privé pour gérer les annonces de matériel directement depuis un téléphone.
         </p>
-        <a href="/realisations/polymaintenance" class="project__link">
-          <span>Découvrir le projet</span>
-          <span aria-hidden="true">→</span>
-        </a>
+        <div class="project__actions">
+          <a href="/realisations/polymaintenance/" class="project__link">
+            <span>Découvrir le projet</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href="https://polymaintenance.fr/"
+            class="project__link project__link--external"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Voir le site en ligne</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </article>
 
-    <article class="project project--beauty">
+    <article class="project project--wedding">
       <a
-        href="https://www.appartbeauteinstitut.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="project__visual project__visual--beauty"
-        aria-label="Voir le site actuel d’Appart Beauté"
+        href="/realisations/anais-glen/"
+        class="project__visual"
+        aria-label="Découvrir le projet Anaïs & Glen"
       >
-        <div class="project__device">
-          <picture class="project__picture">
-            <source
-              srcset="/images/projects/appart-beaute-current-mobile.webp"
-              media="(max-width: 767px)"
+        <ProjectPreview
+              desktopImages={[
+                "/images/projects/carousel/anais-glen/desktop-1.webp",
+                "/images/projects/carousel/anais-glen/desktop-2.webp",
+                "/images/projects/carousel/anais-glen/desktop-3.webp",
+              ]}
+              mobileImages={[
+                "/images/projects/carousel/anais-glen/mobile-1.webp",
+                "/images/projects/carousel/anais-glen/mobile-2.webp",
+                "/images/projects/carousel/anais-glen/mobile-3.webp",
+              ]}
+              label="Aperçus du site de mariage Anaïs & Glen sur ordinateur et téléphone"
             />
-            <img
-              class="project__image"
-              src="/images/projects/appart-beaute-current-desktop.webp"
-              alt="Aperçu du site actuel Appart Beauté"
-            />
-          </picture>
-        </div>
       </a>
 
       <div class="project__content">
-        <p class="project__type">Beauté · Bien-être</p>
-        <h3 class="project__title">Appart Beauté</h3>
+        <p class="project__type">Événementiel · Site de mariage</p>
+        <h3 class="project__title">Anaïs & Glen</h3>
         <p class="project__description">
-          Une première présence en ligne pour présenter l’institut, ses
-          prestations et faciliter la prise de rendez-vous. Une refonte est
-          prévue pour moderniser l’expérience et faire évoluer l’identité
-          visuelle.
+          Un site conçu à l’origine pour un vrai mariage : univers graphique
+          sur mesure, compte à rebours jusqu’au jour J, programme, informations
+          pratiques, dress code, RSVP et expérience mobile soignée.
         </p>
         <div class="project__actions">
+          <a href="/realisations/anais-glen/" class="project__link">
+            <span>Découvrir le projet</span>
+            <span aria-hidden="true">→</span>
+          </a>
           <a
-            href="https://www.appartbeauteinstitut.com/"
+            href="https://anais-et-glen.fr/"
+            class="project__link project__link--external"
             target="_blank"
             rel="noopener noreferrer"
-            class="project__link"
           >
-            <span>Voir le site actuel</span>
+            <span>Voir le site en ligne</span>
             <span aria-hidden="true">↗</span>
           </a>
-          <span class="project__status">Refonte à venir</span>
         </div>
+      </div>
+    </article>
+
+    <article class="project project--beauty project--in-progress">
+      <a
+        href="/realisations/appart-beaute/"
+        class="project__visual"
+        aria-label="Découvrir le projet Appart & Beauté"
+      >
+        <ProjectPreview
+              desktopImages={[
+                "/images/projects/carousel/appart-beaute/desktop-1.webp",
+                "/images/projects/carousel/appart-beaute/desktop-2.webp",
+                "/images/projects/carousel/appart-beaute/desktop-3.webp",
+              ]}
+              mobileImages={[
+                "/images/projects/carousel/appart-beaute/mobile-1.webp",
+                "/images/projects/carousel/appart-beaute/mobile-2.webp",
+                "/images/projects/carousel/appart-beaute/mobile-3.webp",
+              ]}
+              label="Aperçus du site Appart & Beauté sur ordinateur et téléphone"
+            />
+      </a>
+
+      <div class="project__content">
+        <p class="project__type">Beauté · Refonte en cours</p>
+        <h3 class="project__title">Appart & Beauté</h3>
+        <p class="project__description">
+          Refonte complète d’un institut de beauté : nouvelle direction
+          artistique, mobile first, mise en avant du Lash Lift Coréen et du
+          Browlift, réservation Planity et travail du SEO local.
+        </p>
+        <div class="project__actions">
+          <a href="/realisations/appart-beaute/" class="project__link">
+            <span>Découvrir le projet</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href="https://www.appartbeauteinstitut.com/"
+            class="project__link project__link--external"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Voir le site en ligne</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <span class="project__status">Projet en cours de finalisation</span>
       </div>
     </article>
 
     <div class="projects-section__footer">
-      <a href="/realisations" class="projects-section__all">
-        <span>Découvrir la sélection</span>
+      <a href="/realisations/" class="projects-section__all">
+        <span>Voir toutes les réalisations</span>
         <span aria-hidden="true">→</span>
       </a>
     </div>
@@ -151,7 +215,7 @@
   }
 
   .projects-section__intro {
-    max-width: 610px;
+    max-width: 660px;
     margin-top: 1.7rem;
     font-size: 1.02rem;
     line-height: 1.7;
@@ -161,72 +225,17 @@
     display: grid;
     gap: 2.5rem;
     min-width: 0;
+    align-items: center;
   }
 
   .project + .project {
-    margin-top: clamp(4rem, 6vw, 6rem);
+    margin-top: clamp(4.5rem, 8vw, 8rem);
   }
 
   .project__visual {
-    position: relative;
     display: block;
     min-width: 0;
-    overflow: visible;
     color: inherit;
-  }
-
-  .project__device {
-    position: relative;
-    width: 100%;
-    padding-top: 34px;
-    overflow: hidden;
-    background: #fff;
-    border: 1px solid rgba(11, 37, 48, 0.12);
-    border-radius: 18px 18px 50px 18px;
-    box-shadow: 0 20px 50px rgba(11, 37, 48, 0.09);
-  }
-
-  .project__device::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 34px;
-    background: var(--color-ivory);
-    border-bottom: 1px solid rgba(11, 37, 48, 0.08);
-  }
-
-  .project__device::after {
-    content: "";
-    position: absolute;
-    top: 14px;
-    left: 16px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-coral);
-    box-shadow:
-      12px 0 0 rgba(15, 159, 143, 0.45),
-      24px 0 0 rgba(11, 37, 48, 0.18);
-  }
-
-  .project__picture,
-  .project__image {
-    display: block;
-    width: 100%;
-  }
-
-  .project__image {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: top;
-    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .project__visual:hover .project__image,
-  .project__visual:focus-visible .project__image {
-    transform: scale(1.012);
   }
 
   .project__content {
@@ -248,7 +257,7 @@
   }
 
   .project__description {
-    max-width: 480px;
+    max-width: 500px;
     margin-top: 1.3rem;
     line-height: 1.7;
   }
@@ -256,14 +265,51 @@
   .project__actions {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem 1.5rem;
+    gap: 0.65rem 1.4rem;
     margin-top: 1.5rem;
   }
 
+  .project__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0;
+    padding-bottom: 0.35rem;
+    font-family: var(--font-heading);
+    font-size: 1.18rem;
+    font-style: italic;
+  }
+
+  .project__link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--color-teal);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+  }
+
+  .project__link:hover::after,
+  .project__link:focus-visible::after {
+    transform: scaleX(1.06);
+  }
+
+  .project__link span:last-child {
+    color: var(--color-teal);
+  }
+
+  .project__link--external {
+    color: rgba(11, 37, 48, 0.72);
+  }
+
   .project__status {
-    display: inline-block;
-    padding: 0.45rem 0.75rem;
+    display: inline-flex;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0.8rem;
     background: var(--color-mist);
     border-radius: 999px;
     color: #087a71;
@@ -273,77 +319,70 @@
     text-transform: uppercase;
   }
 
-  .project__link {
+  .project__device {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding-bottom: 0.35rem;
-    font-size: 0.92rem;
-    font-weight: 500;
+    width: 100%;
+    padding-top: 34px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(11, 37, 48, 0.12);
+    border-radius: 18px 18px 50px 18px;
+    box-shadow: 0 20px 50px rgba(11, 37, 48, 0.09);
   }
 
-  .project--featured .project__link {
-    margin-top: 1.7rem;
-  }
-
-  .project__link::after {
+  .project__device::before {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 75%;
-    height: 1px;
-    background: var(--color-teal);
-    transition: width var(--transition-base);
+    inset: 0 0 auto;
+    height: 34px;
+    background: var(--color-ivory);
+    border-bottom: 1px solid rgba(11, 37, 48, 0.08);
   }
 
-  .project__link:hover::after,
-  .project__link:focus-visible::after {
+  .project__device::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-coral);
+    box-shadow: 12px 0 0 rgba(15, 159, 143, 0.45), 24px 0 0 rgba(11, 37, 48, 0.18);
+  }
+
+  .project__picture,
+  .project__image {
+    display: block;
     width: 100%;
   }
 
-  .project__link span:last-child {
-    color: var(--color-teal);
-    transition: transform var(--transition-base);
-  }
-
-  .project__link:hover span:last-child,
-  .project__link:focus-visible span:last-child {
-    transform: translateX(5px);
+  .project__image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
   }
 
   .projects-section__footer {
     display: flex;
     justify-content: flex-end;
-    margin-top: clamp(3rem, 4vw, 4.5rem);
+    margin-top: clamp(3.5rem, 6vw, 5.5rem);
   }
 
   .projects-section__all {
-    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
-    padding-bottom: 0.5rem;
-    font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2vw, 1.7rem);
-    font-style: italic;
+    gap: 0.9rem;
+    padding: 0.8rem 1.25rem;
+    border: 1px solid rgba(11, 37, 48, 0.18);
+    border-radius: 999px;
+    transition: background-color var(--transition-base), transform var(--transition-base);
   }
 
-  .projects-section__all::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 75%;
-    height: 1px;
-    background: var(--color-teal);
-    transition: width var(--transition-base);
-  }
-
-  .projects-section__all:hover::after,
-  .projects-section__all:focus-visible::after {
-    width: 100%;
+  .projects-section__all:hover,
+  .projects-section__all:focus-visible {
+    background: var(--color-mist);
+    transform: translateY(-2px);
   }
 
   .projects-section__all span:last-child {
@@ -356,85 +395,30 @@
     }
 
     .project {
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-      align-items: center;
-      gap: clamp(3rem, 6vw, 6rem);
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      gap: clamp(3rem, 7vw, 7rem);
     }
 
-    /* Appart Beauté reprend exactement la même composition que Polymaintenance :
-       visuel à gauche, contenu à droite, avec les mêmes proportions. */
-    .project--beauty .project__visual,
-    .project--beauty .project__content {
-      order: initial;
+    .project:nth-of-type(even) .project__visual {
+      order: 2;
+    }
+
+    .project:nth-of-type(even) .project__content {
+      order: 1;
     }
   }
 
   @media (max-width: 767px) {
-    .projects-section__inner {
-      padding: 2.75rem 0 3.25rem;
-    }
-
     .projects-section__title {
-      font-size: clamp(2.6rem, 12vw, 3.6rem);
+      font-size: clamp(2.6rem, 12vw, 3.7rem);
     }
 
     .project + .project {
-      margin-top: 4.25rem;
+      margin-top: 5rem;
     }
 
-    .project__visual {
-      padding-top: 0.5rem;
-    }
-
-    /* Même faux téléphone pour Polymaintenance et Appart Beauté. */
-    .project__device {
-      width: min(72%, 280px);
-      margin-inline: auto;
-      padding: 18px 7px 7px;
-      background: var(--color-ink);
-      border: 0;
-      border-radius: 32px;
-      box-shadow: 0 20px 42px rgba(11, 37, 48, 0.14);
-    }
-
-    .project__device::before {
-      top: 7px;
-      left: 50%;
-      right: auto;
-      width: 42px;
-      height: 4px;
-      background: rgba(250, 247, 240, 0.5);
-      border: 0;
-      border-radius: 999px;
-      transform: translateX(-50%);
-    }
-
-    .project__device::after {
-      display: none;
-    }
-
-    .project__picture {
-      overflow: hidden;
-      border-radius: 24px;
-    }
-
-    .project__image {
-      aspect-ratio: 9 / 16;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 24px;
-    }
-
-    .projects-section__footer {
-      justify-content: flex-start;
-      margin-top: 3.5rem;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .project__image,
-    .project__link span:last-child {
-      transition: none;
+    .project__content {
+      padding-inline: 0.25rem;
     }
   }
 </style>

@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectPreview from "../../components/ui/ProjectPreview.astro";
+---
+
+<BaseLayout
+  title="Site internet de mariage sur mesure : Anaïs & Glen | Happyclicks"
+  description="Découvrez Anaïs & Glen, un site conçu à l’origine pour un vrai mariage : identité sur mesure, compte à rebours, programme, informations pratiques, dress code, RSVP et mobile first."
+>
+  <main class="case-page">
+    <section class="case-hero">
+      <div class="case-inner case-hero__inner">
+        <a href="/realisations/" class="case-back"><span aria-hidden="true">←</span> Toutes les réalisations</a>
+        <p class="case-eyebrow">Projet mariage · Événementiel</p>
+        <h1>Anaïs & Glen<span class="case-dot">.</span></h1>
+        <p class="case-lead">
+          Imaginer un site de mariage comme le prolongement de l’invitation :
+          personnel, élégant, utile pour les invités et agréable à parcourir sur téléphone.
+        </p>
+        <div class="case-tags" aria-label="Caractéristiques du projet">
+          <span>Site de mariage</span><span>Compte à rebours</span><span>Mobile first</span><span>RSVP</span><span>Programme</span><span>Design sur mesure</span>
+        </div>
+        <a class="case-live-link" href="https://anais-et-glen.fr/" target="_blank" rel="noopener noreferrer">
+          <span>Voir le site en ligne</span><span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="case-preview" aria-label="Aperçu du site Anaïs & Glen">
+      <div class="case-inner">
+        <ProjectPreview
+          desktopImages={[
+            "/images/projects/carousel/anais-glen/desktop-1.webp",
+            "/images/projects/carousel/anais-glen/desktop-2.webp",
+            "/images/projects/carousel/anais-glen/desktop-3.webp",
+          ]}
+          mobileImages={[
+            "/images/projects/carousel/anais-glen/mobile-1.webp",
+            "/images/projects/carousel/anais-glen/mobile-2.webp",
+            "/images/projects/carousel/anais-glen/mobile-3.webp",
+          ]}
+          label="Aperçus du site de mariage Anaïs & Glen sur ordinateur et téléphone"
+          eager={true}
+        />
+      </div>
+    </section>
+
+    <section class="case-context">
+      <div class="case-inner case-split">
+        <div>
+          <p class="case-eyebrow">L’idée</p>
+          <h2>Une invitation qui continue <span>en ligne<span class="case-dot">.</span></span></h2>
+        </div>
+        <div class="case-copy">
+          <p>
+            Le site a été conçu à l’origine pour accompagner un vrai mariage et
+            prolonger l’invitation en ligne. L’objectif : centraliser toutes les
+            informations utiles pour les invités sans perdre l’émotion ni
+            l’identité du couple.
+          </p>
+          <p>
+            L’univers graphique a été construit autour d’une palette douce,
+            de compositions florales et d’une typographie élégante, avec une
+            attention particulière portée au rendu mobile.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-work">
+      <div class="case-inner">
+        <header class="case-work__header">
+          <p class="case-eyebrow">Ce qui a été conçu</p>
+          <h2>Un site beau, mais surtout <span>simple à vivre<span class="case-dot">.</span></span></h2>
+        </header>
+        <div class="case-grid">
+          <article><h3>Univers graphique</h3><p>Une identité cohérente avec l’ambiance du mariage, pensée spécifiquement pour le projet.</p></article>
+          <article><h3>Compte à rebours</h3><p>Un compteur jusqu’au jour J donne immédiatement le ton et crée un rendez-vous dès l’arrivée sur le site.</p></article>
+          <article><h3>Programme</h3><p>Les étapes de la journée sont présentées clairement pour que les invités sachent où aller et à quelle heure.</p></article>
+          <article><h3>Infos pratiques</h3><p>Hébergement, déplacements, enfants, repas et autres questions réunies au même endroit.</p></article>
+          <article><h3>Dress code</h3><p>Une section visuelle pour expliquer les couleurs et inspirations sans transformer le site en règlement.</p></article>
+          <article><h3>RSVP</h3><p>Un formulaire intégré permet de centraliser les réponses et les informations utiles des invités.</p></article>
+          <article><h3>Mobile first</h3><p>La navigation et les contenus ont été pensés pour être confortables sur téléphone, là où les invités consulteront le plus le site.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-result">
+      <div class="case-inner case-split">
+        <div>
+          <p class="case-eyebrow">Le résultat</p>
+          <h2>Un petit site qui raconte <span>une vraie histoire<span class="case-dot">.</span></span></h2>
+        </div>
+        <div class="case-copy">
+          <p>
+            Le résultat est à la fois pratique et très personnel : les invités
+            trouvent rapidement ce dont ils ont besoin, tandis que le couple
+            conserve un univers qui lui ressemble du début à la fin.
+          </p>
+          <p>
+            C’est aussi un bon exemple de la manière dont Happyclicks peut
+            concevoir un projet ponctuel, événementiel ou totalement différent d’un site d’entreprise classique.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-next">
+      <div class="case-inner">
+        <p class="case-eyebrow">Un événement à raconter ?</p>
+        <h2>Votre projet peut avoir <span>son propre univers<span class="case-dot">.</span></span></h2>
+        <p>Site de mariage, événement privé ou projet particulier : parlons de l’expérience que vous voulez créer.</p>
+        <a href="/contact/" class="case-button"><span>Parler de mon projet</span><span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .case-page { overflow:hidden; }
+  .case-hero,.case-context,.case-result { background:var(--color-ivory); }
+  .case-inner { width:min(calc(100% - 2rem),1240px); margin-inline:auto; }
+  .case-hero__inner { padding-block:1rem clamp(3rem,6vw,5rem); }
+  .case-back { display:inline-flex; align-items:center; gap:.7rem; margin-bottom:clamp(2rem,4vw,3.5rem); color:rgba(11,37,48,.68); font-size:.86rem; }
+  .case-back span { color:var(--color-teal); }
+  .case-eyebrow { margin-bottom:.85rem; color:var(--color-teal); font-size:.72rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; }
+  .case-hero h1 { font-size:clamp(3.5rem,8vw,8rem); line-height:.9; letter-spacing:-.04em; }
+  .case-dot { color:var(--color-coral)!important; }
+  .case-lead { max-width:760px; margin-top:1.8rem; font-size:clamp(1.08rem,1.7vw,1.35rem); line-height:1.65; }
+  .case-tags { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.8rem; }
+  .case-tags span { padding:.48rem .75rem; background:var(--color-mist); border-radius:999px; color:#087a71; font-size:.72rem; font-weight:600; }
+  .case-live-link { display:inline-flex; align-items:center; gap:.75rem; margin-top:1.35rem; color:var(--color-teal); font-family:var(--font-heading); font-size:1.12rem; font-style:italic; }
+  .case-preview { padding-block:clamp(2rem,5vw,5rem) clamp(4rem,8vw,7rem); background:linear-gradient(180deg,var(--color-ivory),rgba(229,243,241,.55)); }
+  .case-context,.case-result { padding-block:clamp(4rem,8vw,7rem); }
+  .case-split { display:grid; gap:2.5rem; }
+  .case-split h2,.case-work__header h2,.case-next h2 { font-size:clamp(2.6rem,5vw,5rem); line-height:.98; letter-spacing:-.03em; }
+  .case-split h2 span,.case-work__header h2 span,.case-next h2 span { color:var(--color-teal); }
+  .case-copy { max-width:620px; }
+  .case-copy p { line-height:1.78; }
+  .case-copy p + p { margin-top:1.3rem; }
+  .case-work { background:var(--color-ink); color:var(--color-ivory); padding-block:clamp(4rem,8vw,7rem); }
+  .case-work__header { max-width:900px; }
+  .case-grid { display:grid; gap:1px; margin-top:clamp(2.5rem,5vw,4rem); background:rgba(250,247,240,.12); border:1px solid rgba(250,247,240,.12); border-radius:24px 60px 24px 24px; overflow:hidden; }
+  .case-grid article { padding:clamp(1.6rem,2.5vw,2.4rem); background:var(--color-ink); }
+  .case-grid h3 { font-size:clamp(1.55rem,2.2vw,2.25rem); }
+  .case-grid p { margin-top:.9rem; color:rgba(250,247,240,.72); line-height:1.65; }
+  .case-next { background:var(--color-mist); padding-block:clamp(4rem,8vw,7rem); }
+  .case-next p:not(.case-eyebrow) { max-width:620px; margin-top:1.5rem; line-height:1.7; }
+  .case-button { display:inline-flex; align-items:center; gap:1rem; margin-top:2rem; min-height:52px; padding:.8rem 1.5rem; border:1.5px solid var(--color-teal); border-radius:999px; }
+  .case-button span:last-child { color:var(--color-teal); }
+  @media(min-width:768px){
+    .case-inner { width:min(calc(100% - 4rem),1240px); }
+    .case-split { grid-template-columns:minmax(0,1fr) minmax(0,.8fr); gap:clamp(4rem,9vw,9rem); align-items:start; }
+    .case-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  }
+  @media(max-width:767px){
+    .case-hero h1 { font-size:clamp(3.4rem,16vw,5rem); }
+    .case-grid { grid-template-columns:1fr; }
+  }
+</style>

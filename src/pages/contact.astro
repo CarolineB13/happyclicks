@@ -1,10 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const turnstileSiteKey = import.meta.env.DEV
+  ? "1x00000000000000000000AA"
+  : "0x4AAAAAAFE-7Pp9dG9RZ2Es";
 ---
 
 <BaseLayout
-  title="Contact — Happyclicks"
-  description="Parlez-moi de votre projet web. Création de site, refonte, identité visuelle ou besoin sur mesure : Happyclicks vous accompagne de l’idée à la mise en ligne."
+  title="Contact | Projet de site internet sur mesure | Happyclicks"
+  description="Parlez directement à Caroline de votre projet : création ou refonte de site internet sur mesure, identité visuelle et fonctionnalités adaptées à votre activité."
   ogImage="/images/og/happyclicks-og.png"
   ogImageAlt="Happyclicks — Création de sites web sur mesure"
 >
@@ -45,11 +49,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </a>
 
               <a
-                href="mailto:caroline.briois@happyclicks.fr"
+                href="mailto:contact@happyclicks.fr"
                 class="contact-direct__link"
               >
                 <span>E-mail</span>
-                <strong>caroline.briois@happyclicks.fr</strong>
+                <strong>contact@happyclicks.fr</strong>
               </a>
 
               <a
@@ -78,11 +82,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             class="contact-form"
             name="contact"
             method="POST"
-            action="/merci"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
+            action="/api/contact"
           >
-            <input type="hidden" name="form-name" value="contact" />
 
             <p class="contact-form__honeypot" aria-hidden="true">
               <label>
@@ -127,9 +128,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <span>Votre besoin *</span>
                 <select name="besoin" required>
                   <option value="">Choisir</option>
-                  <option>Site essentiel — 1 page</option>
-                  <option>Site vitrine — 3 à 5 pages</option>
-                  <option>Site sur mesure</option>
+                  <option>Site événementiel</option>
+                  <option>Site vitrine</option>
+                  <option>Site vitrine complet / fonctionnalités spécifiques</option>
                   <option>Refonte d’un site existant</option>
                   <option>Identité visuelle / logo</option>
                   <option>Je ne sais pas encore</option>
@@ -140,10 +141,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <span>Budget envisagé</span>
                 <select name="budget">
                   <option value="">À définir</option>
-                  <option>Moins de 1 000 €</option>
-                  <option>1 000 à 1 500 €</option>
-                  <option>1 500 à 2 500 €</option>
-                  <option>2 500 € et plus</option>
+                  <option>Moins de 600 €</option>
+                  <option>600 à 900 €</option>
+                  <option>900 à 1 300 €</option>
+                  <option>1 300 à 2 000 €</option>
+                  <option>2 000 € et plus</option>
                 </select>
               </label>
 
@@ -169,14 +171,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </label>
             </div>
 
+            <div class="contact-form__turnstile">
+              <div
+                class="cf-turnstile"
+                data-sitekey={turnstileSiteKey}
+                data-theme="light"
+                data-size="flexible"
+                data-action="contact"
+                data-appearance="interaction-only"
+              ></div>
+            </div>
+
             <p class="contact-form__privacy">
               Les informations envoyées sont utilisées uniquement pour répondre
               à votre demande et, le cas échéant, préparer une proposition ou un
               devis. Les demandes sans suite sont conservées au maximum 12 mois.{" "}
-              <a href="/politique-de-confidentialite">
+              <a href="/politique-de-confidentialite/">
                 En savoir plus sur la gestion de vos données.
               </a>
             </p>
+
+            <p class="contact-form__status" role="status" aria-live="polite"></p>
 
             <button class="contact-form__submit" type="submit">
               <span>Envoyer ma demande</span>
@@ -215,8 +230,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </main>
 </BaseLayout>
 
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
   const contactForm = document.querySelector<HTMLFormElement>(".contact-form");
+  const statusMessage =
+    contactForm?.querySelector<HTMLElement>(".contact-form__status");
 
   contactForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -227,6 +246,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       contactForm.querySelector<HTMLButtonElement>(".contact-form__submit");
     const originalContent = submitButton?.innerHTML;
 
+    if (statusMessage) statusMessage.textContent = "";
+
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.innerHTML = "<span>Envoi en cours…</span>";
@@ -236,38 +257,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1"
     ) {
-      window.location.assign("/merci");
+      window.location.assign("/merci/");
       return;
     }
 
     try {
       const formData = new FormData(contactForm);
-      const body = new URLSearchParams();
-
-      for (const [key, value] of formData.entries()) {
-        if (typeof value === "string") {
-          body.append(key, value);
-        }
-      }
-
-      const response = await fetch("/", {
+      const response = await fetch("/api/contact", {
         method: "POST",
+        body: formData,
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
         },
-        body: body.toString(),
       });
 
+      const payload = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Erreur lors de l’envoi du formulaire.");
+        throw new Error(
+          payload?.message ||
+            "Votre message n’a pas pu être envoyé. Merci de réessayer."
+        );
       }
 
-      window.location.assign("/merci");
+      window.location.assign("/merci/");
     } catch (error) {
       console.error(error);
-      alert(
-        "Votre message n’a pas pu être envoyé. Merci de réessayer dans quelques instants."
-      );
+
+      if (statusMessage) {
+        statusMessage.textContent =
+          error instanceof Error
+            ? error.message
+            : "Votre message n’a pas pu être envoyé. Merci de réessayer.";
+      }
+
+      const turnstile = (window as typeof window & {
+        turnstile?: { reset: () => void };
+      }).turnstile;
+      turnstile?.reset();
 
       if (submitButton) {
         submitButton.disabled = false;
@@ -474,6 +501,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border-color: var(--color-teal);
     background: var(--color-ivory);
     box-shadow: 0 0 0 4px rgba(15, 159, 143, 0.1);
+  }
+
+  .contact-form__turnstile {
+    width: min(100%, 420px);
+    margin-top: 1.6rem;
+  }
+
+  .contact-form__turnstile :global(.cf-turnstile) {
+    width: 100%;
+  }
+
+  .contact-form__status {
+    min-height: 1.4em;
+    margin-top: 1rem;
+    color: #9b3f32;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   .contact-form__privacy {
